@@ -1,0 +1,10 @@
+{
+  "cleanUrls": false,
+  "directoryListing": false,
+  "headers": [
+    {
+      "source": "**/*.{html,md,css,js}",
+      "headers": [{ "key": "Cache-Control", "value": "no-cache" }]
+    }
+  ]
+}

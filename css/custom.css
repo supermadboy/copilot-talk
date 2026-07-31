@@ -1,0 +1,372 @@
+/*
+ * Eigene Anpassungen für den Copilot-Vortrag.
+ * Wird nach dem reveal-Theme geladen und gewinnt daher.
+ *
+ * Keine externen Fonts, keine CDN-Requests: der Vortrag muss auch ohne
+ * Internet laufen.
+ */
+
+:root {
+  --bg-1: #0d1117;
+  --bg-2: #161b22;
+  --fg: #e6edf3;
+  --fg-muted: #8b949e;
+  --accent: #58a6ff;
+  --accent-soft: #1f6feb;
+  --good: #3fb950;
+  --warn: #d29922;
+  --bad: #f85149;
+  --line: rgba(139, 148, 158, 0.25);
+
+  --font-ui: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+    Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, "Cascadia Code", "Fira Code", "JetBrains Mono",
+    Consolas, "Liberation Mono", monospace;
+}
+
+/* ---------------------------------------------------------------------------
+ * Grundlayout
+ * ------------------------------------------------------------------------ */
+
+.reveal-viewport {
+  background: var(--bg-1);
+  background-image:
+    radial-gradient(ellipse 80% 60% at 15% 0%, rgba(31, 111, 235, 0.18), transparent 60%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(88, 166, 255, 0.1), transparent 55%);
+  background-attachment: fixed;
+}
+
+.reveal {
+  font-family: var(--font-ui);
+  color: var(--fg);
+  font-weight: 400;
+}
+
+.reveal .slides section {
+  text-align: left;
+}
+
+.reveal .slides section.center-text,
+.reveal .slides section h1 {
+  text-align: center;
+}
+
+/* ---------------------------------------------------------------------------
+ * Typografie
+ * ------------------------------------------------------------------------ */
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4 {
+  font-family: var(--font-ui);
+  color: #fff;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  font-weight: 700;
+  text-shadow: none;
+  line-height: 1.15;
+}
+
+.reveal h1 {
+  font-size: 2.4em;
+}
+
+.reveal h2 {
+  font-size: 1.55em;
+  margin-bottom: 0.7em;
+}
+
+/* Akzentstrich unter Abschnittsüberschriften */
+.reveal .slides section > h2::after {
+  content: "";
+  display: block;
+  width: 2.2em;
+  height: 4px;
+  margin-top: 0.35em;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent), transparent);
+}
+
+.reveal .slides section.center-text > h2::after,
+.reveal .slides section.interaction > h2::after {
+  margin-left: auto;
+  margin-right: auto;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+}
+
+.reveal p {
+  line-height: 1.45;
+}
+
+.reveal strong {
+  color: #fff;
+  font-weight: 700;
+}
+
+.reveal em {
+  color: var(--accent);
+  font-style: normal;
+  font-weight: 600;
+}
+
+/* Kleiner Vorspann über der Überschrift: <p class="kicker">Teil 2</p> */
+.reveal .kicker {
+  font-size: 0.45em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 700;
+  margin: 0 0 0.4em 0;
+}
+
+/* Riesenaussage, allein auf der Folie */
+.reveal .big {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #fff;
+}
+
+.reveal .muted {
+  color: var(--fg-muted);
+}
+
+/* ---------------------------------------------------------------------------
+ * Listen
+ * ------------------------------------------------------------------------ */
+
+.reveal ul {
+  list-style: none;
+  margin-left: 0;
+}
+
+.reveal ul > li {
+  position: relative;
+  padding-left: 1.1em;
+  margin-bottom: 0.5em;
+}
+
+.reveal ul > li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 0.4em;
+  height: 0.4em;
+  border-radius: 2px;
+  background: var(--accent);
+}
+
+.reveal ul ul > li::before {
+  background: var(--fg-muted);
+}
+
+.reveal ol {
+  margin-left: 1em;
+}
+
+.reveal ol > li {
+  margin-bottom: 0.5em;
+}
+
+/* ---------------------------------------------------------------------------
+ * Code
+ * ------------------------------------------------------------------------ */
+
+.reveal pre {
+  width: 100%;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
+  font-size: 0.5em;
+  line-height: 1.45;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.reveal pre code {
+  max-height: 600px;
+  padding: 1.1em 1.3em;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  font-family: var(--font-mono);
+}
+
+.reveal code:not(pre code) {
+  padding: 0.12em 0.4em;
+  border-radius: 5px;
+  background: rgba(88, 166, 255, 0.14);
+  border: 1px solid rgba(88, 166, 255, 0.22);
+  color: #cfe6ff;
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+ * Tabellen
+ * ------------------------------------------------------------------------ */
+
+.reveal table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.72em;
+  margin: 0.4em 0;
+}
+
+.reveal table th {
+  text-align: left;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.85em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--line);
+  padding: 0.5em 0.7em;
+}
+
+.reveal table td {
+  border-bottom: 1px solid var(--line);
+  padding: 0.5em 0.7em;
+  vertical-align: top;
+}
+
+.reveal table tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * Zwei Spalten:  <div class="cols">…</div> mit zwei Kindern
+ * ------------------------------------------------------------------------ */
+
+.reveal .cols {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.6em;
+  align-items: start;
+}
+
+.reveal .cols h3 {
+  font-size: 0.95em;
+  margin-bottom: 0.5em;
+}
+
+/* Karten */
+.reveal .card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0.9em 1.1em;
+}
+
+.reveal .card.good {
+  border-color: rgba(63, 185, 80, 0.45);
+}
+
+.reveal .card.bad {
+  border-color: rgba(248, 81, 73, 0.45);
+}
+
+/* ---------------------------------------------------------------------------
+ * Stand-Marker:  <p class="stand">Stand: 31.07.2026 · VS Code 1.129.1</p>
+ * Pflicht auf jeder Folie mit Versions- oder Feature-Aussagen.
+ * ------------------------------------------------------------------------ */
+
+.reveal .stand {
+  position: absolute;
+  top: -1.6em;
+  right: 0;
+  margin: 0;
+  font-size: 0.32em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.35em 0.9em;
+  white-space: nowrap;
+}
+
+/* ---------------------------------------------------------------------------
+ * Interaktionspunkte
+ *
+ *   <!-- .slide: class="interaction" data-interaction="Chat" data-background-color="#3d1d52" -->
+ * ------------------------------------------------------------------------ */
+
+.reveal .slides section.interaction {
+  text-align: center;
+}
+
+.reveal .slides section.interaction h2,
+.reveal .slides section.interaction h3 {
+  font-size: 1.7em;
+  margin-bottom: 0.5em;
+}
+
+.reveal .slides section.interaction p,
+.reveal .slides section.interaction li {
+  font-size: 1.1em;
+}
+
+.reveal .slides section.interaction ul {
+  display: inline-block;
+  text-align: left;
+}
+
+.reveal .slides section.interaction::before {
+  content: "▶ " attr(data-interaction);
+  position: absolute;
+  top: -1.2em;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  font-size: 0.4em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: #fff;
+  opacity: 0.85;
+}
+
+/* Live-Demo-Folien:  class="demo" */
+.reveal .slides section.demo::before {
+  content: "● LIVE";
+  position: absolute;
+  top: -1.2em;
+  left: 0;
+  font-size: 0.4em;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  color: var(--bad);
+}
+
+/* ---------------------------------------------------------------------------
+ * Screenshots
+ * ------------------------------------------------------------------------ */
+
+.reveal .slides section img {
+  max-height: 600px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  box-shadow: 0 12px 44px rgba(0, 0, 0, 0.6);
+  background: none;
+}
+
+/* ---------------------------------------------------------------------------
+ * Fortschrittsbalken und Steuerung im Akzentton
+ * ------------------------------------------------------------------------ */
+
+.reveal .progress {
+  color: var(--accent);
+  height: 3px;
+}
+
+.reveal .controls {
+  color: var(--accent);
+}
+
+.reveal .slide-number {
+  background: transparent;
+  color: var(--fg-muted);
+  font-size: 0.5em;
+}

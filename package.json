@@ -1,0 +1,17 @@
+{
+  "name": "github-copilot-talk",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Vortrag: GitHub Copilot in VS Code – Tips und Tricks",
+  "scripts": {
+    "start": "serve --listen 8000 --no-clipboard ."
+  },
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "reveal.js": "^6.0.1"
+  },
+  "devDependencies": {
+    "serve": "^14.2.6"
+  }
+}
