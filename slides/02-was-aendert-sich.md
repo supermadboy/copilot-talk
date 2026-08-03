@@ -1,16 +1,19 @@
 <!-- .slide: class="center-text" -->
 
-<p class="kicker">Teil 1</p>
+<p class="kicker">Block 1</p>
 
-## Was sich gerade ändert
+## Was gerade passiert
 
 <p class="big muted">Neun Tage. Drei Releases.</p>
 
 Note:
-Zeit: 0:05
+Zeit: 0:06 — Block 1 läuft bis 0:09.
 
-Überleitung: "Alles, was ich euch gleich zeige, kann in vier Wochen anders
-aussehen. Das ist kein Haftungsausschluss, das ist der Punkt."
+**Kurz und locker halten. Das ist Aufwärmen, nicht der Inhalt.**
+Für harte 30 Minuten: auf zwei Sätze eindampfen.
+
+Einstieg: "Ganz kurz zur Einordnung, warum ich den Vortrag überhaupt halte und
+nicht einfach einen Link schicke."
 
 ---
 
@@ -22,40 +25,51 @@ aussehen. Das ist kein Haftungsausschluss, das ist der Punkt."
 | 1.129 | 15.07.2026 |
 | 1.129.1 | 17.07.2026 |
 
-<p class="stand">Stand: 31.07.2026</p>
+<p class="stand">Stand: 03.08.2026</p>
 
 Note:
 Zeit: 0:06
 
-Die eigentliche Aussage: **wer einmal im Jahr in die Release Notes schaut,
-verpasst das meiste.** Nicht die Versionsnummern vorlesen.
+Nicht die Versionsnummern vorlesen. Der Satz dazu:
 
-Wenn zwischen heute und dem Vortrag 1.130 erschienen ist: Zeile ergänzen.
-Sonst kippt genau hier die Glaubwürdigkeit.
+"Ich sag das nicht, um mich abzusichern — sondern weil es ehrlich gesagt
+schwierig ist, da hinterherzukommen. Ich schau da auch nicht jede Woche rein.
+Deshalb: was ich euch zeige, ist der Stand von heute."
+
+Locker bleiben. Kein Haftungsausschluss-Ton.
+
+**Refresh-Pass:** ist zwischen heute und dem Vortrag 1.130 erschienen? Dann
+Zeile ergänzen. Sonst kippt genau hier das Aktualitätsversprechen.
 
 ---
 
-## Drei Sachen, die den Alltag ändern
+## Drei Sachen, die was bringen
 
-- **Copilot Vision** — Bilder und PDFs in den Chat *(GA)*
-- **Browser-Tools** — der Agent testet die Web-App selbst *(GA)*
-- **Parallele Chats** — Implementierung, Review und Tests getrennt
+- **Vision** — habt ihr gerade gesehen
+- **Browser-Tools** — der Agent testet die Web-App selbst
+- **Parallele Chats** — Implementierung und Review getrennt
 
-<p class="stand">Stand: 31.07.2026 · VS Code 1.129.1</p>
+<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
 
 Note:
 Zeit: 0:07
 
-Vision ist schon gezeigt — nur kurz benennen, nicht wiederholen.
+Vision nur benennen, nicht wiederholen.
 
-Browser-Tools: der Agent bekommt einen echten Browser in VS Code. Er kann
-klicken, tippen, Konsolen-Fehler lesen, Screenshots machen. Der Loop
-"ändern → selbst nachsehen → korrigieren" schließt sich ohne dich.
-Wichtig: deine offenen Tabs sind privat, der Agent kommt erst über
-*Share with Agent* ran.
+Browser-Tools: "Der Agent bekommt einen echten Browser in VS Code — er klickt,
+tippt, liest Konsolen-Fehler, macht Screenshots. Also: er ändert was am CSS,
+lädt die Seite selbst, schaut nach, korrigiert nach. Ohne euch."
 
-Parallele Chats: mehrere Unterhaltungen in einer Session, jede mit eigener
-History und eigenem Modell.
+Die erste Frage, die immer kommt, gleich vorwegnehmen: **eure offenen Tabs
+sind privat.** Der Agent kommt an eine Seite, die ihr selbst geöffnet habt,
+erst wenn ihr auf *Share with Agent* klickt.
+
+Quelle: VS Code Docs, *Build and test web apps with browser agent tools*
+
+Parallele Chats: mehrere Unterhaltungen in einer Session — Implementierung im
+einen, Review im anderen. Jeder mit eigener History und eigenem Modell.
+
+Abbinder: "So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema."
 
 --
 
@@ -66,36 +80,13 @@ History und eigenem Modell.
 - Playwright-Code ausführen für längere Abläufe
 - Eure Tabs bleiben privat bis *Share with Agent*
 
-<p class="stand">Stand: 31.07.2026 · VS Code 1.129.1</p>
+<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
 
 Note:
-Vertiefung. Setting: `workbench.browser.enableChatTools`, dazu Browser-Tools
-im Tools-Picker aktivieren.
+Vertiefung. Nur bei Nachfrage.
+
+Setting: `workbench.browser.enableChatTools`, dazu Browser-Tools im
+Tools-Picker aktivieren.
 
 Admins können Browser-Tools per Policy abschalten oder auf Domains beschränken
-— vor dem Vortrag prüfen, ob es bei uns überhaupt an ist.
-
----
-
-## Und das hier kostet jetzt Geld
-
-- Abrechnung seit 01.06.2026 **tokenbasiert** (AI Credits)
-- 1 Credit = 0,01 $ · Business: 30 $ pro Monat
-- Neu: **Gesamtkosten pro Session** statt pro Request
-- Verbrauch je Subagent sichtbar
-
-<p class="stand">Stand: 31.07.2026</p>
-
-Note:
-Zeit: 0:09
-
-Das ist die Brücke zu Teil 2. Kernsatz:
-
-**"Modellwahl war früher eine Qualitätsfrage. Jetzt ist sie auch eine
-Geldfrage."**
-
-Nicht moralisieren, nicht zum Sparen erziehen. Nur: ihr könnt jetzt sehen,
-was ihr verbraucht, und das ändert die Entscheidung.
-
-Zahlen zur Vertragslage nur nennen, soweit sie stimmen — 30 $ Business,
-aufstockbar.
+— **vor dem Vortrag prüfen, ob es bei uns überhaupt an ist.**

@@ -9,31 +9,20 @@
 Note:
 Zeit: 0:00 — Start.
 
-Begrüßung kurz halten, maximal 30 Sekunden. Nicht erklären, was Copilot ist.
-Direkt zur nächsten Folie, die Chat-Frage ist der eigentliche Einstieg.
+Begrüßung maximal 30 Sekunden. Nicht erklären, was Copilot ist.
 
-Screensharing prüfen: sehen alle die Folien? Kurz in den Chat schauen lassen.
+"Ich zeige euch, wie ich mit Copilot arbeite. Nicht welche Features es gibt —
+das könnt ihr nachlesen — sondern wie mein Ablauf aussieht, wenn ich morgens
+eine echte Aufgabe habe."
 
----
+Ziel ansagen: "ihr sollt danach eure eigenen Repos vernünftig aufsetzen können.
+Am Ende kriegt ihr eine Checkliste."
 
-## Worum es geht
+Zwei Sätze vorweg:
+1. Ich mache viel live. Wenn was schiefgeht, gehe ich einfach weiter.
+2. Fragen jederzeit in den Chat, ich sammle die ein.
 
-<p class="kicker">Agenda</p>
+Screensharing prüfen: sehen alle die Folien?
 
-| | | |
-| --- | --- | --- |
-| **1** | Was sich gerade ändert | 5 min |
-| **2** | Der Arbeitsablauf, live | 12 min |
-| **3** | Was brauche ich im Repo? | 8 min |
-| **4** | VS Code vs. IntelliJ | 3 min |
-| **5** | Firmenregeln | 3 min |
-| **6** | Eure Fragen | Rest |
-
-Note:
-Zeit: 0:01
-
-Nicht vorlesen. Zwei Sätze:
-"Teil 2 und 3 sind der Kern — da geht es um den Arbeitsablauf und darum, was
-ihr einmalig im Repo einrichtet. Der Rest ist Rahmen."
-
-Ansage machen: Fragen jederzeit in den Chat, ich sammle sie für Teil 6.
+Der Fahrplan kommt NICHT hier, sondern nach dem Hook. Erst die Demo, die
+Aufmerksamkeit holt, dann die Landkarte.

@@ -14,13 +14,14 @@ gebaut, nicht umgekehrt.
 Repos danach selbst vernünftig aufsetzen können. Jeder Abschnitt muss auf die
 Frage einzahlen: *was mache ich morgen früh anders?*
 
-**Zeitplan:** Kern 42 Minuten bis zum Schlusssatz.
-Für harte 30: Teil 4 komplett streichen, in Teil 2 die Prompt-Tipps und in
-Teil 3 die Custom Agents raus.
+**Zeitplan:** Kern 47 Minuten bis zum Schlusssatz.
+Für harte 30: Teil 4 komplett streichen, Teil 1 auf zwei Sätze, in Teil 2 die
+Prompt-Tipps und in Teil 3 die Custom Agents und `.instructions.md` raus.
+Der `/init`-Block bleibt — der ist das Handfeste.
 
 ---
 
-## Teil 0 — Einstieg · 0:00 bis 0:05
+## Teil 0 — Einstieg · 0:00 bis 0:06
 
 ### 0:00 Begrüßung
 
@@ -74,14 +75,38 @@ Das ist Copilot Vision, seit Anfang Juli allgemein verfügbar. Der ganze Schritt
 ▸ **Fallback:** Screenshot aus `images/` zeigen und erzählen. Nicht reparieren
 wollen.
 
+### 0:05 Der Fahrplan
+
+▸ Inhaltsfolie. Vier Blöcke, nicht sechs Teile — die Leute sollen sich das
+merken können, nicht mitlesen.
+
+Kurz, wo wir hinlaufen. Vier Blöcke:
+
+1. **Was gerade neu ist** — fünf Minuten, damit ihr wisst, worüber wir reden
+2. **Wie ich arbeite** — eine echte Aufgabe, von vorne bis fertig
+3. **Was ihr in euer Repo legt** — damit das bei euch morgen auch so läuft
+4. **Regeln bei uns, und dann eure Fragen**
+
+Block zwei und drei sind der eigentliche Vortrag. Der Rest ist Rahmen. Wenn ihr
+zwischendurch rausfallt, steigt spätestens da wieder ein.
+
+Und das Versprechen für den Schluss: ihr geht mit einer Checkliste raus, die ihr
+abarbeiten könnt. Ihr müsst also nicht mitschreiben.
+
+▸ Nicht länger als eine Minute. Das ist Orientierung, kein Inhalt.
+
+▸ **Optional:** dieselbe Folie vor Teil 3 nochmal kurz einblenden — das ist der
+Punkt, an dem der Vortrag von "wie Markus arbeitet" auf "was ihr tut"
+umschaltet. Kostet zehn Sekunden. Wenn du in Zeitnot bist, weglassen.
+
 ---
 
-## Teil 1 — Was gerade passiert · 0:05 bis 0:08
+## Teil 1 — Was gerade passiert · 0:06 bis 0:09
 
 > Kurz und locker halten. Das ist Aufwärmen, nicht der Inhalt.
 > Für 30 Minuten: auf zwei Sätze eindampfen.
 
-### 0:05 Das Tempo
+### 0:06 Das Tempo
 
 Ganz kurz zur Einordnung, warum ich den Vortrag überhaupt halte und nicht
 einfach einen Link schicke.
@@ -95,7 +120,7 @@ Deshalb: was ich euch zeige, ist der Stand von heute.
 
 ▸ Wenn zwischen heute und dem Vortrag 1.130 erschienen ist: Zeile ergänzen.
 
-### 0:06 Drei Sachen, die was ändern
+### 0:07 Drei Sachen, die was ändern
 
 Drei Sachen aus den letzten Wochen, die tatsächlich was bringen.
 
@@ -118,18 +143,18 @@ So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema.
 
 ---
 
-## Teil 2 — So arbeite ich · 0:08 bis 0:26
+## Teil 2 — So arbeite ich · 0:09 bis 0:27
 
 > **Das Kernstück.** Hier ist alles drin, was die Leute mitnehmen sollen.
 
-### 0:08 Rahmen
+### 0:09 Rahmen
 
 Jetzt der eigentliche Teil. Ich mache eine echte Aufgabe in einem kleinen Repo,
 so wie ich das tatsächlich mache.
 
 Und ich fange nicht bei der Aufgabe an, sondern eine Stufe davor: beim Setup.
 
-### 0:09 Setup — ein Workspace für alles
+### 0:10 Setup — ein Workspace für alles
 
 Das ist der unspektakulärste Tipp des Vortrags und trotzdem der, der bei mir am
 meisten gebracht hat.
@@ -154,9 +179,9 @@ gemeinsamen Regeln in allen Repos, ohne dass ihr sie dreimal pflegt.
 Die Aufgabe für gleich: die Einträge sollen nach Projekt gruppiert werden, mit
 einer Summe pro Projekt.
 
-▸ Vorher prüfen: `git reset --hard start && git clean -fd`
+▸ Vorher prüfen: `npm run demo:reset` (aus dem Repo-Wurzelverzeichnis)
 
-### 0:11 Entscheidung 1 — welches Modell
+### 0:12 Entscheidung 1 — welches Modell
 
 Erste Entscheidung. Und da bin ich anderer Meinung als die offizielle
 Empfehlung, deshalb sage ich beides.
@@ -194,7 +219,7 @@ Chat, nicht nur pro Request. Und aufgeschlüsselt nach Subagent.
 
 ▸ Modellnamen nicht vorlesen — die sind in vier Wochen falsch.
 
-### 0:14 Entscheidung 2 — erst Plan, dann Code
+### 0:15 Entscheidung 2 — erst Plan, dann Code
 
 Wenn ihr heute nur eine Sache mitnehmt, dann die.
 
@@ -245,9 +270,19 @@ einen Diff, den ich nicht mehr auseinanderklamüsern will.
 
 ▸ Erst danach implementieren lassen.
 
-### 0:18 Memory — was der Agent sich merkt
+### 0:19 Raten-Folie — wo liegt der Plan?
 
-Der Plan von eben liegt übrigens nicht im Repo. Und das führt zu einer Sache,
+▸ Interaktionsfolie. **30 Sekunden, nicht mehr.**
+
+Kurze Frage in den Chat, bevor ich weitermache: wo speichert Copilot den Plan,
+den ihr gerade gesehen habt?
+
+▸ Ein bis zwei Antworten vorlesen. **Hier nicht auflösen** — die meisten tippen
+auf eine Datei im Repo, und genau das ist die Pointe des nächsten Blocks.
+
+### 0:19 Memory — was der Agent sich merkt
+
+Der Plan von eben liegt nämlich nicht im Repo. Und das führt zu einer Sache,
 die deutlich nützlicher ist, als sie klingt.
 
 Copilot hat drei Arten von Gedächtnis:
@@ -276,7 +311,7 @@ ihr könnt einzelne Einträge nicht löschen — nur alles auf einmal, mit
 das hängt an den Copilot-Einstellungen. Wenn nicht: den Block auf die
 Session-Ebene kürzen und den Rest weglassen.
 
-### 0:21 Tests und Linter lasse ich nicht laufen
+### 0:22 Tests und Linter lasse ich nicht laufen
 
 Jetzt ein Punkt aus der Praxis, der gegen das läuft, was überall empfohlen wird.
 
@@ -297,7 +332,7 @@ macht er es beim nächsten Mal ohne die drei Fehlversuche davor.
 
 ▸ Das ist die Brücke zu Teil 3.
 
-### 0:23 Kontext und Prompts
+### 0:24 Kontext und Prompts
 
 > Für 30 Minuten: diesen Block auf die vier `#`-Referenzen kürzen.
 
@@ -343,12 +378,12 @@ nicht jedes Mal. Die gehören ins Repo.
 
 ---
 
-## Teil 3 — Euer Repo aufsetzen · 0:26 bis 0:36
+## Teil 3 — Euer Repo aufsetzen · 0:27 bis 0:41
 
 > Der "geht nach Hause und macht das"-Teil. Alles hier landet auf der
 > Checkliste am Ende.
 
-### 0:26 Teams-Reaktion
+### 0:27 Teams-Reaktion
 
 ▸ **Explizit sagen, welche Reaktion.**
 
@@ -357,7 +392,7 @@ wer eine `copilot-instructions.md` im Repo hat.
 
 ▸ 10 Sekunden warten, dann **laut auszählen**: "vier von zwanzig."
 
-### 0:27 Die Landkarte
+### 0:28 Die Landkarte
 
 Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
 anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
@@ -371,10 +406,81 @@ MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 ▸ Quelle: VS Code Docs, *Customization options at a glance*
 
-### 0:28 Instructions — und was NICHT reingehört
+### 0:29 Den ersten Entwurf schreiben lassen — `/init`
 
 `.github/copilot-instructions.md` im Repo, gilt für alle Anfragen. Das ist das
 Minimum, das jeder haben sollte.
+
+Und die gute Nachricht zuerst: ihr müsst die nicht von Hand schreiben.
+
+▸ **DEMO.** Im Demo-Repo in den Chat:
+
+```
+/init
+```
+
+Er liest sich durch das Repo und schreibt die Datei selbst. Stack, Struktur,
+Konventionen — das, was er im Code sehen kann.
+
+▸ Quelle: VS Code Docs, *Use custom instructions in VS Code* — "analyze your
+workspace and generate always-on custom instructions"
+
+Es gibt noch zwei Geschwister davon: **`/create-instructions`**, wenn ihr eine
+ganz bestimmte Regel wollt statt des Rundumschlags. Und dasselbe nochmal als
+Knopf im Agent-Customizations-Editor, falls ihr lieber klickt.
+
+Und jetzt der wichtige Teil — **das Ergebnis ist ein Rohentwurf, kein
+Ergebnis.** Er hat den Code gelesen. Er weiß nicht, warum ihr etwas so macht,
+und er kennt die Stolpersteine beim Bauen nicht. Genau die zwei Sachen sind
+aber das, was die Datei wertvoll macht.
+
+▸ **Generierte Fassung und meine überarbeitete nebeneinander zeigen.**
+
+### 0:31 Was reingehört
+
+Vier Blöcke. Wenn die drin sind, habt ihr neunzig Prozent.
+
+**Erstens: was das Projekt überhaupt ist.** Zwei, drei Sätze. Stack **mit
+Versionen** — "Angular 20", nicht "Angular". Das ist der Unterschied zwischen
+Code, der bei euch läuft, und Code aus einem drei Jahre alten Blogpost.
+
+**Zweitens: wie man das Ding baut, testet und lintet.** Die exakten Befehle.
+Und — das ist der Punkt, den die GitHub-Doku extra hervorhebt — **die
+Stolpersteine dazu.** Wenn bei euch der Build ohne ein vorheriges `npm install`
+scheitert, dann schreibt genau das rein. Ihr dokumentiert hier die Sachen, die
+einen neuen Kollegen am ersten Tag zwei Stunden kosten.
+
+**Drittens: wo was liegt.** Die wichtigsten Verzeichnisse mit relativen Pfaden,
+und wo die Konfigurationen für Tests und Linter stehen. Damit hört das Suchen
+auf.
+
+**Viertens: die Regeln, die man dem Code nicht ansieht.** Und die bitte mit
+Begründung und einem Code-Beispiel.
+
+▸ Quelle: GitHub Docs, *Adding repository custom instructions* · VS Code Docs,
+*Use custom instructions in VS Code*
+
+Zu Block vier zwei Sachen, die richtig was ausmachen.
+
+**Die Begründung.** "Dauern immer als ganze Minuten" wird umgangen. "Dauern
+immer als ganze Minuten, **weil** sich Rundungsfehler über die Woche
+aufsummieren" wird befolgt. Die Doku sagt das genauso: mit der Begründung
+entscheidet das Modell in den Fällen richtig, die ihr nicht aufgeschrieben habt.
+Bei Menschen ist das übrigens dasselbe.
+
+**Das Code-Beispiel.** Wörtlich aus der Doku: das Modell reagiert besser auf
+Beispiele als auf abstrakte Regeln. Also nicht "sprechende Namen benutzen",
+sondern zwei Zeilen — so ja, so nicht.
+
+▸ Code-Folie mit dem Prefer/Avoid-Paar.
+
+Und rein gehört das, was ich euch vorhin erzählt habe: **dass er Tests und
+Linter nicht selbst ausführen soll.** Bei mir steht da sinngemäß "führe keine
+Tests aus, ich mache das und gebe dir die Ausgabe" — mit der Begründung, dass
+er sich sonst festfrisst. Genau so eine Regel: sieht man dem Code nicht an,
+wird ohne Begründung ignoriert.
+
+### 0:34 Was raus muss
 
 Und jetzt der Teil, den fast alle falsch machen: nicht was reingehört ist das
 Problem, sondern was raus muss.
@@ -383,24 +489,22 @@ Problem, sondern was raus muss.
 Semikolons. Ihr verbrennt Kontext für Regeln, die sowieso automatisch
 durchgesetzt werden.
 
-**Rein gehört das Nicht-Offensichtliche** — und die Begründung dazu.
+**Raus muss Taskspezifisches.** Die Doku ist da ungewöhnlich direkt:
+*"Instructions must not be task specific."* Das ist eine Datei über euer
+Projekt, nicht über das Ticket von heute.
 
-▸ Beispiel-Folie zeigen.
+**Raus muss alles Vage.** "Sei gründlicher", "achte auf Qualität" — das tut
+nichts. Kostet nur Platz.
 
-Der Unterschied ist: "Dauern immer als ganze Minuten" wird umgangen. "Dauern
-immer als ganze Minuten, **weil** sich Rundungsfehler über die Woche
-aufsummieren" wird befolgt. Bei Menschen ist das genauso.
+**Und haltet die Datei kurz.** GitHub schreibt, dass Instructions-Dateien
+jenseits von ungefähr tausend Zeilen zu inkonsistentem Verhalten führen. Fangt
+klein an — eine einzige Zeile hilft schon.
 
-▸ Quelle: VS Code Docs, *Use custom instructions* — kurz halten, Begründung
-mitgeben, auf Nicht-Offensichtliches konzentrieren
+▸ Quelle: GitHub Docs, *Adding repository custom instructions* · GitHub Blog,
+*Master your instructions files* — der Längen-Hinweis stammt aus dem Kontext
+Copilot Code Review
 
-Und rein gehört das, was ich euch vorhin erzählt habe: **dass er Tests und
-Linter nicht selbst ausführen soll.** Bei mir steht da sinngemäß "führe keine
-Tests aus, ich mache das und gebe dir die Ausgabe" — mit der Begründung, dass
-er sich sonst festfrisst. Das ist genau so eine Regel, die man dem Code nicht
-ansieht und die ohne Begründung ignoriert wird.
-
-### 0:31 Die Stolperfalle
+### 0:35 Die Stolperfalle
 
 Eine Sache, die viele nicht wissen und die für Verwirrung sorgt:
 
@@ -413,7 +517,7 @@ account for inline suggestions as you type"
 Wenn ihr euch also wundert, warum die Autovervollständigung eure schönen Regeln
 komplett ignoriert — daran liegt's. Das ist kein Bug bei euch.
 
-### 0:32 Pro Dateityp
+### 0:36 Pro Dateityp
 
 Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
 `.instructions.md` mit einem `applyTo`-Glob gilt nur für die Dateien, die zum
@@ -423,7 +527,7 @@ Muster passen — Testkonventionen zum Beispiel nur in Testdateien.
 
 Mehrere kleine Dateien nach Thema schlagen eine große. Steht auch so in der Doku.
 
-### 0:33 Skills — wenn Regeln nicht reichen
+### 0:37 Skills — wenn Regeln nicht reichen
 
 Instructions sind Text. Wenn ihr einen Ablauf habt, der aus mehreren Schritten
 besteht und vielleicht noch ein Skript oder eine Vorlage braucht, dann ist das
@@ -449,7 +553,7 @@ fertig.
 Übrigens: falls ihr noch `.chatmode.md`-Dateien rumliegen habt — die heißen
 inzwischen `.agent.md`. Umbenennen, fertig.
 
-### 0:35 Custom Agents — ehrlich gesagt
+### 0:39 Custom Agents — ehrlich gesagt
 
 Custom Agents nur kurz, und ich bin da ehrlich: **ich hatte welche und habe sie
 wieder abgeschaltet.**
@@ -464,21 +568,48 @@ schreiben. Er *kann* nichts ausführen. Das ist ein echter Grund.
 
 Für die meisten von uns: erst mal die Instructions richtig hinkriegen.
 
-### 0:36 Nicht bei null anfangen
+### 0:40 Fremde Bausteine — abschauen statt erfinden
 
-Fangt nicht mit einem leeren Blatt an. Es gibt ein Repo, `github/awesome-copilot`,
-mit fertigen Instructions, Skills und Agents.
+`/init` schreibt euch den Entwurf. Für alles darüber hinaus müsst ihr auch nicht
+bei null anfangen — schaut euch an, wie andere das machen.
+
+**Erstens: `github/awesome-copilot`.** Fertige Instructions, Skills und Agents
+zum Rauspicken.
 
 ▸ Zwei bis drei konkrete Beispiele daraus zeigen, die zu uns passen.
 ▸ **Am Wochenende auswählen.** Nicht die Sammlung als Ganzes zeigen — das
 erschlägt und niemand macht danach was.
 
-Nicht alles übernehmen, das ist viel zu viel. Sucht euch zwei Sachen raus, die
-zu eurem Stack passen, und schaut euch an, *wie* die geschrieben sind.
+**Zweitens, das andere Extrem: ein Repo namens ECC.** Das ist keine Sammlung
+zum Rauspicken, sondern ein einziges durchgebautes Setup — 67 Agents, 281
+Skills, 94 Commands, MIT-Lizenz, gut zweihunderttausend Sterne. Da hat jemand
+zu Ende gedacht, wie weit man das treiben *kann*.
+
+▸ Quelle: <https://github.com/affaan-m/ECC> · **Stand: 03.08.2026** — Zahlen am
+Vortag neu ablesen, die wandern schnell
+
+▸ **Direkt in `.github/copilot-instructions.md` und `.github/prompts/` springen.**
+Nicht auf der Startseite bleiben.
+
+Und für uns ist genau das interessant: da liegt eine echte
+`copilot-instructions.md` drin, und daneben fertige Prompt-Dateien — `/plan`,
+`/tdd`, `/security-review`, `/build-fix`, `/refactor`.
+
+▸ Optional, ein Satz: *"Das Ding ist übrigens aus einem Anthropic-Hackathon
+entstanden."* Mehr nicht — die Geschichte ist nur über Blogs belegt, und wir
+reden hier über Copilot. **Markus entscheidet, ob der Satz fällt.**
+
+Bei beiden gilt dasselbe und das ist die eigentliche Botschaft: **nicht
+übernehmen — lesen, wie die geschrieben sind.** Sucht euch zwei Sachen raus,
+die zu eurem Stack passen. Nicht zweihunderteinundachtzig.
+
+▸ 281 Skills sind auch ein guter Aufhänger zurück zur "kurz halten"-Regel von
+vorhin — falls jemand fragt, warum das kein Widerspruch ist: Skills werden
+dreistufig geladen, Instructions nicht.
 
 ---
 
-## Teil 4 — VS Code vs. IntelliJ · 0:36 bis 0:38
+## Teil 4 — VS Code vs. IntelliJ · 0:41 bis 0:43
 
 > Markus überlegt noch, ob der Teil ganz rausfliegt.
 > **Für 30 Minuten: streichen.**
@@ -499,7 +630,7 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 
 ---
 
-## Teil 5 — Firmenregeln · 0:38 bis 0:41
+## Teil 5 — Firmenregeln · 0:43 bis 0:46
 
 > **Schreibt Markus selbst.** Nichts hier wird generiert.
 
@@ -512,7 +643,7 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 
 ▸ Bei Unklarheit: "weiß ich nicht, ich kläre das". Nicht raten.
 
-### 0:41 Der Schlusssatz
+### 0:46 Der Schlusssatz
 
 Eine Sache zum Mitnehmen, wenn ihr den Rest vergesst:
 
@@ -529,7 +660,7 @@ anders machen".
 
 ---
 
-## Teil 6 — Fragen und Feedback · ab 0:42
+## Teil 6 — Fragen und Feedback · ab 0:47
 
 ▸ Die Chat-Antworten von ganz am Anfang jetzt aufgreifen.
 
@@ -573,16 +704,21 @@ Danke fürs Zuhören.
 
 Muss vor dem Vortrag stehen, wird am Ende verlinkt. Eine Seite, zum Abarbeiten:
 
-1. `.github/copilot-instructions.md` anlegen — kurz, mit Begründungen
-2. Rein: der eine Test-Befehl, fachliche Regeln, "führe Tests nicht selbst aus"
-3. Raus: alles, was der Linter prüft
-4. Bei Bedarf `.instructions.md` mit `applyTo` je Dateityp
-5. Workspace über alle Repos eines Projekts
-6. `chat.useCustomizationsInParentRepositories` einschalten
-7. Memory prüfen und einschalten, User-Ebene für Dauerhaftes nutzen
-8. Modell bewusst wählen statt Auto
-9. `/plan` vor allem, was mehr als eine Datei anfasst
-10. Links: VS Code Docs, awesome-copilot, Release Notes
+1. `/init` laufen lassen — erzeugt `.github/copilot-instructions.md`
+2. Entwurf überarbeiten. Rein gehören vier Blöcke:
+   Projekt und Stack **mit Versionen** · Befehle für Build/Test/Lint samt
+   Stolpersteinen · wo was liegt (relative Pfade) · die nicht-offensichtlichen
+   Regeln **mit Begründung und Code-Beispiel**
+3. Rein gehört außerdem: "führe Tests und Linter nicht selbst aus"
+4. Raus: was der Linter prüft · Taskspezifisches · Vages · externe Links
+5. Kurz halten. Jenseits ~1.000 Zeilen wird es inkonsistent
+6. Bei Bedarf `.instructions.md` mit `applyTo` je Dateityp
+7. Workspace über alle Repos eines Projekts
+8. `chat.useCustomizationsInParentRepositories` einschalten
+9. Memory prüfen und einschalten, User-Ebene für Dauerhaftes nutzen
+10. Modell bewusst wählen statt Auto
+11. `/plan` vor allem, was mehr als eine Datei anfasst
+12. Links: VS Code Docs, awesome-copilot, Release Notes
 
 ---
 
@@ -594,6 +730,12 @@ Muss vor dem Vortrag stehen, wird am Ende verlinkt. Eine Seite, zum Abarbeiten:
 - [ ] Prüfen: sind Browser-Tools per Policy erlaubt?
 - [ ] Am Wochenende: zwei bis drei konkrete Beispiele aus `awesome-copilot`
       aussuchen
+- [ ] ECC-Repo öffnen, dessen `copilot-instructions.md` selbst lesen — taugt sie
+      als Positiv- oder als Warnbeispiel?
+- [ ] Entscheiden: fällt der Hackathon-Satz? Wenn ja, Rahmenbedingung 1 in
+      `CLAUDE.md` um eine Ausnahme ergänzen
+- [ ] `/init` im Demo-Repo einmal laufen lassen und die überarbeitete Fassung
+      danebenlegen
 - [ ] Entscheiden, ob Teil 4 bleibt
 - [ ] Handout schreiben und verlinkbar ablegen
 - [ ] Demo-Repo auf die Aufgabe zuschneiden

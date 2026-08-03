@@ -7,7 +7,7 @@ wer eine `copilot-instructions.md` im Repo hat.
 <p class="muted">Reaktionsleiste in Teams — nicht in den Chat.</p>
 
 Note:
-Zeit: 0:26
+Zeit: 0:27
 
 **Explizit sagen, welche Reaktion gemeint ist**, sonst passiert remote nichts.
 "Daumen hoch, oben in der Reaktionsleiste."
@@ -17,223 +17,357 @@ alle anderen — und liefert dir die Überleitung.
 
 ---
 
-<p class="kicker">Teil 3</p>
+<!-- .slide: class="center-text" -->
 
-## Was brauche ich im Repo?
+<p class="kicker">Block 3</p>
+
+## Euer Repo aufsetzen
 
 <p class="big">Sieben Möglichkeiten.<br />Ihr braucht zwei.</p>
 
 Note:
-Zeit: 0:27 — 8 Minuten.
+Zeit: 0:27 — Block 3 läuft bis 0:41. Der "geht nach Hause und macht das"-Teil.
 
-Die Ansage ist wichtig: das Ökosystem sieht überwältigend aus, ist es aber
-nicht. Für 90 % reichen Instructions und Skills.
+"Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
+anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
+Plugins. Sieht überwältigend aus. Gute Nachricht: für neunzig Prozent braucht
+ihr zwei davon."
+
+**Optional:** hier die Fahrplan-Folie von 0:05 kurz nochmal einblenden.
+Das ist die Stelle, an der es von "wie ich arbeite" auf "was ihr tut"
+umschaltet.
 
 ---
 
-## Die offizielle Entscheidungstabelle
+## Die offizielle Landkarte
 
 | Ziel | Mittel |
 | --- | --- |
 | Gleiche Standards für allen Code | Always-on Instructions |
-| Andere Regeln je Dateityp | Instructions mit `applyTo` |
-| Mehrschritt-Ablauf mit Skripten | Agent Skills |
+| Andere Regeln je Dateityp | File-based Instructions |
+| Mehrschritt-Workflow mit Skripten | Agent Skills |
 | Rolle mit weniger Tools | Custom Agents |
-| Externe API oder Datenbank | MCP |
-| Befehl im Agent-Loop | Hooks |
-| Aufgabe auf Abruf | Prompt Files |
+| Zugriff auf externe API/DB | MCP |
 
-<p class="stand">Quelle: VS Code Docs · Stand 31.07.2026</p>
+<p class="stand">VS Code Docs · <em>Customization options at a glance</em></p>
 
 Note:
 Zeit: 0:28
 
-Nicht durchgehen. Der Satz dazu:
+**Diese Tabelle ist offiziell — nicht neu erfunden.** Nicht vorlesen, auf die
+zwei oberen Zeilen zeigen.
 
-**"Das ist nicht meine Meinung, das ist die offizielle Tabelle. Und die
-empfohlene Reihenfolge steht auch drin: erst Instructions, dann Skills,
-MCP nur bei externen Daten, Custom Agents für Rollen."**
-
-Screenshot-Link für die Nachlese ansagen.
+Die empfohlene Reihenfolge steht auch in der Doku: **erst Instructions, dann
+Skills.** MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 ---
 
-## `.github/copilot-instructions.md`
+<!-- .slide: class="demo center-text" -->
 
-<div class="cols">
-<div class="card good">
-<h3>Rein</h3>
-<ul>
-<li>Nicht-Offensichtliches</li>
-<li>Der eine Test-Befehl</li>
-<li>Begründungen</li>
-<li>Verbote mit Beispiel</li>
-</ul>
-</div>
-<div class="card bad">
-<h3>Raus</h3>
-<ul>
-<li>Was der Linter schon prüft</li>
-<li>Formatierungsregeln</li>
-<li>Allgemeinplätze</li>
-<li>Alles über ~1 Seite</li>
-</ul>
-</div>
-</div>
+## Ihr müsst das nicht tippen
+
+<p class="big"><code>/init</code></p>
+
+<p class="muted">Copilot liest das Repo und schreibt die Datei selbst.</p>
+
+<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
 
 Note:
-Zeit: 0:29
+Zeit: 0:29 — DEMO 7, zwei Minuten. Nach `/plan` die wichtigste Demo.
 
-Die rechte Spalte ist der eigentliche Inhalt. Fast alle schreiben zu viel rein.
+`/init` in den Chat, laufen lassen, entstandene Datei aufmachen und **kurz
+durchscrollen**. Nicht vorlesen.
 
-Offizielle Empfehlung wörtlich: kurz und in sich geschlossen halten, die
-Begründung mitgeben, auf nicht-offensichtliche Regeln konzentrieren.
+Satz: "Er hat den Code gelesen. Stack, Struktur, Konventionen — das, was man
+sehen kann."
 
-**Wichtige Einschränkung nennen:** Instructions wirken im Chat und im Agent —
-**nicht** bei den Inline-Vorschlägen beim Tippen. Das ist ein verbreitetes
-Missverständnis.
+Quelle: VS Code Docs, *Use custom instructions in VS Code* — "analyze your
+workspace and generate always-on custom instructions".
+
+Zwei Geschwister erwähnen:
+- `/create-instructions` — wenn ihr **eine bestimmte** Regel wollt
+- derselbe Knopf im Agent-Customizations-Editor, für Klicker
+
+Dann die vorbereitete überarbeitete Fassung daneben aufmachen (Split-View).
+
+Details: demo-ablauf.md, Demo 7.
 
 ---
 
-## So sieht eine gute aus
+## Der Entwurf ist nicht das Ergebnis
 
-```markdown
-# Projektkontext
-
-Zeiterfassung, TypeScript + Vite. Tests mit vitest.
-
-## Verifikation
-`npm test` muss grün sein. Ein Befehl, mehr braucht es nicht.
-
-## Regeln
-- Geldbeträge und Dauern immer als ganze Minuten (number),
-  nie als Float. Rundungsfehler summieren sich über die Woche.
-- Keine neuen Abhängigkeiten ohne Rückfrage.
-
-## Was schon der Linter macht
-Formatierung, Quotes, Semikolons — nicht erwähnen.
-```
+<p class="big">Er kennt eure Begründungen nicht.<br />Und die Stolpersteine beim Bauen auch nicht.</p>
 
 Note:
 Zeit: 0:30
 
-Kurz auf die Begründung bei der Minuten-Regel zeigen: "Rundungsfehler
-summieren sich" — genau das macht den Unterschied zwischen einer Regel, die
-befolgt wird, und einer, die umgangen wird.
+Das ist die Pointe der Demo. Auf **genau zwei Stellen** in der überarbeiteten
+Fassung zeigen:
+
+1. eine Regel **mit Begründung**
+2. die Zeile **"führe Tests und Linter nicht selbst aus"** — der Rückbezug auf
+   Block 2, die kennt `/init` garantiert nicht
+
+Nicht mehr. Nicht die ganze Datei durchgehen.
 
 ---
 
-## Und für einzelne Dateitypen
+## Was reingehört
 
-```markdown
----
-name: 'Tests'
-description: 'Konventionen für Testdateien'
-applyTo: '**/*.test.ts'
----
+1. **Was das Projekt ist** — Stack mit Versionen
+2. **Build, Test, Lint** — die Befehle *und* die Stolpersteine
+3. **Wo was liegt** — relative Pfade
+4. **Die nicht-offensichtlichen Regeln** — mit Begründung
 
-- Ein `describe` pro exportierter Funktion
-- Testnamen auf Deutsch, beschreiben das Verhalten
-- Keine Snapshots
-```
-
-<p class="muted">Liegt in <code>.github/instructions/</code></p>
+<p class="stand">GitHub Docs · <em>Adding repository custom instructions</em></p>
 
 Note:
-Zeit: 0:31
+Zeit: 0:31 — drei Minuten. Das ist der Teil mit dem meisten Mitnehm-Wert.
 
-`applyTo` ist der ganze Trick: das Glob entscheidet, wann die Regeln greifen.
-So bleibt die Hauptdatei kurz.
+Zu 1: "Angular 20", nicht "Angular". Der Unterschied zwischen Code, der bei
+euch läuft, und Code aus einem drei Jahre alten Blogpost.
 
-Mehrere kleine Dateien nach Thema schlagen eine große — steht auch so in der
-Doku.
+Zu 2: **Das ist der Block, den fast niemand schreibt.** Die GitHub-Doku hebt
+ihn extra hervor — inklusive unerwarteter Build-Probleme und ihrer Workarounds.
+Beispiel aus der Doku: "always run npm install before building".
+Formulierung für uns: "ihr dokumentiert hier die Sachen, die einen neuen
+Kollegen am ersten Tag zwei Stunden kosten."
+
+Zu 3: damit das Suchen aufhört.
+
+Zu 4: nächste zwei Folien.
 
 ---
 
-## Skills statt Prompt Files
+## Die Begründung entscheidet
 
-| | Prompt Files | Skills |
-| --- | --- | --- |
-| VS Code | ✅ | ✅ |
-| Copilot CLI | ❌ | ✅ |
-| Cloud-Agent | ❌ | ✅ |
-| Skripte, Dateien dabei | ❌ | ✅ |
+<div class="cols">
+<div class="card bad">
 
-<p class="stand">Stand: 31.07.2026 · VS Code 1.129.1</p>
+### Wird umgangen
+
+Dauern immer als ganze Minuten.
+
+</div>
+<div class="card good">
+
+### Wird befolgt
+
+Dauern immer als ganze Minuten, **weil** sich Rundungsfehler über die Woche
+aufsummieren.
+
+</div>
+</div>
 
 Note:
 Zeit: 0:32
 
-**Der "das wusstet ihr noch nicht"-Punkt für die Vielnutzer.**
+Die Doku sagt das genauso: mit der Begründung entscheidet das Modell in den
+Fällen richtig, die ihr nicht aufgeschrieben habt.
 
-Wer Prompt Files gebaut hat, hat sie an VS Code gekettet. Skills laufen überall.
+"Bei Menschen ist das übrigens dasselbe."
 
-VS Code hat seit 1.129 eine Migration eingebaut:
-`chat.customizations.promptMigration.enabled` — experimentell, aber sie
-existiert.
-
-Zweite Umbenennung im selben Atemzug: `.chatmode.md` heißt jetzt `.agent.md`.
-Wer noch Chat Modes hat: umbenennen, fertig.
-
---
-
-## Wie ein Skill aussieht
-
-```markdown
----
-name: release-notes
-description: Erzeugt Release Notes aus den Commits
-  seit dem letzten Tag. Nutzen, wenn ein Release
-  vorbereitet wird.
 ---
 
-1. `git log <letzter-tag>..HEAD --oneline` ausführen
-2. Nach Feature / Fix / Intern gruppieren
-3. Vorlage aus ./template.md befüllen
+## Beispiele schlagen Regeln
+
+```ts
+// Prefer
+const currentDate = new Date();
+const activeUsers = users.filter(user => user.isActive);
+
+// Avoid
+const d = new Date();
+const x = users.filter(u => u.active);
 ```
 
-Note:
-Vertiefung.
-
-Ein Skill ist ein **Ordner** mit `SKILL.md` plus Skripten und Vorlagen.
-
-Der Clou ist die dreistufige Ladung: erst nur name und description, dann der
-Body wenn es passt, dann erst die referenzierten Dateien. Deshalb kosten
-viele installierte Skills fast keinen Kontext.
-
-Die `description` ist das Wichtigste: sie muss sagen, **wann** der Skill
-benutzt werden soll — daran entscheidet das Modell.
-
----
-
-## Custom Agents: wann überhaupt?
-
-- Wenn eine Rolle **weniger** Tools haben soll
-- Klassiker: Planer mit **Nur-Lese-Rechten**
-- Definiert in `.agent.md`
-- Für die meisten Teams: **später**
+<p class="stand">GitHub Docs · <em>Use custom instructions</em></p>
 
 Note:
 Zeit: 0:33
 
-Ehrlich bleiben: Custom Agents sind das, was am meisten nach Fortschritt
-aussieht und am wenigsten bringt, wenn die Instructions noch nicht stehen.
+Wörtlich aus der VS-Code-Doku: das Modell reagiert besser auf Beispiele als
+auf abstrakte Regeln.
 
-Das offizielle Beispiel ist gut: ein Planungs-Agent bekommt nur Lese-Tools,
-damit er beim Planen nichts ändert. Prinzip der geringsten Rechte.
+Also nicht "sprechende Namen benutzen", sondern zwei Zeilen — so ja, so nicht.
+
+Und dann der Rückbezug: rein gehört auch **"führe Tests und Linter nicht
+selbst aus"**, mit der Begründung, dass er sich sonst festfrisst. Genau so
+eine Regel: sieht man dem Code nicht an, wird ohne Begründung ignoriert.
+
+---
+
+## Was raus muss
+
+- Alles, was **Linter oder Formatter** schon prüfen
+- Taskspezifisches — *"Instructions must not be task specific"*
+- Vages — "sei gründlicher" tut nichts
+- Externe Links — werden nicht verfolgt
+
+<p class="stand">GitHub Docs · <em>Adding repository custom instructions</em></p>
+
+Note:
+Zeit: 0:34
+
+"Nicht was reingehört ist das Problem, sondern was raus muss."
+
+Zu Punkt 1: ihr verbrennt Kontext für Regeln, die sowieso automatisch
+durchgesetzt werden.
+
+Zu Punkt 2: "Das ist eine Datei über euer Projekt, nicht über das Ticket von
+heute."
+
+**Und haltet die Datei kurz.** GitHub schreibt, dass Instructions-Dateien
+jenseits von ungefähr tausend Zeilen zu inkonsistentem Verhalten führen.
+Fangt klein an — eine einzige Zeile hilft schon.
+
+⚠️ Der Längen-Hinweis stammt aus dem Kontext *Copilot Code Review*. Als
+Faustregel brauchbar, aber nicht als allgemeine Doku-Aussage verkaufen.
+Quelle: GitHub Blog, *Master your instructions files*.
+
+---
+
+## Die Stolperfalle
+
+<p class="big">Instructions wirken nicht<br />bei den Inline-Vorschlägen.</p>
+
+<p class="muted">Nur im Chat und im Agenten.</p>
+
+<p class="stand">VS Code Docs · <em>Use custom instructions</em></p>
+
+Note:
+Zeit: 0:35
+
+Wörtlich aus der Doku: "not taken into account for inline suggestions as you
+type".
+
+"Wenn ihr euch also wundert, warum die Autovervollständigung eure schönen
+Regeln komplett ignoriert — daran liegt's. Das ist kein Bug bei euch."
+
+Das ist ein häufiges Missverständnis und ein guter "aha"-Moment.
+
+---
+
+## Pro Dateityp
+
+```markdown
+---
+applyTo: '**/*.test.ts'
+---
+
+- Testdaten inline, keine Fixture-Dateien
+- Ein Verhalten pro Test, kein Setup-Sharing
+```
+
+<p class="muted">Mehrere kleine Dateien nach Thema schlagen eine große.</p>
+
+Note:
+Zeit: 0:36
+
+Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
+`.instructions.md` mit `applyTo`-Glob gilt nur für passende Dateien.
+
+Liegt in `.github/instructions/`.
+
+Steht auch so in der Doku: mehrere kleine nach Themen statt einer Riesendatei.
+
+**Für harte 30 Minuten: diese Folie streichen.**
+
+---
+
+## Skills — wenn Text nicht reicht
+
+- Ein Ordner mit `SKILL.md` plus Skripten und Vorlagen
+- Geladen in **drei Stufen**: Name → Inhalt → Dateien
+- Zwanzig Skills kosten fast nichts, solange sie nicht greifen
+- Instructions sind dagegen **immer** dabei
+
+<p class="stand">VS Code Docs · <em>Use Agent Skills in VS Code</em></p>
+
+Note:
+Zeit: 0:37
+
+Der eigentliche Vorteil ist die dreistufige Ladung — und der ist für uns mit
+begrenztem Budget der relevante.
+
+Erst nur Name und Beschreibung. Erst wenn die Aufgabe passt, der Inhalt. Und
+die mitgelieferten Dateien erst, wenn er sie wirklich braucht.
+
+Kreis schließen: "mein 'so führst du die Tests aus'-Ablauf ist genau so ein
+Kandidat. Einmal aufschreiben lassen, als Skill ablegen, fertig."
+
+Nebenbei: falls ihr noch `.chatmode.md`-Dateien rumliegen habt — die heißen
+inzwischen `.agent.md`. Umbenennen, fertig.
+
+---
+
+## Custom Agents — ehrlich gesagt
+
+- Ich hatte welche für TypeScript- und Java-Review
+- Wieder **abgeschaltet**: viel Tokens, wenig Mehrwert
+- Der eine gute Grund: eine Rolle soll **weniger** können
+- Für die meisten: erst mal die Instructions richtig hinkriegen
+
+Note:
+Zeit: 0:39
+
+Ehrlich bleiben, nicht verkaufen. "Klang gut. In der Praxis haben sie ordentlich
+Tokens gekostet und mir wenig gebracht, was ein normaler Review-Prompt nicht
+auch gebracht hätte."
+
+Der eine echte Grund: der offizielle Planungs-Agent hat genau drei Tools —
+lesen, suchen, schreiben. Er *kann* nichts ausführen. Prinzip der geringsten
+Rechte.
+
+**Für harte 30 Minuten: diese Folie streichen.**
 
 ---
 
 ## Nicht bei null anfangen
 
-<p class="big">github/awesome-copilot</p>
+<div class="cols">
+<div class="card">
 
-<p class="muted">Fertige Instructions, Skills und Agents zum Abschauen</p>
+### `github/awesome-copilot`
+
+Kuratierte Einzelteile zum Rauspicken
+
+</div>
+<div class="card">
+
+### `affaan-m/ECC`
+
+Ein durchgebautes Gesamtsystem<br />
+67 Agents · 281 Skills · 94 Commands
+
+</div>
+</div>
+
+<p class="big">Nicht übernehmen — lesen, wie die geschrieben sind.</p>
+
+<p class="stand">Stand: 03.08.2026 · Zahlen am Vortag prüfen</p>
 
 Note:
-Zeit: 0:34
+Zeit: 0:40 — DEMO 8.
 
-Link in den Chat posten.
+**Beide Repos als Tabs vorher öffnen, jeweils schon auf der richtigen Datei.**
+Nicht auf dem Share durch zwei fremde Repos navigieren.
 
-Ansage: nicht blind installieren — reinlesen. Aber als Vorlage, wie so eine
-Datei aussieht, spart es einen Nachmittag.
+awesome-copilot: zwei bis drei konkrete Beispiele, die zu unserem Stack passen.
+Am Wochenende auswählen. **Nicht die Sammlung als Ganzes zeigen** — das
+erschlägt und niemand macht danach was.
+
+ECC: direkt in `.github/copilot-instructions.md` und `.github/prompts/`
+springen. Da liegen fertige `/plan`, `/tdd`, `/security-review`, `/build-fix`,
+`/refactor`. MIT-Lizenz, gut zweihunderttausend Sterne.
+
+**Optional, ein Satz:** "Das Ding ist übrigens aus einem Anthropic-Hackathon
+entstanden." Mehr nicht — nur über Blogs belegt, und wir reden hier über
+Copilot. Markus entscheidet, ob der Satz fällt.
+Siehe research/ecc-hackathon-repo.md.
+
+Falls jemand fragt, warum 281 Skills kein Widerspruch zur "kurz halten"-Regel
+sind: Skills werden dreistufig geladen, Instructions nicht.
+
+Botschaft: "Sucht euch zwei Sachen raus, die zu eurem Stack passen. Nicht
+zweihunderteinundachtzig."

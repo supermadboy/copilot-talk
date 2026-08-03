@@ -1,14 +1,17 @@
-<p class="kicker">Teil 4</p>
+<p class="kicker">Block 4</p>
 
 ## "Muss ich jetzt zu VS Code?"
 
 <p class="big">Nein.</p>
 
 Note:
-Zeit: 0:35 — 3 Minuten.
+Zeit: 0:41 — zwei Minuten.
 
 Bewusst als erste Antwort. Im Publikum sitzen IntelliJ-Leute, und wenn die
-drei Minuten lang Werbung hören, sind sie weg.
+zwei Minuten lang Werbung hören, sind sie weg.
+
+**Für harte 30 Minuten: diesen ganzen Block streichen.**
+Markus überlegt ohnehin, ob er ganz rausfliegt.
 
 ---
 
@@ -20,12 +23,11 @@ drei Minuten lang Werbung hören, sind sie weg.
 | Custom Agents, Subagents, Plan-Agent | GA |
 | `AGENTS.md` / `CLAUDE.md` | unterstützt |
 | Agent Skills | Preview |
-| Copilot CLI | seit Juni |
 
-<p class="stand">Stand: 31.07.2026</p>
+<p class="stand">Stand: 03.08.2026</p>
 
 Note:
-Zeit: 0:36
+Zeit: 0:41
 
 Das war vor einem Jahr noch ein Graben. Heute ist es ein zeitlicher Versatz
 von etwa drei bis sechs Monaten.
@@ -42,10 +44,10 @@ für IDEA, PyCharm, WebStorm, Rider gleichermaßen.
 - Browser-Tools
 - Next Edit Suggestions
 
-<p class="stand">Stand: 31.07.2026</p>
+<p class="stand">Stand: 03.08.2026</p>
 
 Note:
-Zeit: 0:37
+Zeit: 0:42
 
 Der erste Punkt ist der einzige, der wirklich zählt. Die anderen drei sind
 Beispiele dafür.
@@ -61,9 +63,9 @@ Nicht behaupten, VS Code sei "besser". Es ist früher dran.
 <p class="muted">Prompt Files nicht.</p>
 
 Note:
-Zeit: 0:38
+Zeit: 0:42
 
-**Das ist der eigentliche Payoff von Teil 4** — und der Grund, warum Teil 3
+**Das ist der eigentliche Payoff von Block 4** — und der Grund, warum Block 3
 auch für die IntelliJ-Fraktion relevant war.
 
 Die Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden. Die
