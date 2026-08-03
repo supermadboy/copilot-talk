@@ -1,23 +1,22 @@
 # Vortragsskript
 
 **Das hier ist die Quelle.** Folien und Demo-Repo werden aus diesem Text
-gebaut, nicht umgekehrt. Was hier nicht drinsteht, kommt auch nicht auf eine
-Folie.
+gebaut, nicht umgekehrt.
 
 **Lesehilfe**
 
-- Normaler Text = das, was du sagst. Gesprochene Sprache, nicht vorlesen —
-  als Gerüst benutzen und frei formulieren.
-- Zeilen mit `▸` = Regieanweisung. Was du **tust**, nicht sagst.
-- Zeitangaben sind **kumulativ**: "0:12" heißt "hier bist du zwölf Minuten drin".
+- Normaler Text = das, was du sagst. Gerüst, nicht zum Vorlesen.
+- `▸` = Regieanweisung. Was du **tust**, nicht sagst.
+- `▸ Quelle:` = Beleg für die Aussage davor. Gehört auf die Folie.
+- Zeiten sind **kumulativ**: "0:12" heißt "hier bist du zwölf Minuten drin".
 
-**Zeitplan:** Der Kern läuft in dieser Fassung **42 Minuten** bis zum
-Schlusssatz, nicht 36 wie ursprünglich geplant. Teil 2 ist beim Ausschreiben
-länger geworden — 15 statt 12 Minuten — weil die Plan-Demo mehr Luft braucht.
+**Leitgedanke:** Die Leute sollen mit etwas Handfestem rausgehen und ihre
+Repos danach selbst vernünftig aufsetzen können. Jeder Abschnitt muss auf die
+Frage einzahlen: *was mache ich morgen früh anders?*
 
-Für harte 30 Minuten reicht Kürzen an Teil 1 und 4 damit **nicht mehr aus**.
-Dann zusätzlich: die Raten-Folie streichen, Teil 3 auf Instructions und Skills
-eindampfen (Custom Agents und awesome-copilot raus), Teil 4 auf zwei Sätze.
+**Zeitplan:** Kern 42 Minuten bis zum Schlusssatz.
+Für harte 30: Teil 4 komplett streichen, in Teil 2 die Prompt-Tipps und in
+Teil 3 die Custom Agents raus.
 
 ---
 
@@ -25,39 +24,43 @@ eindampfen (Custom Agents und awesome-copilot raus), Teil 4 auf zwei Sätze.
 
 ### 0:00 Begrüßung
 
-▸ Screensharing prüfen, kurz in den Chat schauen, ob alle die Folien sehen.
+▸ Screensharing prüfen, kurz in den Chat schauen lassen.
 
-Hi zusammen. Ich zeige euch in der nächsten halben Stunde, wie ich mit
-Copilot arbeite. Nicht welche Features es gibt — das könnt ihr nachlesen —
-sondern wie der Ablauf aussieht, wenn ich morgens eine echte Aufgabe habe.
+Hi zusammen. Ich zeige euch in der nächsten halben Stunde, wie ich mit Copilot
+arbeite. Nicht welche Features es gibt — das könnt ihr nachlesen — sondern wie
+mein Ablauf aussieht, wenn ich morgens eine echte Aufgabe habe.
 
-Zwei Sachen vorweg. Erstens: ich mache viel live. Wenn was schiefgeht, gehe
-ich weiter, das ist kein Drama. Zweitens: schreibt Fragen jederzeit in den
-Chat, ich sammle die ein und gehe am Ende drauf ein.
+Mein Ziel ist, dass ihr danach eure eigenen Repos vernünftig aufsetzen könnt.
+Am Ende kriegt ihr eine Checkliste, da steht alles drauf.
+
+Zwei Sachen vorweg: ich mache viel live, und wenn was schiefgeht, gehe ich
+einfach weiter. Und schreibt Fragen jederzeit in den Chat, ich sammle die ein.
 
 ### 0:01 Die Chat-Frage
 
 ▸ Interaktionsfolie. **Hier passiert nichts von alleine.**
 
 Bevor ich anfange, brauche ich was von euch. Schreibt mir bitte eine Sache in
-den Chat, die euch an Copilot nervt. Eine reicht. Kann eine Kleinigkeit sein.
+den Chat, die euch an Copilot nervt. Eine reicht.
 
-▸ **45 bis 60 Sekunden warten. Wirklich schweigen.** Remote fühlt sich das
-länger an, als es ist. Sobald die ersten zwei, drei Antworten da sind, laut
-vorlesen — das löst die Blockade bei den anderen.
+▸ **45 bis 60 Sekunden warten. Wirklich schweigen.** Sobald die ersten zwei,
+drei Antworten da sind, laut vorlesen — das löst die Blockade bei den anderen.
 
-▸ Antworten auf dem zweiten Monitor offen lassen. Du brauchst sie in Teil 6.
+▸ Antworten auf dem zweiten Monitor offen lassen, du brauchst sie in Teil 6.
 
 Gut, danke. Ich komme am Ende darauf zurück.
 
-▸ Nebeneffekt: du siehst jetzt, ob das eher Einsteiger oder Vielnutzer sind.
-Teil 2 entsprechend flacher oder tiefer fahren.
+▸ Du siehst jetzt, ob das eher Einsteiger oder Vielnutzer sind. Teil 2
+entsprechend flacher oder tiefer fahren.
 
 ### 0:03 Der Hook — Live-Demo 1
 
 Eine Sache vorweg, die die meisten noch nicht gesehen haben.
 
 ▸ **DEMO, harte Grenze 90 Sekunden.**
+▸ **Vorher zu Hause einmal durchspielen** — die Demo ist stark, aber nur wenn
+sie sitzt. Wenn sie beim Proben nicht zuverlässig läuft: ersatzlos streichen
+und mit Teil 1 anfangen.
 ▸ Screenshot der kaputten Ansicht per Drag & Drop in den Chat.
 ▸ Prompt: "Was ist hier kaputt und in welcher Datei?"
 
@@ -65,126 +68,160 @@ Ich beschreibe den Fehler nicht. Ich ziehe einen Screenshot rein.
 
 ▸ Antwort abwarten, Fix übernehmen, Browser zeigen.
 
-Das ist Copilot Vision, seit Anfang Juli allgemein verfügbar. Bilder und PDFs
-direkt in den Chat. Der ganze Schritt "Fehler in Worte fassen und hoffen, dass
-das Modell richtig rät" fällt weg.
+Das ist Copilot Vision, seit Anfang Juli allgemein verfügbar. Der ganze Schritt
+"Fehler in Worte fassen und hoffen, dass das Modell richtig rät" fällt weg.
 
-▸ **Fallback bei Fehlschlag:** Screenshot aus `images/` zeigen und erzählen.
-Nicht reparieren wollen. Der Punkt ist die Idee, nicht der Beweis.
-
-Und das ist ein gutes Beispiel für das, worum es in den nächsten fünf Minuten
-geht.
+▸ **Fallback:** Screenshot aus `images/` zeigen und erzählen. Nicht reparieren
+wollen.
 
 ---
 
-## Teil 1 — Was sich gerade ändert · 0:05 bis 0:10
+## Teil 1 — Was gerade passiert · 0:05 bis 0:08
 
-> Für 30 Minuten: diesen Teil auf 3 Minuten kürzen. Das Tempo und die Kosten
-> behalten, die drei Features nur nennen statt erklären.
+> Kurz und locker halten. Das ist Aufwärmen, nicht der Inhalt.
+> Für 30 Minuten: auf zwei Sätze eindampfen.
 
 ### 0:05 Das Tempo
 
-Kurze Einordnung, warum ich diesen Vortrag überhaupt halte.
+Ganz kurz zur Einordnung, warum ich den Vortrag überhaupt halte und nicht
+einfach einen Link schicke.
 
 VS Code hat am achten Juli 1.128 released. Am fünfzehnten 1.129. Am
 siebzehnten nochmal einen Fix hinterher. Drei Releases in neun Tagen.
 
-Das heißt: alles, was ich euch heute zeige, kann in vier Wochen anders
-aussehen. Das ist kein Haftungsausschluss, das ist der eigentliche Punkt. Wer
-einmal im Jahr in die Release Notes schaut, verpasst das meiste.
+Ich sag das nicht, um mich abzusichern — sondern weil es ehrlich gesagt
+schwierig ist, da hinterherzukommen. Ich schau da auch nicht jede Woche rein.
+Deshalb: was ich euch zeige, ist der Stand von heute.
 
-▸ Wenn zwischen heute und dem Vortrag 1.130 erschienen ist: **Zeile ergänzen.**
-Sonst kippt genau hier die Glaubwürdigkeit.
+▸ Wenn zwischen heute und dem Vortrag 1.130 erschienen ist: Zeile ergänzen.
 
-### 0:07 Drei Sachen, die den Alltag ändern
+### 0:06 Drei Sachen, die was ändern
 
-Drei Sachen aus den letzten Wochen, die tatsächlich was ändern.
+Drei Sachen aus den letzten Wochen, die tatsächlich was bringen.
 
-**Erstens Vision** — habt ihr gerade gesehen, sage ich nichts mehr zu.
+**Vision** habt ihr gerade gesehen.
 
-**Zweitens Browser-Tools.** Der Agent bekommt einen echten Browser in VS Code.
-Er kann klicken, tippen, Konsolen-Fehler lesen, Screenshots machen. Das heißt:
-er ändert was am CSS, lädt die Seite selbst, schaut nach, ob es jetzt stimmt,
-und korrigiert nach. Ohne euch. Der Loop schließt sich.
+**Browser-Tools.** Der Agent bekommt einen echten Browser in VS Code — er
+klickt, tippt, liest Konsolen-Fehler, macht Screenshots. Also: er ändert was am
+CSS, lädt die Seite selbst, schaut nach, korrigiert nach. Ohne euch.
 
-Und weil das die erste Frage ist: eure offenen Tabs sind privat. Der Agent
+Und die erste Frage, die immer kommt: eure offenen Tabs sind privat. Der Agent
 kommt an eine Seite, die ihr selbst geöffnet habt, erst wenn ihr auf "Share
-with Agent" klickt. Dann allerdings mit eurer echten Session, also inklusive
-Login — das ist praktisch, wenn hinter einer Anmeldung getestet werden soll.
+with Agent" klickt.
 
-**Drittens parallele Chats.** Ihr könnt mehrere Unterhaltungen in einer
-Session laufen lassen. Implementierung in dem einen, Review im anderen, Tests
-im dritten. Jeder mit eigener History und eigenem Modell.
+▸ Quelle: VS Code Docs, *Build and test web apps with browser agent tools*
 
-### 0:09 Und das kostet jetzt Geld
+**Parallele Chats.** Mehrere Unterhaltungen in einer Session — Implementierung
+im einen, Review im anderen. Jeder mit eigener History und eigenem Modell.
 
-Eine Sache, die untergegangen ist: die Abrechnung hat sich zum ersten Juni
-geändert. Vorher wurden Requests gezählt. Jetzt wird nach Tokens abgerechnet,
-in AI Credits, ein Credit ist ein Cent. Wir haben dreißig Dollar im Monat.
-
-▸ **Nur sagen, was stimmt.** Nichts über die Vertragslage behaupten, was nicht
-verifiziert ist.
-
-Dazu ist neu, dass ihr die Kosten überhaupt sehen könnt: was eine ganze
-Session gekostet hat, nicht nur ein einzelner Request. Und wenn Arbeit an
-Subagents delegiert wurde, seht ihr das aufgeschlüsselt.
-
-Warum ich das erzähle: Modellwahl war früher eine Qualitätsfrage. Jetzt ist es
-auch eine Geldfrage. Und damit sind wir mitten im nächsten Teil.
+So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema.
 
 ---
 
-## Teil 2 — Der Arbeitsablauf · 0:10 bis 0:25
+## Teil 2 — So arbeite ich · 0:08 bis 0:26
 
-> **Das Kernstück. Hier nicht kürzen.**
+> **Das Kernstück.** Hier ist alles drin, was die Leute mitnehmen sollen.
 
-### 0:10 Rahmen setzen
+### 0:08 Rahmen
 
-Jetzt der eigentliche Teil. Ich mache eine echte Aufgabe in einem kleinen
-Repo. Nicht Feature für Feature, sondern so, wie ich das tatsächlich mache.
+Jetzt der eigentliche Teil. Ich mache eine echte Aufgabe in einem kleinen Repo,
+so wie ich das tatsächlich mache.
 
-Dabei treffe ich drei Entscheidungen, und die drei sind der ganze Trick:
-welches Modell, mache ich erst einen Plan, und welchen Kontext gebe ich mit.
+Und ich fange nicht bei der Aufgabe an, sondern eine Stufe davor: beim Setup.
 
-▸ Demo-Repo zeigen, 20 Sekunden. Nicht den Code durchgehen — nur zeigen, dass
-es klein und echt ist.
+### 0:09 Setup — ein Workspace für alles
 
-▸ **Vorher prüfen:** `git reset --hard start && git clean -fd`, damit nichts
-von der Probe übrig ist.
+Das ist der unspektakulärste Tipp des Vortrags und trotzdem der, der bei mir am
+meisten gebracht hat.
 
-Die Aufgabe: die Einträge sollen nach Projekt gruppiert werden, mit einer
-Summe pro Projekt.
+▸ VS Code Workspace zeigen, in dem mehrere Repos eines Projekts liegen.
 
-### 0:12 Entscheidung 1 — welches Modell
+Wenn ein Projekt aus mehreren Repos besteht — Frontend, Backend, geteilte
+Bibliothek — dann macht nicht drei Fenster auf. Macht einen Workspace, in dem
+alle drin sind.
 
-Erste Entscheidung, und die treffen die meisten einmal und nie wieder.
+Der Unterschied ist nicht Bequemlichkeit. Der Agent sieht mit `#codebase` alle
+Repos auf einmal. Er findet, dass das Feld im Backend anders heißt als im
+Frontend. In drei getrennten Fenstern findet er das nie, und ihr erklärt es ihm
+jedes Mal neu.
 
-▸ Model-Picker öffnen. Hover-Card auf einem Modell zeigen.
+Dazu: Instructions können auch aus dem Eltern-Verzeichnis gezogen werden, wenn
+ihr `chat.useCustomizationsInParentRepositories` einschaltet. Damit gelten eure
+gemeinsamen Regeln in allen Repos, ohne dass ihr sie dreimal pflegt.
 
-Der häufigste Fehler ist, dass man irgendwann das teuerste Modell eingestellt
-hat und es seitdem für alles benutzt. Auch für "benenn mir diese Variable um".
+▸ Quelle: VS Code Docs, *Use custom instructions in VS Code*
 
-Meine Faustregel: **Auto ist der richtige Default.** Das wählt selbst aus und
-ist obendrein günstiger. Bewusst umschalten lohnt sich an zwei Stellen — nach
-oben bei echtem Debugging und bei Architekturfragen, nach unten bei stumpfer
-Fleißarbeit.
+Die Aufgabe für gleich: die Einträge sollen nach Projekt gruppiert werden, mit
+einer Summe pro Projekt.
 
-Und der Punkt, den ich vorhin schon angedeutet habe: Reasoning-Modelle denken
-länger, produzieren mehr Tokens, kosten mehr. Bei Tokenabrechnung ist jedes
-Hochschalten eine Geldentscheidung.
+▸ Vorher prüfen: `git reset --hard start && git clean -fd`
 
-▸ Session-Kosten einblenden. **Das ist der Moment, wo es klickt.**
+### 0:11 Entscheidung 1 — welches Modell
 
-▸ Modellnamen bewusst nicht vorlesen — die sind in vier Wochen falsch. Wenn
-jemand fragt: auf die GitHub-Doku verweisen, "choosing the right AI model for
-your task".
+Erste Entscheidung. Und da bin ich anderer Meinung als die offizielle
+Empfehlung, deshalb sage ich beides.
 
-### 0:15 Entscheidung 2 — erst Plan, dann Code
+**Die offizielle Empfehlung ist "Auto".** Das wählt automatisch aus und ist
+laut GitHub obendrein günstiger.
 
-Wenn ihr heute nur eine Sache mitnehmt, dann die hier.
+▸ Quelle: GitHub Docs, *Choosing the right AI model for your task*
+
+**Meine Erfahrung ist eine andere.** Ich arbeite praktisch nur mit Codex. Auto
+greift mir zu oft zu den günstigen Modellen, und die sind bei allem, was über
+eine Handvoll Zeilen hinausgeht, schlicht nicht gut genug. Sie machen nicht
+das, was sie sollen, ich merke es erst nach zwei Runden, und dann habe ich mehr
+Zeit verloren als ich an Credits gespart habe.
+
+Deshalb mein Rat: **stellt bewusst ein Modell ein und bleibt dabei, bis ihr
+einen Grund habt zu wechseln.** Wechselt nach unten für echte Fleißarbeit —
+Umbenennen, Boilerplate, Formatkram. Nach oben braucht ihr selten zu gehen,
+weil ihr schon oben seid.
+
+Was ihr wissen müsst, wenn ihr das so macht: es kostet. Seit dem ersten Juni
+wird nach Tokens abgerechnet, in AI Credits, ein Credit ist ein Cent. Wir haben
+dreißig Dollar im Monat.
+
+▸ **Nur sagen, was verifiziert ist.** Nichts über die Vertragslage behaupten.
+
+Und das ist der Punkt, den ich euch mitgeben will: Modellwahl war früher eine
+Qualitätsfrage, heute ist sie auch eine Geldfrage — aber die Rechnung geht
+meistens trotzdem zugunsten des besseren Modells aus. Ein Modell, das die
+Aufgabe beim ersten Mal richtig macht, ist billiger als drei Anläufe mit dem
+günstigen.
+
+▸ Session-Kosten einblenden. Neu seit Juni: Gesamtkosten über einen ganzen
+Chat, nicht nur pro Request. Und aufgeschlüsselt nach Subagent.
+
+▸ Modellnamen nicht vorlesen — die sind in vier Wochen falsch.
+
+### 0:14 Entscheidung 2 — erst Plan, dann Code
+
+Wenn ihr heute nur eine Sache mitnehmt, dann die.
 
 Und ich rede nicht von einem Prompting-Trick, wo man "denk erst nach"
-davorschreibt. Das ist ein eingebautes Feature.
+davorschreibt. Das ist ein eingebautes Feature — und es gibt Zahlen dazu.
+
+**Erstens: die Hersteller haben es eingebaut.** VS Code hat einen Plan-Agenten,
+und GitHub liefert in seiner offiziellen Bibliothek einen fertigen
+`implementation-planner` mit — bezeichnenderweise mit nur drei Tools: lesen,
+suchen, schreiben. Kein Ausführen.
+
+▸ Quelle: VS Code Docs, *Planning with agents* · GitHub Docs,
+*Customization library → implementation-planner*
+
+**Zweitens: es ist gemessen.** Es gibt seit Juni einen Benchmark, RigorBench,
+der nicht misst *ob* der Code funktioniert, sondern *wie* Agenten arbeiten. Das
+Ergebnis: strukturiertes Vorgehen hebt die Prozessqualität um durchschnittlich
+41 Prozent — und, das ist die Zahl, die zählt, die **Korrektheit des Ergebnisses
+um 17 Prozent**.
+
+Und der interessanteste Befund daraus: Agenten planen von sich aus praktisch
+nie. Sie können es, aber sie tun es nur, wenn man sie explizit dazu auffordert.
+
+▸ Quelle: Madiraju & Madiraju, *RigorBench: Benchmarking Engineering Process
+Discipline in Autonomous AI Coding Agents*, arXiv 2606.22678, Juni 2026
+
+Also: der Agent macht es nicht von selbst. Ihr müsst `/plan` tippen.
 
 ▸ **DEMO.** In den Chat:
 
@@ -196,51 +233,78 @@ Bestehende Tests müssen grün bleiben.
 Keine neue Abhängigkeit.
 ```
 
-Der Plan-Agent geht durch den Code, stellt teilweise Rückfragen, und schreibt
-dann einen Plan: Zusammenfassung, Implementierungsschritte, und — das ist der
-wichtige Teil — wie man hinterher prüft, ob es funktioniert hat.
+Er geht durch den Code, stellt teilweise Rückfragen, und schreibt dann einen
+Plan: Zusammenfassung, Schritte, und wie man hinterher prüft, ob es geklappt
+hat.
 
-▸ **Den Plan wirklich lesen und laut kommentieren.** Eine Zeile korrigieren.
+▸ **Den Plan wirklich lesen und laut kommentieren. Eine Zeile korrigieren.**
 
-Und genau das ist der Punkt. Ich korrigiere hier eine Zeile. Wenn ich den
+Und das ist der ganze Punkt. Ich korrigiere hier eine Zeile. Wenn ich denselben
 Fehler erst nach der Implementierung finde, kostet er mich zwanzig Minuten und
-einen kaputten Diff.
+einen Diff, den ich nicht mehr auseinanderklamüsern will.
 
 ▸ Erst danach implementieren lassen.
 
-### 0:19 Raten-Folie
+### 0:18 Memory — was der Agent sich merkt
 
-▸ **Interaktionsfolie. 30 Sekunden, nicht mehr.**
+Der Plan von eben liegt übrigens nicht im Repo. Und das führt zu einer Sache,
+die deutlich nützlicher ist, als sie klingt.
 
-Kurze Frage in den Chat: wo, glaubt ihr, speichert Copilot diesen Plan?
+Copilot hat drei Arten von Gedächtnis:
 
-▸ Ein, zwei Antworten vorlesen. **Nicht auflösen** — das ist die Pointe der
-nächsten Folie. Die meisten tippen auf eine Datei im Repo.
+- **Session** — der Plan von eben. Nach dem Chat weg.
+- **Repository** — gilt in diesem Projekt, überlebt den Chat.
+- **User** — gilt in *allen* euren Projekten.
 
-### 0:20 Die Auflösung
+Und jetzt der Teil, der es interessant macht: **von der User-Ebene werden die
+ersten 200 Zeilen automatisch in jeden Chat geladen.** In jedem Projekt, ohne
+dass ihr etwas tut.
 
-Nicht im Repo. Der Plan liegt im Session-Memory, unter
-`/memories/session/plan.md`.
+▸ Quelle: VS Code Docs, *Memory in VS Code agents*
 
-▸ Command Palette → **Chat: Show Memory Files** → `plan.md` öffnen.
+Das heißt praktisch: wenn ihr rausgefunden habt, wie ihr etwas gerne hättet —
+sagt dem Agenten "merk dir das". Er legt es selbst an der richtigen Stelle ab.
+Beim nächsten Projekt weiß er es noch.
 
-Ihr kommt da ran, über "Chat: Show Memory Files". Aber — und das ist der
-Haken — Session-Memory wird gelöscht, wenn die Conversation endet. Der Plan
-ist dann weg.
+▸ Command Palette → **Chat: Show Memory Files** → alle drei Ebenen zeigen.
 
-Praktisch heißt das: wenn ihr an einem Plan zu zweit arbeiten wollt, oder ihn
-morgen noch braucht, kopiert ihr ihn raus und legt ihn ins Repo. Sonst ist er
-Wegwerfware.
+Zwei Einschränkungen, die ihr kennen solltet: das Ganze ist noch Preview, und
+ihr könnt einzelne Einträge nicht löschen — nur alles auf einmal, mit
+*Chat: Clear All Memory Files*. Und es ist standardmäßig **aus**.
 
-▸ Kurz wirken lassen. Das ist der stärkste "das wusste ich nicht"-Moment für
-die Vielnutzer im Publikum.
+▸ **Vor dem Vortrag prüfen, ob Memory bei uns überhaupt freigeschaltet ist** —
+das hängt an den Copilot-Einstellungen. Wenn nicht: den Block auf die
+Session-Ebene kürzen und den Rest weglassen.
 
-### 0:22 Entscheidung 3 — Kontext
+### 0:21 Tests und Linter lasse ich nicht laufen
 
-Dritte Entscheidung. Und da ist der Satz aus der VS-Code-Doku ziemlich
-brutal: **was nicht im Kontext ist, existiert für das Modell nicht.**
+Jetzt ein Punkt aus der Praxis, der gegen das läuft, was überall empfohlen wird.
 
-Die wichtigsten Referenzen:
+Ich lasse den Agenten **Tests und Linter nicht selbst ausführen.** Ich mache das
+selbst und gebe ihm das Ergebnis.
+
+Zwei Gründe. Erstens dreht er sich sonst im Kreis: Test läuft rot, er ändert
+was, läuft wieder, immer noch rot, ändert wieder — und ihr schaut zu, wie
+Credits verbrennen. Zweitens liest er Testausgaben oft schlicht falsch aus und
+zieht dann die falschen Schlüsse.
+
+Mein Ablauf ist: er schreibt, ich führe aus, ich kippe das Ergebnis in den Chat.
+Das kostet mich zehn Sekunden und spart eine Menge Tokens.
+
+Und der Dreh dabei, den ich euch empfehle: **wenn er es einmal richtig gemacht
+hat, lasst ihn aufschreiben, wie.** Als Skill oder in die Instructions. Dann
+macht er es beim nächsten Mal ohne die drei Fehlversuche davor.
+
+▸ Das ist die Brücke zu Teil 3.
+
+### 0:23 Kontext und Prompts
+
+> Für 30 Minuten: diesen Block auf die vier `#`-Referenzen kürzen.
+
+Letzte Sache zum Ablauf. Der Satz aus der VS-Code-Doku dazu ist ziemlich
+eindeutig: **was nicht im Kontext ist, existiert für das Modell nicht.**
+
+Die Referenzen, die ich täglich benutze:
 
 - `#file` und `#selection` — genau die Stelle, nicht das ganze Projekt
 - `#codebase` — wenn ihr selbst nicht wisst, wo es steht
@@ -249,182 +313,204 @@ Die wichtigsten Referenzen:
 
 ▸ `#fetch` live zeigen. Das kennen die wenigsten.
 
-`#fetch` ist der, den ich am meisten unterschätzt gesehen habe. Damit löst ihr
-das Problem, dass das Modell eine API-Version von vor zwei Jahren kennt.
+`#fetch` löst das Problem, dass das Modell eine API-Version von vor zwei Jahren
+kennt. Ihr werft ihm die Doku-Seite hin, und er benutzt die.
 
 Und der häufigste Fehler in die andere Richtung: alles reinwerfen. Das große
 Kontextfenster vollzumachen kostet Geld und macht die Antwort schlechter, nicht
 besser.
 
-### 0:24 Der eine Satz
+**Vier Sachen zum Prompt selbst**, die laut Doku am meisten bringen:
 
-Wenn ich das alles auf einen Satz eindampfe, dann diesen:
-**Akzeptanzkriterien gehören in den Prompt.**
+1. **Konkret sein** — Sprache, Framework, Rahmenbedingungen nennen. Nicht
+   "mach das besser", sondern "reduzier die Komplexität" oder "füg
+   Null-Prüfungen hinzu".
+2. **Zerlegen** — kein ganzes Feature am Stück.
+3. **Sagen, wie das Ergebnis aussehen soll** — Testfälle, erwartete Werte,
+   Akzeptanzkriterien.
+4. **Rückfragen einfordern** — "frag nach, wenn was unklar ist" statt raten
+   lassen.
 
-Die VS-Code-Doku formuliert das ungewöhnlich deutlich — Testfälle, erwartete
-Ergebnisse oder Akzeptanzkriterien mitzugeben sei, ich zitiere sinngemäß, mit
-das Wirkungsvollste, was man überhaupt tun kann. Weil das Modell damit seine
-eigene Arbeit prüfen kann.
+▸ Quelle: VS Code Docs, *Prompt engineering for Copilot Chat*
 
-Ihr habt das vorhin schon gesehen — in meinem Plan-Prompt stand "bestehende
-Tests müssen grün bleiben". Das ist genau so ein Kriterium.
+Punkt drei ist der wichtigste. Die Doku nennt das sinngemäß mit das
+Wirkungsvollste, was man überhaupt tun kann — weil das Modell damit seine
+eigene Arbeit prüfen kann. Ihr habt das vorhin schon gesehen: in meinem
+Plan-Prompt stand "bestehende Tests müssen grün bleiben".
 
-Und das ist die Überleitung: Kriterien, die *immer* gelten, schreibt man nicht
-jedes Mal in den Prompt. Die gehören ins Repo.
+Und damit sind wir bei der Überleitung: Kriterien, die *immer* gelten, tippt man
+nicht jedes Mal. Die gehören ins Repo.
 
 ---
 
-## Teil 3 — Was brauche ich im Repo? · 0:25 bis 0:34
+## Teil 3 — Euer Repo aufsetzen · 0:26 bis 0:36
 
-### 0:25 Teams-Reaktion
+> Der "geht nach Hause und macht das"-Teil. Alles hier landet auf der
+> Checkliste am Ende.
 
-▸ **Interaktionsfolie. Explizit sagen, welche Reaktion.**
+### 0:26 Teams-Reaktion
 
-Kurze Umfrage, und zwar über die Reaktionsleiste oben, nicht über den Chat:
-Daumen hoch, wer eine `copilot-instructions.md` im Repo hat.
+▸ **Explizit sagen, welche Reaktion.**
+
+Kurze Umfrage über die Reaktionsleiste oben, nicht über den Chat: Daumen hoch,
+wer eine `copilot-instructions.md` im Repo hat.
 
 ▸ 10 Sekunden warten, dann **laut auszählen**: "vier von zwanzig."
 
-Gut. Damit seid ihr in guter Gesellschaft, und genau darum geht es jetzt.
-
 ### 0:27 Die Landkarte
 
-Wenn ihr anfangt, euch damit zu beschäftigen, findet ihr sieben verschiedene
-Möglichkeiten, Copilot anzupassen. Instructions, Skills, Custom Agents, MCP,
-Hooks, Prompt Files, Plugins. Das sieht erstmal überwältigend aus.
+Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
+anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
+Plugins. Sieht überwältigend aus.
 
-Die gute Nachricht: für neunzig Prozent braucht ihr zwei davon.
+Gute Nachricht: für neunzig Prozent braucht ihr zwei davon.
 
-VS Code hat dafür inzwischen eine offizielle Tabelle — Ziel, Mittel, wann es
-greift. Das ist nicht meine Meinung, das steht so in der Doku. Und die
-empfohlene Reihenfolge steht auch drin: **erst Instructions, dann Skills.** MCP
-nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
+VS Code hat dafür eine offizielle Tabelle — Ziel, Mittel, wann es greift. Und
+die empfohlene Reihenfolge steht auch drin: **erst Instructions, dann Skills.**
+MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
-### 0:29 Instructions — und was NICHT reingehört
+▸ Quelle: VS Code Docs, *Customization options at a glance*
 
-Fangen wir mit dem an, was jeder braucht: `.github/copilot-instructions.md`
-im Repo, gilt für alle Anfragen.
+### 0:28 Instructions — und was NICHT reingehört
 
-Und jetzt der Teil, den fast alle falsch machen. Nicht was reingehört ist das
-Problem, sondern was rausgehört.
+`.github/copilot-instructions.md` im Repo, gilt für alle Anfragen. Das ist das
+Minimum, das jeder haben sollte.
+
+Und jetzt der Teil, den fast alle falsch machen: nicht was reingehört ist das
+Problem, sondern was raus muss.
 
 **Raus muss alles, was der Linter schon prüft.** Formatierung, Quotes,
 Semikolons. Ihr verbrennt Kontext für Regeln, die sowieso automatisch
 durchgesetzt werden.
 
-**Rein gehört das Nicht-Offensichtliche.** Der eine Befehl, mit dem man prüft,
-ob es funktioniert. Fachliche Regeln, die man dem Code nicht ansieht. Und —
-das ist der Trick — **die Begründung dazu.**
+**Rein gehört das Nicht-Offensichtliche** — und die Begründung dazu.
 
-▸ Beispiel-Folie mit der Minuten-Regel zeigen.
+▸ Beispiel-Folie zeigen.
 
-Der Unterschied ist: "Dauern immer als ganze Minuten" wird umgangen.
-"Dauern immer als ganze Minuten, weil sich Rundungsfehler über die Woche
-aufsummieren" wird befolgt. Bei Menschen übrigens genauso.
+Der Unterschied ist: "Dauern immer als ganze Minuten" wird umgangen. "Dauern
+immer als ganze Minuten, **weil** sich Rundungsfehler über die Woche
+aufsummieren" wird befolgt. Bei Menschen ist das genauso.
 
-Zweite Sache, die viele nicht wissen: **Instructions wirken nicht bei den
-Inline-Vorschlägen beim Tippen.** Nur im Chat und im Agent. Wenn ihr euch
-wundert, warum die Autovervollständigung eure Regeln ignoriert — deshalb.
+▸ Quelle: VS Code Docs, *Use custom instructions* — kurz halten, Begründung
+mitgeben, auf Nicht-Offensichtliches konzentrieren
 
-### 0:31 Pro Dateityp
+Und rein gehört das, was ich euch vorhin erzählt habe: **dass er Tests und
+Linter nicht selbst ausführen soll.** Bei mir steht da sinngemäß "führe keine
+Tests aus, ich mache das und gebe dir die Ausgabe" — mit der Begründung, dass
+er sich sonst festfrisst. Das ist genau so eine Regel, die man dem Code nicht
+ansieht und die ohne Begründung ignoriert wird.
+
+### 0:31 Die Stolperfalle
+
+Eine Sache, die viele nicht wissen und die für Verwirrung sorgt:
+
+**Instructions wirken nicht bei den Inline-Vorschlägen beim Tippen.** Nur im
+Chat und im Agenten.
+
+▸ Quelle: VS Code Docs, *Use custom instructions* — wörtlich: "not taken into
+account for inline suggestions as you type"
+
+Wenn ihr euch also wundert, warum die Autovervollständigung eure schönen Regeln
+komplett ignoriert — daran liegt's. Das ist kein Bug bei euch.
+
+### 0:32 Pro Dateityp
 
 Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
-`.instructions.md` mit einem `applyTo`-Glob im Frontmatter gilt nur für die
-Dateien, die zum Muster passen.
+`.instructions.md` mit einem `applyTo`-Glob gilt nur für die Dateien, die zum
+Muster passen — Testkonventionen zum Beispiel nur in Testdateien.
 
 ▸ Code-Folie mit `applyTo: '**/*.test.ts'`.
 
-Testkonventionen greifen nur in Testdateien. Die Hauptdatei bleibt kurz.
+Mehrere kleine Dateien nach Thema schlagen eine große. Steht auch so in der Doku.
 
-### 0:32 Skills statt Prompt Files
+### 0:33 Skills — wenn Regeln nicht reichen
 
-Jetzt der Punkt für die, die schon länger dabei sind.
+Instructions sind Text. Wenn ihr einen Ablauf habt, der aus mehreren Schritten
+besteht und vielleicht noch ein Skript oder eine Vorlage braucht, dann ist das
+ein **Skill**.
 
-Wer von euch Prompt Files gebaut hat: die laufen nur in VS Code. Skills laufen
-in VS Code, in der Copilot CLI und im Cloud-Agent. Und Skills können Skripte
-und Dateien mitbringen, Prompt Files nicht.
+Ein Skill ist ein Ordner mit einer `SKILL.md` drin, plus was ihr sonst noch
+braucht.
 
-VS Code hat in 1.129 eine Migration eingebaut, mit der ihr eure Prompt Files
-zu Skills konvertieren könnt. Noch experimentell, hinter einem Setting, aber
-sie existiert. Die Richtung ist damit ziemlich klar.
+Der eigentliche Vorteil ist aber ein anderer, und der ist für uns mit
+begrenztem Budget relevant: **Skills werden in drei Stufen geladen.** Erst nur
+Name und Beschreibung. Erst wenn die Aufgabe passt, der eigentliche Inhalt.
+Und die mitgelieferten Dateien erst, wenn er sie wirklich braucht.
 
-Und im selben Atemzug: `.chatmode.md` heißt inzwischen `.agent.md`. Wenn ihr
-noch Chat Modes rumliegen habt — umbenennen, fertig.
+Heißt: ihr könnt zwanzig Skills im Repo haben, und die kosten euch fast nichts,
+solange sie nicht greifen. Instructions sind dagegen *immer* dabei.
 
-### 0:33 Custom Agents — ehrlich
+▸ Quelle: VS Code Docs, *Use Agent Skills in VS Code*
 
-Custom Agents nur kurz, weil sie am meisten nach Fortschritt aussehen und am
-wenigsten bringen, solange die Instructions noch nicht stehen.
+Und da schließt sich der Kreis zu vorhin: mein "so führst du die Tests aus"-
+Ablauf ist genau so ein Kandidat. Einmal aufschreiben lassen, als Skill ablegen,
+fertig.
 
-Der eine Fall, wo sie sich sofort lohnen: wenn eine Rolle **weniger** können
-soll. Das offizielle Beispiel ist ein Planungs-Agent mit reinen Lese-Rechten,
-damit er beim Planen nichts kaputtmacht.
+Übrigens: falls ihr noch `.chatmode.md`-Dateien rumliegen habt — die heißen
+inzwischen `.agent.md`. Umbenennen, fertig.
 
-Für die meisten von uns: später.
+### 0:35 Custom Agents — ehrlich gesagt
 
-### 0:34 Nicht bei null anfangen
+Custom Agents nur kurz, und ich bin da ehrlich: **ich hatte welche und habe sie
+wieder abgeschaltet.**
 
-Letzter Punkt zu dem Block: fangt nicht mit einem leeren Blatt an. Es gibt ein
-Repo, `github/awesome-copilot`, mit fertigen Instructions, Skills und Agents.
+Ich hatte einen für TypeScript-Review und einen für Java-Review. Klang gut. In
+der Praxis haben sie ordentlich Tokens gekostet und mir wenig gebracht, was ein
+normaler Review-Prompt nicht auch gebracht hätte.
 
-▸ Link in den Chat posten.
+Der eine Fall, wo sie sich wirklich lohnen: wenn eine Rolle **weniger** können
+soll. Der offizielle Planungs-Agent hat genau drei Tools — lesen, suchen,
+schreiben. Er *kann* nichts ausführen. Das ist ein echter Grund.
 
-Nicht blind installieren — reinlesen. Aber als Vorlage, wie sowas aussieht,
-spart es einen Nachmittag.
+Für die meisten von uns: erst mal die Instructions richtig hinkriegen.
+
+### 0:36 Nicht bei null anfangen
+
+Fangt nicht mit einem leeren Blatt an. Es gibt ein Repo, `github/awesome-copilot`,
+mit fertigen Instructions, Skills und Agents.
+
+▸ Zwei bis drei konkrete Beispiele daraus zeigen, die zu uns passen.
+▸ **Am Wochenende auswählen.** Nicht die Sammlung als Ganzes zeigen — das
+erschlägt und niemand macht danach was.
+
+Nicht alles übernehmen, das ist viel zu viel. Sucht euch zwei Sachen raus, die
+zu eurem Stack passen, und schaut euch an, *wie* die geschrieben sind.
 
 ---
 
-## Teil 4 — VS Code vs. IntelliJ · 0:34 bis 0:38
+## Teil 4 — VS Code vs. IntelliJ · 0:36 bis 0:38
 
-> Für 30 Minuten: auf 2 Minuten kürzen. Die JetBrains-Tabelle weglassen, nur
-> die erste und die letzte Aussage bringen.
+> Markus überlegt noch, ob der Teil ganz rausfliegt.
+> **Für 30 Minuten: streichen.**
 
-### 0:34 Die Antwort zuerst
+Die Frage kommt sowieso, deshalb kurz: nein, ihr müsst nicht wechseln.
 
-Die Frage kommt sowieso, deshalb beantworte ich sie vorweg: nein, ihr müsst
-nicht zu VS Code wechseln.
+JetBrains hat 2026 aufgeholt. Agent Mode ist GA, Custom Agents, Subagents und
+der Plan-Agent auch, `AGENTS.md` wird gelesen, Skills sind in Preview. Das war
+vor einem Jahr ein Graben, heute sind es vielleicht drei bis sechs Monate
+Versatz.
 
-JetBrains hat 2026 massiv aufgeholt. Agent Mode ist GA. Custom Agents,
-Subagents und der Plan-Agent, den ich euch gerade gezeigt habe, sind da auch
-GA. `AGENTS.md` wird gelesen. Skills sind in Preview. Die Copilot CLI gibt es
-seit Juni.
-
-Das war vor einem Jahr ein Graben. Heute ist es ein zeitlicher Versatz von
-vielleicht drei bis sechs Monaten.
-
-### 0:37 Wo VS Code vorne bleibt
-
-Wo VS Code vorne bleibt, ist eigentlich nur ein Punkt: **neue Sachen kommen
-zuerst hier an.** Im Wochenrhythmus. Browser-Tools, das Agents-Window mit
-parallelen Sessions, Next Edit Suggestions — das sind Beispiele dafür, nicht
-eigene Argumente.
-
-Nicht "besser". Früher dran.
-
-### 0:38 Der Payoff
+Wo VS Code vorne bleibt, ist eigentlich nur ein Punkt: neue Sachen kommen
+zuerst hier an. Nicht "besser" — früher dran.
 
 Und das ist der Grund, warum der letzte Block auch für die IntelliJ-Leute
-relevant war:
-
-**Instructions, `AGENTS.md` und Skills sind portabel.** Die Arbeit, die ihr
-ins Repo steckt, ist nicht an eine IDE gebunden. Die Arbeit, die ihr in Prompt
-Files steckt, schon.
+relevant war: **Instructions, `AGENTS.md` und Skills sind portabel.** Die
+Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 
 ---
 
 ## Teil 5 — Firmenregeln · 0:38 bis 0:41
 
-> **Diesen Abschnitt schreibt Markus selbst.** Nichts hier wird generiert.
+> **Schreibt Markus selbst.** Nichts hier wird generiert.
 
 ▸ Kandidaten, die sich aus dem Vortrag ergeben:
-- Nur Copilot ist freigegeben — was heißt das konkret für den Model-Picker
+- Nur Copilot ist freigegeben — was heißt das konkret
 - Was darf in einen Prompt und was nicht
-- Wer erhöht das Credit-Budget, und wie fragt man das an
-- Sind Browser-Tools und MCP freigegeben oder per Policy gesperrt
+- Wer erhöht das Credit-Budget, und wie fragt man an
+- Sind Browser-Tools, MCP und Memory freigegeben oder gesperrt
 - Wer ist ansprechbar bei Problemen
 
-▸ Bei Unklarheit: "weiß ich nicht, ich kläre das" sagen. Nicht raten. Das
-Publikum merkt den Unterschied sofort.
+▸ Bei Unklarheit: "weiß ich nicht, ich kläre das". Nicht raten.
 
 ### 0:41 Der Schlusssatz
 
@@ -432,45 +518,84 @@ Eine Sache zum Mitnehmen, wenn ihr den Rest vergesst:
 
 **Der Agent schreibt schneller, als ihr prüfen könnt.**
 
-Plan vorher lesen, Akzeptanzkriterien mitgeben, Regeln ins Repo schreiben —
-das sind keine drei getrennten Tipps. Das ist dreimal dieselbe Antwort auf
-dieses eine Problem.
+Plan vorher lesen, Akzeptanzkriterien mitgeben, Regeln ins Repo — das sind
+keine drei getrennten Tipps. Das ist dreimal dieselbe Antwort auf dieses eine
+Problem.
 
-▸ **Wenn du bei 30 Minuten aufhören musst: hier aufhören** und in die Fragen
-gehen.
+▸ Checkliste einblenden und Link in den Chat.
+
+Und hier ist die Checkliste. Das ist das, was ich meine mit "morgen früh
+anders machen".
 
 ---
 
-## Teil 6 — Fragen · ab 0:42
+## Teil 6 — Fragen und Feedback · ab 0:42
 
 ▸ Die Chat-Antworten von ganz am Anfang jetzt aufgreifen.
 
 Am Anfang habt ihr mir geschrieben, was euch nervt. Ich gehe ein paar davon
 durch.
 
-▸ **Zwei bis drei laut vorlesen und beantworten, auch wenn niemand nachfragt.**
-Das füllt die erste Stille, und die kommt remote garantiert.
+▸ **Zwei bis drei laut vorlesen und beantworten**, auch wenn niemand nachfragt.
+Das füllt die erste Stille.
 
-▸ Wenn viel Zeit übrig ist, hier abzweigen:
-- Mitmach-Übung: alle schreiben eine `copilot-instructions.md` (8 min)
-- "Gebt mir eine echte Aufgabe von heute" und live lösen (10 min)
-- Session-Hygiene: wann neuer Chat, Context Rot (5 min)
-- Harness-Denke: Instructions, Linter und Tests als Regelkreis (5 min)
+### Feedback einsammeln
+
+▸ **Wichtig: Markus hält denselben Vortrag eine Woche später nochmal.**
+
+Zwei Sachen noch, bevor ihr geht.
+
+Erstens: schreibt mir in den Chat, was gefehlt hat. Ich baue daraus das Handout
+— dann steht da drin, was ihr wirklich braucht, und nicht nur, was ich für
+wichtig halte.
+
+Zweitens, und da bin ich ehrlich eigennützig: ich halte den Vortrag nächste
+Woche nochmal. Wenn euch was zu lang, zu kurz oder zu oberflächlich war —
+sagt's mir. Auch gern hinterher per Nachricht.
+
+▸ **Konkret fragen, nicht "gibt's Feedback".** Zum Beispiel:
+- Was war zu schnell?
+- Was hättet ihr lieber ausführlicher gehabt?
+- Was fehlt auf der Checkliste?
+
+▸ Antworten wegspeichern, bevor das Meeting zugeht.
 
 ### Zum Schluss
 
-Links kommen in den Chat. Der wichtigste ist der letzte: wer selbst aktuell
-bleiben will, liest die Release Notes. Alles andere aus diesem Vortrag
-veraltet.
+Die Links kommen in den Chat. Der wichtigste ist der auf die Release Notes —
+alles andere aus diesem Vortrag veraltet.
 
 Danke fürs Zuhören.
 
 ---
 
+## Das Handout
+
+Muss vor dem Vortrag stehen, wird am Ende verlinkt. Eine Seite, zum Abarbeiten:
+
+1. `.github/copilot-instructions.md` anlegen — kurz, mit Begründungen
+2. Rein: der eine Test-Befehl, fachliche Regeln, "führe Tests nicht selbst aus"
+3. Raus: alles, was der Linter prüft
+4. Bei Bedarf `.instructions.md` mit `applyTo` je Dateityp
+5. Workspace über alle Repos eines Projekts
+6. `chat.useCustomizationsInParentRepositories` einschalten
+7. Memory prüfen und einschalten, User-Ebene für Dauerhaftes nutzen
+8. Modell bewusst wählen statt Auto
+9. `/plan` vor allem, was mehr als eine Datei anfasst
+10. Links: VS Code Docs, awesome-copilot, Release Notes
+
+---
+
 ## Offene Punkte
 
+- [ ] **Hook vorher testen** — läuft die Vision-Demo zuverlässig? Sonst streichen
 - [ ] Teil 5 inhaltlich füllen (nur Markus)
-- [ ] Demo-Aufgabe final festlegen, dann Demo-Repo darauf zuschneiden
-- [ ] Fallback-Screenshots für Demo 1 (Vision) und Demo 2 (Plan) erzeugen
-- [ ] Prüfen, ob Browser-Tools bei uns per Policy erlaubt sind
+- [ ] Prüfen: ist Copilot Memory bei uns freigeschaltet?
+- [ ] Prüfen: sind Browser-Tools per Policy erlaubt?
+- [ ] Am Wochenende: zwei bis drei konkrete Beispiele aus `awesome-copilot`
+      aussuchen
+- [ ] Entscheiden, ob Teil 4 bleibt
+- [ ] Handout schreiben und verlinkbar ablegen
+- [ ] Demo-Repo auf die Aufgabe zuschneiden
+- [ ] Fallback-Screenshots für beide Demos
 - [ ] Am Vortag: Release Notes checken, Versionsnummern nachziehen

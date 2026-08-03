@@ -132,7 +132,11 @@ Drei Stufen, damit viele Skills den Kontext nicht sprengen:
 | Inhalt      | Instructions + Skripte + Dateien | nur Text                 | wiederverwendbare Prompts | ganze Agent-Definition |
 | Reichweite  | task-spezifisch, on demand       | immer oder per Muster    | eine Konversation | eigenes Reasoning    |
 
-**Das ist das Kernargument für "Skills statt Prompt Files".**
+> ⚠️ **Diese Portabilitäts-Zeile ist für unseren Vortrag unbrauchbar.**
+> Copilot CLI und Cloud-Agent dürfen in der Firma nicht benutzt werden und
+> werden deshalb nicht erwähnt. Das Argument für Skills ist bei uns die
+> **dreistufige Ladung** (Tokenersparnis, siehe oben) und dass Skills Skripte
+> und Dateien mitbringen können.
 
 ### Steuerung der Auslösung
 

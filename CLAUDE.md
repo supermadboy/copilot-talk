@@ -19,9 +19,12 @@ Tool, das in der Firma erlaubt ist. Entwickelt wird unter WSL.
 
 Diese vier Punkte überschreiben im Zweifel jede andere Entscheidung.
 
-1. **Nur GitHub Copilot.** Keine Inhalte zu Claude Code, Codex, Cursor, BYOK-
-   Modellen oder der Ollama-Extension – auch nicht als Vergleich oder Ausblick.
-   Agent Host nur insoweit, wie er mit dem Copilot-Harness läuft.
+1. **Nur GitHub Copilot in VS Code.** Keine Inhalte zu Claude Code, Codex-CLI,
+   Cursor, BYOK-Modellen oder der Ollama-Extension – auch nicht als Vergleich.
+   **Auch Copilot CLI und Cloud-Agent nicht erwähnen** – beides ist in der Firma
+   nicht erlaubt. Das betrifft besonders die Skills-Argumentation: der Vorteil
+   von Skills ist hier **nicht** die Portabilität zu CLI und Cloud-Agent,
+   sondern die dreistufige Ladung (Tokenersparnis) und mitgelieferte Skripte.
 2. **Keine Firmen-Interna erfinden.** Alles zu internen Regeln, Policies,
    Lizenzverträgen oder konkreten Projekten kommt ausschließlich von Markus.
    Im Zweifel nachfragen statt plausibel klingende Beispiele generieren.
@@ -138,14 +141,21 @@ Inhaltliche Schwerpunkte (höchster Hebel zuerst):
    Repo-weites, `.instructions.md` mit `applyTo`-Glob für Dateityp-spezifisches.
    Kurz halten, nur Nicht-Offensichtliches, keine Regeln, die schon der Linter
    durchsetzt, Begründung mitgeben.
-3. **Skills statt Prompt Files.** Prompt Files laufen nur in VS Code, Skills auch
-   in Copilot CLI und Cloud-Agent. VS Code hat inzwischen eine Migration
-   (`chat.customizations.promptMigration.enabled`). Ebenso: `.chatmode.md` heißt
-   jetzt `.agent.md`. Beides starke "das wusstet ihr noch nicht"-Punkte.
-4. **Modellwahl als Kostenentscheidung.** Seit 01.06.2026 tokenbasierte AI
-   Credits (1 Credit = 0,01 $), dazu die neue Kostentransparenz (Gesamtkosten
-   pro Session, Verbrauch je Subagent, Status-Dashboard).
-5. **Kontext-Referenzen** im Chat.
+3. **Skills, wenn Text nicht reicht.** Argument ist die **dreistufige Ladung**
+   (Name/Description → Body → Dateien): viele Skills kosten fast nichts, solange
+   sie nicht greifen, Instructions sind dagegen immer im Kontext. Nicht mit
+   CLI-/Cloud-Portabilität argumentieren (siehe Rahmenbedingung 1).
+   Nebenbei: `.chatmode.md` heißt jetzt `.agent.md`.
+4. **Memory richtig nutzen.** Drei Ebenen – Session, Repository, User. Von der
+   User-Ebene werden die **ersten 200 Zeilen in jeden Chat geladen**, in jedem
+   Projekt. Preview, standardmäßig aus, einzelne Einträge nicht löschbar.
+5. **Tests und Linter selbst ausführen**, nicht den Agenten. Verhindert
+   Endlosschleifen und falsch gelesene Testausgaben, spart Tokens. Gehört als
+   begründete Regel in die Instructions.
+6. **Modellwahl.** Markus' Position weicht bewusst von der offiziellen ab:
+   `Auto` greift zu oft zu schwachen Modellen, er arbeitet bewusst mit einem
+   starken. Beide Sichten nennen. Seit 01.06.2026 tokenbasierte AI Credits.
+7. **Kontext-Referenzen und Prompt-Regeln** im Chat.
 
 Für "wann nehme ich was" gibt es eine **offizielle Entscheidungstabelle** von
 VS Code (Ziel → Mittel → wann es greift, siehe `research/offizielle-doku.md`).

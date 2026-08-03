@@ -14,6 +14,7 @@ Wahrheit** – Copilot-Features ändern sich im Wochenrhythmus.
 | [modelle-und-kosten.md](modelle-und-kosten.md)       | Modellauswahl und die neue tokenbasierte Abrechnung           |
 | [praktiker-blogs.md](praktiker-blogs.md)             | Blogs von Böckeler, Willison, Osmani, Ronacher, Hashimoto u.a. |
 | [vscode-vs-jetbrains.md](vscode-vs-jetbrains.md)     | Feature-Vergleich der IDEs                                    |
+| [memory-und-plan-belege.md](memory-und-plan-belege.md) | Memory-Scopes und die Belege für "erst Plan, dann Code"     |
 
 ## Refresh vor dem Vortrag
 
