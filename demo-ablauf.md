@@ -31,7 +31,8 @@ steht **`Überstunden: -10h`**. `calc()` in `src/timesheet.ts` rechnet
 erzeugt `/init` in Demo 7 live. Die überarbeitete Fassung, die du danebenlegst,
 liegt in `demo-vorlagen/copilot-instructions-final.md`.
 
-**Was noch fehlt:** der Tag `start`. Einmalig setzen, siehe Reset-Karte unten.
+**Voraussetzung für den Reset:** der Ausgangszustand muss committet sein.
+Siehe Reset-Karte unten.
 
 ---
 
@@ -95,11 +96,10 @@ Was ist hier kaputt und in welcher Datei?
 
 ▸ **Fallback:** Screenshot aus `images/` zeigen und erzählen, was passiert wäre.
 
-### Entscheidung vor dem Vortrag
+### Status
 
-Läuft die Demo beim Proben nicht **dreimal hintereinander** sauber: ersatzlos
-streichen und mit Teil 1 anfangen. Ein misslungener Hook kostet dich die ersten
-fünf Minuten Aufmerksamkeit.
+**Getestet, läuft — bleibt im Vortrag.** Die Fallback-Zeile in der Tabelle oben
+gilt trotzdem: wenn es live hakt, nicht reparieren wollen.
 
 ---
 
@@ -153,7 +153,7 @@ zum *Korrigieren* da, nicht zum Durchwinken.
 ### Ausgangszustand
 
 ```bash
-git checkout start -- demo-repo && git clean -fd demo-repo
+npm run demo:reset
 ```
 
 ▸ **Aus dem Wurzelverzeichnis des Vortrags-Repos**, nicht aus `demo-repo/`.
@@ -239,14 +239,13 @@ Plan von eben liegt nicht im Repo."* Also **nicht** vorher den Chat schließen.
 ▸ Dazusagen: Preview, standardmäßig **aus**, einzelne Einträge nicht löschbar
 (nur alles auf einmal mit *Chat: Clear All Memory Files*).
 
-### Vor dem Vortrag klären
+### Vor dem Vortrag
 
-- [ ] **Ist Memory bei uns überhaupt freigeschaltet?** Wenn nein: Block auf die
-      Session-Ebene kürzen und den Rest weglassen
+Memory ist bei uns **freigeschaltet** (bestätigt 03.08.2026) — die Demo läuft
+über alle drei Ebenen, kein Vorbehalt nötig.
+
 - [ ] **User-Memory-Datei vorher durchsehen.** Da steht möglicherweise Zeug aus
       echten Projekten drin, das auf dem Share landet
-
-Punkt zwei ist der wichtigere von beiden.
 
 ---
 
@@ -286,7 +285,7 @@ Dann: und trotzdem musst du ran. Der Kontrast ist die Demo, nicht der Befehl.
 
 ### Ausgangszustand
 
-Das Demo-Repo hat am Tag `start` **noch keine**
+Das Demo-Repo hat im Ausgangszustand **noch keine**
 `.github/copilot-instructions.md` — sonst gibt es nichts zu erzeugen.
 
 Was du daneben brauchst: **deine überarbeitete Fassung**. Die liegt fertig in
@@ -398,16 +397,14 @@ npm run demo:reset
 ▸ **Aus dem Repo-Wurzelverzeichnis.** Terminal-Tab dafür **vorher offen**
 haben, im richtigen Verzeichnis. Sonst tippst du das vor Publikum.
 
-▸ Dahinter steckt `git checkout start -- demo-repo && git clean -fd demo-repo`.
+▸ Dahinter steckt `git checkout HEAD -- demo-repo && git clean -fd demo-repo`.
 Ohne `-x` bleibt `node_modules/` stehen — der Dev-Server läuft weiter, kein
 `npm install` nötig.
 
-**Einmalig vor dem Vortrag den Tag setzen:**
-
-```bash
-git add -A && git commit -m "Demo-Ausgangszustand"
-git tag start
-```
+▸ **Voraussetzung:** der Demo-Ausgangszustand muss committet sein. Kein Tag
+nötig — der Reset geht gegen den letzten Commit. Also vor dem Vortrag einmal
+committen und danach in `demo-repo/` nichts mehr committen, sonst wandert der
+Rücksetzpunkt mit.
 
 ---
 
@@ -455,13 +452,13 @@ Einmal komplett, mit Uhr, ohne Anhalten. Dabei mitschreiben:
 
 ## Offene Punkte
 
-- [ ] Tag `start` setzen (Reset-Karte oben)
+- [ ] Demo-Ausgangszustand committen (Voraussetzung für `npm run demo:reset`)
 - [ ] `demo-vorlagen/copilot-instructions-final.md` durchlesen und auf dein
       Empfinden anpassen — das ist dein Beispiel, nicht meins
 - [ ] `/init`-Verhalten bei vorhandener Datei testen
 - [ ] Entscheiden: nach Demo 1 zurücksetzen oder Fix stehen lassen
 - [ ] `#fetch`-URL testen
-- [ ] Prüfen, ob Memory freigeschaltet ist
+- [ ] User-Memory-Datei durchsehen, bevor sie auf dem Share landet
 - [ ] Fallback-Screenshots erzeugen (Liste oben)
 - [ ] Raten-Folie geprobt? Sitzt jetzt bei 0:19 zwischen Demo 4 und Demo 5
       ("wo speichert Copilot den Plan?"). **Nicht auflösen** — die Auflösung

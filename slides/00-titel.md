@@ -4,7 +4,7 @@
 
 ## Tips und Tricks
 
-<p class="muted">Interner Vortrag · Entwicklung unter WSL</p>
+<p>Interner Vortrag · Entwicklung unter WSL</p>
 
 Note:
 Zeit: 0:00 — Start.

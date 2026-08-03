@@ -11,7 +11,7 @@
     "demo": "npm run dev --workspace zeiterfassung",
     "demo:test": "npm test --workspace zeiterfassung",
     "demo:build": "npm run build --workspace zeiterfassung",
-    "demo:reset": "git checkout start -- demo-repo && git clean -fd demo-repo"
+    "demo:reset": "git checkout HEAD -- demo-repo && git clean -fd demo-repo"
   },
   "license": "ISC",
   "type": "commonjs",

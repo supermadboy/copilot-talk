@@ -7,7 +7,7 @@
 - Platzhalter
 
 Note:
-Zeit: 0:43 — drei Minuten.
+Zeit: 0:45 — drei Minuten.
 
 **Diese Folie füllt Markus selbst.** Inhalte zu internen Regeln, Policies und
 Lizenzverträgen werden nicht generiert — hier steht nur, was tatsächlich gilt.
@@ -30,10 +30,10 @@ sagen als raten. Das Publikum merkt den Unterschied.
 
 <p class="big">Der Agent schreibt schneller,<br />als ihr prüfen könnt.</p>
 
-<p class="muted">Alles andere folgt daraus.</p>
+<p>Alles andere folgt daraus.</p>
 
 Note:
-Zeit: 0:46
+Zeit: 0:48
 
 Die Klammer um den ganzen Vortrag.
 
@@ -53,10 +53,8 @@ gehen. Der Rest ist Bonus.
 3. Rein: "führe Tests und Linter nicht selbst aus"
 4. Raus: Linter-Kram, Taskspezifisches, Vages, externe Links
 
-<p class="muted">Link kommt in den Chat.</p>
-
 Note:
-Zeit: 0:46
+Zeit: 0:48
 
 "Und hier ist die Checkliste. Das ist das, was ich meine mit 'morgen früh
 anders machen'."

@@ -5,10 +5,19 @@
 <p class="big">Nein.</p>
 
 Note:
-Zeit: 0:41 — zwei Minuten.
+Zeit: 0:43 — zwei Minuten.
 
-Bewusst als erste Antwort. Im Publikum sitzen IntelliJ-Leute, und wenn die
-zwei Minuten lang Werbung hören, sind sie weg.
+**Erst die Umfrage, Reaktionsleiste:**
+
+1. "Daumen hoch, wer IntelliJ benutzt." → auszählen
+2. "Und wer VS Code." → auszählen
+
+Zwanzig Sekunden, und du weißt, wie du die nächsten zwei Minuten fährst:
+- überwiegend IntelliJ → auf die Portabilität gehen, das ist ihr Payoff
+- überwiegend VS Code → noch kürzer machen
+
+**Dann erst die Antwort.** Bewusst als Erstes. Im Publikum sitzen
+IntelliJ-Leute, und wenn die zwei Minuten lang Werbung hören, sind sie weg.
 
 **Für harte 30 Minuten: diesen ganzen Block streichen.**
 Markus überlegt ohnehin, ob er ganz rausfliegt.
@@ -24,10 +33,8 @@ Markus überlegt ohnehin, ob er ganz rausfliegt.
 | `AGENTS.md` / `CLAUDE.md` | unterstützt |
 | Agent Skills | Preview |
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
-Zeit: 0:41
+Zeit: 0:43
 
 Das war vor einem Jahr noch ein Graben. Heute ist es ein zeitlicher Versatz
 von etwa drei bis sechs Monaten.
@@ -44,10 +51,8 @@ für IDEA, PyCharm, WebStorm, Rider gleichermaßen.
 - Browser-Tools
 - Next Edit Suggestions
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
-Zeit: 0:42
+Zeit: 0:44
 
 Der erste Punkt ist der einzige, der wirklich zählt. Die anderen drei sind
 Beispiele dafür.
@@ -60,10 +65,10 @@ Nicht behaupten, VS Code sei "besser". Es ist früher dran.
 
 <p class="big">Instructions, <code>AGENTS.md</code> und Skills<br />sind portabel.</p>
 
-<p class="muted">Prompt Files nicht.</p>
+<p>Prompt Files nicht.</p>
 
 Note:
-Zeit: 0:42
+Zeit: 0:44
 
 **Das ist der eigentliche Payoff von Block 4** — und der Grund, warum Block 3
 auch für die IntelliJ-Fraktion relevant war.

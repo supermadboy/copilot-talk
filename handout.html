@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>GitHub Copilot in VS Code — Spickzettel</title>
+    <style>
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+
+      :root {
+        --fg: #1a1a1a;
+        --muted: #6b7280;
+        --line: #d4d8de;
+        --accent: #1f6feb;
+        --good: #1a7f37;
+        --bad: #b42318;
+        --shade: #f4f6f8;
+        --mono: "Cascadia Mono", "Consolas", "Liberation Mono", monospace;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        padding: 10mm;
+        background: #fff;
+        color: var(--fg);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
+          Helvetica, Arial, sans-serif;
+        font-size: 8.6pt;
+        line-height: 1.35;
+      }
+
+      /* --- Kopf ---------------------------------------------------------- */
+
+      header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 8mm;
+        border-bottom: 2px solid var(--fg);
+        padding-bottom: 1.5mm;
+        margin-bottom: 3mm;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: 14pt;
+        letter-spacing: -0.02em;
+      }
+
+      .stand {
+        color: var(--muted);
+        font-size: 7.4pt;
+        white-space: nowrap;
+      }
+
+      /* --- Spalten ------------------------------------------------------- */
+
+      .cols {
+        column-count: 2;
+        column-gap: 7mm;
+        column-fill: auto;
+        height: 245mm;
+      }
+
+      section {
+        break-inside: avoid;
+        margin-bottom: 3.2mm;
+      }
+
+      h2 {
+        margin: 0 0 1.2mm;
+        font-size: 8.8pt;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: var(--accent);
+        border-bottom: 1px solid var(--line);
+        padding-bottom: 0.8mm;
+      }
+
+      h3 {
+        margin: 1.6mm 0 0.8mm;
+        font-size: 8.2pt;
+      }
+
+      h3.rein {
+        color: var(--good);
+      }
+      h3.raus {
+        color: var(--bad);
+      }
+
+      ol,
+      ul {
+        margin: 0;
+        padding-left: 4.2mm;
+      }
+
+      li {
+        margin-bottom: 0.7mm;
+      }
+
+      p {
+        margin: 0 0 1mm;
+      }
+
+      code {
+        font-family: var(--mono);
+        font-size: 0.94em;
+        background: var(--shade);
+        padding: 0.2mm 0.9mm;
+        border-radius: 1mm;
+        white-space: nowrap;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      td {
+        padding: 0.7mm 0;
+        vertical-align: top;
+        border-bottom: 1px solid var(--line);
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      td:first-child {
+        width: 38%;
+        padding-right: 2mm;
+      }
+
+      .merksatz {
+        border-left: 2.5px solid var(--accent);
+        padding: 1mm 0 1mm 2.5mm;
+        margin: 0 0 1.2mm;
+      }
+
+      .merksatz strong {
+        display: block;
+      }
+
+      .merksatz span {
+        color: var(--muted);
+      }
+
+      footer {
+        border-top: 1px solid var(--line);
+        margin-top: 2mm;
+        padding-top: 1.2mm;
+        color: var(--muted);
+        font-size: 7.2pt;
+      }
+
+      footer a {
+        color: var(--muted);
+      }
+
+      @media screen {
+        body {
+          max-width: 210mm;
+          margin: 0 auto;
+          box-shadow: 0 0 18px rgba(0, 0, 0, 0.14);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>GitHub Copilot in VS Code — Spickzettel</h1>
+      <span class="stand">Stand: 03.08.2026 · VS&nbsp;Code 1.129.1</span>
+    </header>
+
+    <div class="cols">
+      <section>
+        <h2>Morgen früh — fünf Schritte</h2>
+        <ol>
+          <li><code>/init</code> im Chat tippen. Erzeugt
+            <code>.github/copilot-instructions.md</code></li>
+          <li>Den Entwurf überarbeiten — er kennt eure Begründungen nicht</li>
+          <li><code>chat.checkpoints.enabled</code> einschalten</li>
+          <li>Ein Modell bewusst einstellen statt <code>Auto</code></li>
+          <li><code>/plan</code> vor allem, was mehr als eine Datei anfasst</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Die copilot-instructions.md</h2>
+
+        <h3 class="rein">Rein gehört</h3>
+        <ul>
+          <li>Was das Projekt ist — Stack <strong>mit Versionen</strong>
+            („Angular 20“, nicht „Angular“)</li>
+          <li>Befehle für Build, Test, Lint — <strong>samt Stolpersteinen</strong>
+            („erst <code>npm install</code>“)</li>
+          <li>Wo was liegt, mit relativen Pfaden</li>
+          <li>Regeln, die man dem Code nicht ansieht —
+            <strong>mit Begründung</strong> und Code-Beispiel</li>
+          <li>„Führe Tests und Linter nicht selbst aus, ich gebe dir die
+            Ausgabe“</li>
+        </ul>
+
+        <h3 class="raus">Raus muss</h3>
+        <ul>
+          <li>Alles, was Linter oder Formatter schon prüfen</li>
+          <li>Taskspezifisches — die Datei beschreibt das Projekt, nicht das
+            Ticket</li>
+          <li>Vages — „sei gründlicher“ tut nichts</li>
+          <li>Externe Links — werden nicht verfolgt</li>
+        </ul>
+
+        <p style="margin-top:1.4mm">
+          <strong>Kurz halten.</strong> Jenseits von etwa 1.000 Zeilen wird das
+          Verhalten inkonsistent. Eine einzige Zeile hilft schon.
+        </p>
+      </section>
+
+      <section>
+        <h2>Warum Begründungen wirken</h2>
+        <table>
+          <tr>
+            <td style="color:var(--bad)">Wird umgangen</td>
+            <td>„Dauern immer als ganze Minuten.“</td>
+          </tr>
+          <tr>
+            <td style="color:var(--good)">Wird befolgt</td>
+            <td>„… <strong>weil</strong> sich Rundungsfehler über die Woche
+              aufsummieren.“</td>
+          </tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Befehle</h2>
+        <table>
+          <tr><td><code>/plan</code></td><td>Plan vor der Umsetzung</td></tr>
+          <tr><td><code>/init</code></td><td>Instructions erzeugen</td></tr>
+          <tr><td><code>/compact</code></td><td>langen Chat zusammenfassen</td></tr>
+          <tr><td><code>/fork</code></td><td>Session abzweigen</td></tr>
+          <tr><td><code>/clear</code></td><td>neue Session</td></tr>
+          <tr><td><code>/explain</code> <code>/fix</code> <code>/tests</code></td>
+              <td>die Klassiker</td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Kontext mitgeben</h2>
+        <table>
+          <tr><td><code>#file</code> <code>#selection</code></td>
+              <td>genau die Stelle, nicht das Projekt</td></tr>
+          <tr><td><code>#codebase</code></td>
+              <td>wenn du selbst nicht weißt, wo es steht</td></tr>
+          <tr><td><code>#changes</code> <code>#problems</code></td>
+              <td>Diff und Fehlerliste</td></tr>
+          <tr><td><code>#fetch &lt;url&gt;</code></td>
+              <td>aktuelle Doku statt Trainingswissen</td></tr>
+        </table>
+        <p style="margin-top:1.2mm">
+          Bei <code>#fetch</code>: fremder Seiteninhalt ist Text, den du nicht
+          kontrollierst. Doku holen, nicht irgendwas.
+        </p>
+      </section>
+
+      <section>
+        <h2>Vier Sachen zum Prompt</h2>
+        <ol>
+          <li>Konkret sein — Sprache, Framework, Rahmenbedingungen</li>
+          <li>Zerlegen — kein ganzes Feature am Stück</li>
+          <li><strong>Sagen, wie das Ergebnis aussehen soll</strong> —
+            Testfälle, erwartete Werte</li>
+          <li>Rückfragen einfordern statt raten lassen</li>
+        </ol>
+      </section>
+
+      <section>
+        <h2>Wenn er Mist baut</h2>
+        <p>Im Chat über den Request hovern →
+          <strong>Restore Checkpoint</strong>. Dateien sind zurück, der Request
+          verschwindet aus dem Verlauf, <strong>Redo</strong> geht.
+          Kein Ersatz für Git.</p>
+      </section>
+
+      <section>
+        <h2>Credits sparen</h2>
+        <ul>
+          <li>Neuer Chat bei neuem Thema — sonst zahlst du den alten Verlauf mit</li>
+          <li><code>/compact</code>, wenn der Chat lang wird</li>
+          <li>Ungenutzte Tools abschalten (<em>Configure Tools</em>)</li>
+          <li>Generierte Dateien ausschließen —
+            <code>.gitignore</code>, <code>files.exclude</code></li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>Einstellungen</h2>
+        <table>
+          <tr><td><code>chat.checkpoints.enabled</code></td>
+              <td>Rückwärtsgang im Chat</td></tr>
+          <tr><td><code>chat.useCustomizationsInParentRepositories</code></td>
+              <td>Instructions aus dem Eltern-Ordner, für mehrere Repos</td></tr>
+          <tr><td><code>chat.agent.sandbox.enabled</code></td>
+              <td>schränkt Datei- und Netzzugriff ein (macOS, Linux, WSL2)</td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Tastenkürzel</h2>
+        <table>
+          <tr><td><code>Strg+Alt+I</code></td><td>Chat öffnen</td></tr>
+          <tr><td><code>Strg+N</code></td><td>neue Session</td></tr>
+          <tr><td><code>Strg+I</code></td><td>Inline-Chat</td></tr>
+          <tr><td><code>Strg+Alt+.</code></td><td>Modell-Picker</td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Gedächtnis</h2>
+        <p>Sag <em>„merk dir das“</em> — er wählt die Ebene selbst.</p>
+        <table>
+          <tr><td>Session</td><td>der Plan. Nach dem Chat weg</td></tr>
+          <tr><td>Repository</td><td>wie <em>dieses</em> Projekt gebaut wird</td></tr>
+          <tr><td>User</td><td>wie <em>du</em> arbeitest — erste 200 Zeilen
+            landen in jedem Chat</td></tr>
+        </table>
+      </section>
+
+      <section>
+        <h2>Drei Sätze zum Behalten</h2>
+        <div class="merksatz">
+          <strong>Der Agent schreibt schneller, als du prüfen kannst.</strong>
+          <span>Alles andere folgt daraus.</span>
+        </div>
+        <div class="merksatz">
+          <strong>Agenten planen nicht von selbst.</strong>
+          <span>Sie können es — aber nur, wenn du <code>/plan</code> tippst.</span>
+        </div>
+        <div class="merksatz">
+          <strong>Was nicht im Kontext ist, existiert für das Modell nicht.</strong>
+          <span>Und alles reinwerfen macht die Antwort schlechter, nicht besser.</span>
+        </div>
+      </section>
+
+      <section>
+        <h2>Nicht bei null anfangen</h2>
+        <table>
+          <tr><td><code>github/awesome-copilot</code></td>
+              <td>kuratierte Einzelteile zum Rauspicken</td></tr>
+          <tr><td><code>affaan-m/ECC</code></td>
+              <td>ein durchgebautes Gesamtsystem — dort in
+                <code>.github/copilot-instructions.md</code> und
+                <code>.github/prompts/</code> schauen</td></tr>
+        </table>
+        <p style="margin-top:1.2mm">Nicht übernehmen — lesen, <em>wie</em> die
+          geschrieben sind.</p>
+      </section>
+    </div>
+
+    <footer>
+      <strong>Zum Nachlesen:</strong>
+      code.visualstudio.com/docs/agents/best-practices ·
+      /docs/agents/reference/ai-features-cheat-sheet ·
+      /docs/agent-customization/custom-instructions ·
+      /docs/agents/planning ·
+      <strong>code.visualstudio.com/updates</strong> (der wichtigste — alles
+      andere veraltet)
+    </footer>
+  </body>
+</html>

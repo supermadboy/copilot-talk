@@ -58,9 +58,9 @@ Demo-Material:
 npm run demo:reset
 ```
 
-Dahinter steckt `git checkout start -- demo-repo && git clean -fd demo-repo`.
-Ohne `-x` bleibt `node_modules/` stehen, ein erneutes `npm install` ist also
-nicht nötig.
+Dahinter steckt `git checkout HEAD -- demo-repo && git clean -fd demo-repo` —
+zurück auf den letzten Commit. Ohne `-x` bleibt `node_modules/` stehen, ein
+erneutes `npm install` ist also nicht nötig.
 
 ## Zum Verteilen
 

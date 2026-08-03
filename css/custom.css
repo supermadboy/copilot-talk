@@ -267,8 +267,14 @@
 }
 
 /* ---------------------------------------------------------------------------
- * Stand-Marker:  <p class="stand">Stand: 31.07.2026 · VS Code 1.129.1</p>
- * Pflicht auf jeder Folie mit Versions- oder Feature-Aussagen.
+ * Zwei verschiedene Marker – nicht verwechseln:
+ *
+ *   <p class="stand">VS Code 1.129.1</p>
+ *     Versionsmarker, oben rechts. Nur auf Folien, deren Aussage an einer
+ *     bestimmten VS-Code-Version hängt. Kein Datum – die Version genügt.
+ *
+ *   <p class="quelle">VS Code Docs · <em>Seitenname</em></p>
+ *     Quellenangabe, unten unter dem Inhalt. Beleg für die Aussage darüber.
  * ------------------------------------------------------------------------ */
 
 .reveal .stand {
@@ -285,6 +291,25 @@
   border-radius: 999px;
   padding: 0.35em 0.9em;
   white-space: nowrap;
+}
+
+.reveal .quelle {
+  margin: 1.2em 0 0 0;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--line);
+  font-size: 0.42em;
+  color: var(--fg-muted);
+  line-height: 1.4;
+}
+
+.reveal .quelle em {
+  color: var(--fg-muted);
+  font-style: italic;
+  font-weight: 400;
+}
+
+.reveal .slides section.center-text .quelle {
+  border-top: none;
 }
 
 /* ---------------------------------------------------------------------------

@@ -14,10 +14,11 @@ gebaut, nicht umgekehrt.
 Repos danach selbst vernünftig aufsetzen können. Jeder Abschnitt muss auf die
 Frage einzahlen: *was mache ich morgen früh anders?*
 
-**Zeitplan:** Kern 47 Minuten bis zum Schlusssatz.
+**Zeitplan:** Kern 49 Minuten bis zum Schlusssatz.
 Für harte 30: Teil 4 komplett streichen, Teil 1 auf zwei Sätze, in Teil 2 die
-Prompt-Tipps und in Teil 3 die Custom Agents und `.instructions.md` raus.
-Der `/init`-Block bleibt — der ist das Handfeste.
+Prompt-Tipps und die Credit-Hebel raus, in Teil 3 die Custom Agents und
+`.instructions.md`. Der `/init`-Block und die Checkpoints bleiben — das ist das
+Handfeste.
 
 ---
 
@@ -143,18 +144,30 @@ So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema.
 
 ---
 
-## Teil 2 — So arbeite ich · 0:09 bis 0:27
+## Teil 2 — So arbeite ich · 0:09 bis 0:29
 
 > **Das Kernstück.** Hier ist alles drin, was die Leute mitnehmen sollen.
 
-### 0:09 Rahmen
+### 0:09 Rahmen und die Basics
 
 Jetzt der eigentliche Teil. Ich mache eine echte Aufgabe in einem kleinen Repo,
 so wie ich das tatsächlich mache.
 
-Und ich fange nicht bei der Aufgabe an, sondern eine Stufe davor: beim Setup.
+Ganz kurz vorweg das Vokabular, damit gleich niemand aussteigt. Ich gehe das
+nicht durch, ich zeige es nur — den Link schicke ich in den Chat.
+
+▸ **Cheat-Sheet-Folie. 60 Sekunden, nicht mehr.** Nicht vorlesen. Auf die drei
+Zeilen zeigen, die im Vortrag noch vorkommen: `/plan`, `/init`, `#fetch`.
+
+▸ Quelle: VS Code Docs, *AI features cheat sheet* — die Seite ist offiziell und
+wird gepflegt, deshalb kommt sie als Link statt als Foliensammlung.
+
+Wenn ihr davon nichts kennt: das ist der Link, den ihr euch speichert. Alles
+andere heute baut darauf auf.
 
 ### 0:10 Setup — ein Workspace für alles
+
+Und ich fange nicht bei der Aufgabe an, sondern eine Stufe davor: beim Setup.
 
 Das ist der unspektakulärste Tipp des Vortrags und trotzdem der, der bei mir am
 meisten gebracht hat.
@@ -170,11 +183,26 @@ Repos auf einmal. Er findet, dass das Feld im Backend anders heißt als im
 Frontend. In drei getrennten Fenstern findet er das nie, und ihr erklärt es ihm
 jedes Mal neu.
 
-Dazu: Instructions können auch aus dem Eltern-Verzeichnis gezogen werden, wenn
-ihr `chat.useCustomizationsInParentRepositories` einschaltet. Damit gelten eure
-gemeinsamen Regeln in allen Repos, ohne dass ihr sie dreimal pflegt.
+Dazu gibt es eine Einstellung, die genau dafür gebaut ist:
+`chat.useCustomizationsInParentRepositories`.
 
-▸ Quelle: VS Code Docs, *Use custom instructions in VS Code*
+Was die macht: normalerweise sucht Copilot Instructions nur im Repo, in dem die
+Datei liegt, an der ihr gerade arbeitet. Mit der Einstellung schaut er
+zusätzlich **eine Ebene höher** — in den übergeordneten Ordner, in dem eure
+Repos nebeneinander liegen. Legt ihr dort eine gemeinsame
+`.github/copilot-instructions.md` hin, gilt die in allen Repos darunter. Einmal
+gepflegt statt dreimal.
+
+▸ Einschalten: `Strg+,`, oben `useCustomizationsInParentRepositories` suchen,
+Haken setzen. **Live zeigen, das ist ein Zweisekünder.**
+
+▸ Quelle: VS Code Docs, *Use custom instructions in VS Code* — wörtlich: "In a
+monorepo, enable `chat.useCustomizationsInParentRepositories` to discover
+instructions from the parent repository root."
+
+▸ **Ehrlich bleiben:** die Doku sagt nur "parent repository root" und definiert
+nicht genauer, was als Elternteil zählt. Wenn jemand nach Submodulen oder
+verschachtelten Repos fragt: "weiß ich nicht, das steht so nicht in der Doku."
 
 Die Aufgabe für gleich: die Einträge sollen nach Projekt gruppiert werden, mit
 einer Summe pro Projekt.
@@ -216,6 +244,22 @@ günstigen.
 
 ▸ Session-Kosten einblenden. Neu seit Juni: Gesamtkosten über einen ganzen
 Chat, nicht nur pro Request. Und aufgeschlüsselt nach Subagent.
+
+Und weil die Frage sofort kommt — vier Hebel, die wirklich etwas bringen:
+
+- **Neuer Chat bei neuem Thema.** Alles in einer Unterhaltung heißt, ihr bezahlt
+  den alten Kram bei jeder Anfrage mit
+- **`/compact`**, wenn ein Chat lang geworden ist, aber ihr dranbleiben wollt —
+  fasst den Verlauf zusammen und gibt Kontextfenster frei
+- **Tools abschalten**, die ihr nicht braucht, über *Configure Tools* im
+  Eingabefeld
+- **Generierte Dateien ausschließen** über `.gitignore`, `files.exclude` und
+  `search.exclude` — sonst indiziert er euren `dist`-Ordner mit
+
+▸ Quelle: VS Code Docs, *Optimize AI credit usage*
+
+▸ **Nicht ausbreiten, das ist eine Aufzählung von zwanzig Sekunden.** Wer mehr
+will, kriegt den Link.
 
 ▸ Modellnamen nicht vorlesen — die sind in vier Wochen falsch.
 
@@ -280,6 +324,11 @@ den ihr gerade gesehen habt?
 ▸ Ein bis zwei Antworten vorlesen. **Hier nicht auflösen** — die meisten tippen
 auf eine Datei im Repo, und genau das ist die Pointe des nächsten Blocks.
 
+▸ **Die Antwort, falls du sie brauchst:** in der Session-Memory unter
+`/memories/session/plan.md`. Nicht im Projektbaum — die Memory-Dateien liegen
+lokal außerhalb des Repos. Sichtbar über *Chat: Show Memory Files*. Und nach
+Ende der Conversation weg.
+
 ### 0:19 Memory — was der Agent sich merkt
 
 Der Plan von eben liegt nämlich nicht im Repo. Und das führt zu einer Sache,
@@ -297,9 +346,26 @@ dass ihr etwas tut.
 
 ▸ Quelle: VS Code Docs, *Memory in VS Code agents*
 
+Und wie kommt da was rein? **Ihr sagt es ihm, in normaler Sprache.** "Merk dir
+das" reicht. Er entscheidet dann selbst, auf welche Ebene es gehört, und legt
+die Datei an oder ergänzt sie. Ihr müsst weder einen Pfad kennen noch eine
+Datei anlegen.
+
+Als Faustregel, was wo landet:
+
+- **Repository** — wie *dieses* Projekt gebaut und getestet wird, Konventionen
+- **User** — wie *ihr* arbeitet: Vorlieben, wiederkehrende Befehle, Muster
+
+Der Plan von eben ist übrigens Session-Memory — der Agent legt den selbst dort
+ab, ohne dass ihr etwas sagt. Memory ist also mehr als der Plan; der Plan ist
+nur der eine Fall, in dem ihr es schon gesehen habt.
+
 Das heißt praktisch: wenn ihr rausgefunden habt, wie ihr etwas gerne hättet —
-sagt dem Agenten "merk dir das". Er legt es selbst an der richtigen Stelle ab.
-Beim nächsten Projekt weiß er es noch.
+sagt "merk dir das". Beim nächsten Projekt weiß er es noch.
+
+▸ **Live zeigen, wenn die Zeit reicht:** "merk dir, dass ich Tests immer selbst
+ausführe" — dann *Chat: Show Memory Files* und die neue Zeile zeigen. Das ist
+der Moment, in dem es für die Zuhörer greifbar wird.
 
 ▸ Command Palette → **Chat: Show Memory Files** → alle drei Ebenen zeigen.
 
@@ -307,9 +373,11 @@ Zwei Einschränkungen, die ihr kennen solltet: das Ganze ist noch Preview, und
 ihr könnt einzelne Einträge nicht löschen — nur alles auf einmal, mit
 *Chat: Clear All Memory Files*. Und es ist standardmäßig **aus**.
 
-▸ **Vor dem Vortrag prüfen, ob Memory bei uns überhaupt freigeschaltet ist** —
-das hängt an den Copilot-Einstellungen. Wenn nicht: den Block auf die
-Session-Ebene kürzen und den Rest weglassen.
+▸ **Bei uns freigeschaltet** (bestätigt 03.08.2026) — der Block läuft
+vollständig, kein Vorbehalt nötig.
+
+▸ **Eigene User-Memory-Datei vorher durchsehen.** Die zeigst du live auf dem
+Share, und da landet gern Zeug aus echten Projekten drin.
 
 ### 0:22 Tests und Linter lasse ich nicht laufen
 
@@ -330,9 +398,31 @@ Und der Dreh dabei, den ich euch empfehle: **wenn er es einmal richtig gemacht
 hat, lasst ihn aufschreiben, wie.** Als Skill oder in die Instructions. Dann
 macht er es beim nächsten Mal ohne die drei Fehlversuche davor.
 
+### 0:23 Und wenn er trotzdem Mist baut: Checkpoints
+
+Eine Sache, die kaum jemand kennt und die genau dann rettet, wenn es schiefgeht.
+
+VS Code macht **vor jedem Chat-Request einen Snapshot der Dateien**, die
+angefasst werden. Wenn der Agent in die falsche Richtung läuft, geht ihr im Chat
+auf den Request zurück, an dem es noch gut war, und klickt **Restore
+Checkpoint**. Die Dateien sind wieder wie vorher.
+
+▸ Einschalten: `chat.checkpoints.enabled`.
+▸ Bedienen: im Chat über einen Request hovern → *Restore Checkpoint*.
+
+Zwei Sachen dazu, die ihr wissen müsst: der Request verschwindet dabei aus dem
+Verlauf — ihr könnt aber **Redo** drücken, wenn ihr es euch anders überlegt. Und
+das ist **kein Ersatz für Git.** Steht wörtlich so in der Doku: Checkpoints sind
+für schnelles Ausprobieren innerhalb einer Session gedacht und temporär.
+
+▸ Quelle: VS Code Docs, *Checkpoints*
+
+Der praktische Nutzen ist der: ihr könnt den Agenten mutiger laufen lassen. Ihr
+habt einen Rückwärtsgang, der schneller ist als `git checkout`.
+
 ▸ Das ist die Brücke zu Teil 3.
 
-### 0:24 Kontext und Prompts
+### 0:25 Kontext und Prompts
 
 > Für 30 Minuten: diesen Block auf die vier `#`-Referenzen kürzen.
 
@@ -346,10 +436,24 @@ Die Referenzen, die ich täglich benutze:
 - `#changes` und `#problems` — der Diff und die Fehlerliste
 - `#fetch` mit einer URL — holt die aktuelle Doku rein statt Trainingswissen
 
+▸ **Wenn jemand fragt "ich hänge Dateien lieber per Knopf an, ist das
+schlechter?" — nein.** Was zählt, ist *was* im Kontext landet, nicht wie ihr es
+hinbekommt. Die Doku beschreibt nur die `#`-Variante, sagt aber nirgends, dass
+Anhängen schlechter wäre. Der Vorteil von `#` ist Tempo, und dass es Sachen
+gibt, für die es keinen Knopf gibt: `#fetch`, `#problems`, `#changes`.
+
 ▸ `#fetch` live zeigen. Das kennen die wenigsten.
 
 `#fetch` löst das Problem, dass das Modell eine API-Version von vor zwei Jahren
 kennt. Ihr werft ihm die Doku-Seite hin, und er benutzt die.
+
+Ein Satz Vorsicht dazu, weil es zu `#fetch` gehört: was von einer fremden Seite
+reinkommt, ist Text, den ihr nicht kontrolliert. Steht da "ignoriere alle
+vorherigen Anweisungen", liest der Agent das mit. Das heißt nicht, lasst es
+bleiben — es heißt, holt Doku und nicht irgendwas.
+
+▸ Quelle: VS Code Docs, *Security* — Prompt Injection über Tool-Ausgaben.
+▸ **Ein Satz. Kein Sicherheitsvortrag.**
 
 Und der häufigste Fehler in die andere Richtung: alles reinwerfen. Das große
 Kontextfenster vollzumachen kostet Geld und macht die Antwort schlechter, nicht
@@ -368,6 +472,23 @@ besser.
 
 ▸ Quelle: VS Code Docs, *Prompt engineering for Copilot Chat*
 
+▸ **Gegenüberstellung zeigen.** Derselbe Wunsch, zweimal formuliert:
+
+```
+Mach die Validierung besser.
+```
+
+```
+Schreib eine TypeScript-Funktion, die E-Mail-Adressen validiert.
+Gibt true für gültige zurück, sonst false. Kein Regex.
+Testfälle: "a@b.de" → true, "a@" → false, "" → false.
+```
+
+Unten stehen alle vier Punkte drin: konkret, eine Aufgabe, erwartetes Ergebnis
+als Testfälle, und eine Rahmenbedingung. Oben steht nichts davon — deshalb rät
+das Modell, und ihr diskutiert danach zwei Runden über etwas, das ihr vorher in
+einem Satz hättet festlegen können.
+
 Punkt drei ist der wichtigste. Die Doku nennt das sinngemäß mit das
 Wirkungsvollste, was man überhaupt tun kann — weil das Modell damit seine
 eigene Arbeit prüfen kann. Ihr habt das vorhin schon gesehen: in meinem
@@ -378,12 +499,12 @@ nicht jedes Mal. Die gehören ins Repo.
 
 ---
 
-## Teil 3 — Euer Repo aufsetzen · 0:27 bis 0:41
+## Teil 3 — Euer Repo aufsetzen · 0:29 bis 0:43
 
 > Der "geht nach Hause und macht das"-Teil. Alles hier landet auf der
 > Checkliste am Ende.
 
-### 0:27 Teams-Reaktion
+### 0:29 Teams-Reaktion
 
 ▸ **Explizit sagen, welche Reaktion.**
 
@@ -392,7 +513,7 @@ wer eine `copilot-instructions.md` im Repo hat.
 
 ▸ 10 Sekunden warten, dann **laut auszählen**: "vier von zwanzig."
 
-### 0:28 Die Landkarte
+### 0:30 Die Landkarte
 
 Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
 anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
@@ -406,7 +527,7 @@ MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 ▸ Quelle: VS Code Docs, *Customization options at a glance*
 
-### 0:29 Den ersten Entwurf schreiben lassen — `/init`
+### 0:31 Den ersten Entwurf schreiben lassen — `/init`
 
 `.github/copilot-instructions.md` im Repo, gilt für alle Anfragen. Das ist das
 Minimum, das jeder haben sollte.
@@ -436,7 +557,7 @@ aber das, was die Datei wertvoll macht.
 
 ▸ **Generierte Fassung und meine überarbeitete nebeneinander zeigen.**
 
-### 0:31 Was reingehört
+### 0:33 Was reingehört
 
 Vier Blöcke. Wenn die drin sind, habt ihr neunzig Prozent.
 
@@ -480,7 +601,7 @@ Tests aus, ich mache das und gebe dir die Ausgabe" — mit der Begründung, dass
 er sich sonst festfrisst. Genau so eine Regel: sieht man dem Code nicht an,
 wird ohne Begründung ignoriert.
 
-### 0:34 Was raus muss
+### 0:36 Was raus muss
 
 Und jetzt der Teil, den fast alle falsch machen: nicht was reingehört ist das
 Problem, sondern was raus muss.
@@ -504,7 +625,7 @@ klein an — eine einzige Zeile hilft schon.
 *Master your instructions files* — der Längen-Hinweis stammt aus dem Kontext
 Copilot Code Review
 
-### 0:35 Die Stolperfalle
+### 0:37 Die Stolperfalle
 
 Eine Sache, die viele nicht wissen und die für Verwirrung sorgt:
 
@@ -517,7 +638,7 @@ account for inline suggestions as you type"
 Wenn ihr euch also wundert, warum die Autovervollständigung eure schönen Regeln
 komplett ignoriert — daran liegt's. Das ist kein Bug bei euch.
 
-### 0:36 Pro Dateityp
+### 0:38 Pro Dateityp
 
 Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
 `.instructions.md` mit einem `applyTo`-Glob gilt nur für die Dateien, die zum
@@ -527,7 +648,7 @@ Muster passen — Testkonventionen zum Beispiel nur in Testdateien.
 
 Mehrere kleine Dateien nach Thema schlagen eine große. Steht auch so in der Doku.
 
-### 0:37 Skills — wenn Regeln nicht reichen
+### 0:39 Skills — wenn Regeln nicht reichen
 
 Instructions sind Text. Wenn ihr einen Ablauf habt, der aus mehreren Schritten
 besteht und vielleicht noch ein Skript oder eine Vorlage braucht, dann ist das
@@ -553,7 +674,7 @@ fertig.
 Übrigens: falls ihr noch `.chatmode.md`-Dateien rumliegen habt — die heißen
 inzwischen `.agent.md`. Umbenennen, fertig.
 
-### 0:39 Custom Agents — ehrlich gesagt
+### 0:41 Custom Agents — ehrlich gesagt
 
 Custom Agents nur kurz, und ich bin da ehrlich: **ich hatte welche und habe sie
 wieder abgeschaltet.**
@@ -568,7 +689,7 @@ schreiben. Er *kann* nichts ausführen. Das ist ein echter Grund.
 
 Für die meisten von uns: erst mal die Instructions richtig hinkriegen.
 
-### 0:40 Fremde Bausteine — abschauen statt erfinden
+### 0:42 Fremde Bausteine — abschauen statt erfinden
 
 `/init` schreibt euch den Entwurf. Für alles darüber hinaus müsst ihr auch nicht
 bei null anfangen — schaut euch an, wie andere das machen.
@@ -595,9 +716,12 @@ Und für uns ist genau das interessant: da liegt eine echte
 `copilot-instructions.md` drin, und daneben fertige Prompt-Dateien — `/plan`,
 `/tdd`, `/security-review`, `/build-fix`, `/refactor`.
 
-▸ Optional, ein Satz: *"Das Ding ist übrigens aus einem Anthropic-Hackathon
-entstanden."* Mehr nicht — die Geschichte ist nur über Blogs belegt, und wir
-reden hier über Copilot. **Markus entscheidet, ob der Satz fällt.**
+Kleine Randnotiz, weil sie erklärt, warum das Ding so aussieht: das ist aus
+einem Hackathon entstanden, den der Autor gewonnen hat — und danach hat er sein
+komplettes Setup unter MIT rausgegeben.
+
+▸ **Ein Satz, dann weiter.** Die Geschichte ist nur über Blogs belegt, also
+nicht als Fakt verkaufen — "soweit ich weiß" reicht.
 
 Bei beiden gilt dasselbe und das ist die eigentliche Botschaft: **nicht
 übernehmen — lesen, wie die geschrieben sind.** Sucht euch zwei Sachen raus,
@@ -609,10 +733,17 @@ dreistufig geladen, Instructions nicht.
 
 ---
 
-## Teil 4 — VS Code vs. IntelliJ · 0:41 bis 0:43
+## Teil 4 — VS Code vs. IntelliJ · 0:43 bis 0:45
 
 > Markus überlegt noch, ob der Teil ganz rausfliegt.
 > **Für 30 Minuten: streichen.**
+
+▸ **Kurze Umfrage vorweg, Reaktionsleiste.** Erst: "Daumen hoch, wer IntelliJ
+benutzt." Auszählen. Dann: "und wer VS Code." Auszählen.
+
+Das kostet zwanzig Sekunden und sagt dir, wie du die nächsten zwei Minuten
+fährst — bei überwiegend IntelliJ gehst du auf die Portabilität, bei
+überwiegend VS Code machst du es noch kürzer.
 
 Die Frage kommt sowieso, deshalb kurz: nein, ihr müsst nicht wechseln.
 
@@ -630,7 +761,7 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 
 ---
 
-## Teil 5 — Firmenregeln · 0:43 bis 0:46
+## Teil 5 — Firmenregeln · 0:45 bis 0:48
 
 > **Schreibt Markus selbst.** Nichts hier wird generiert.
 
@@ -638,12 +769,17 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 - Nur Copilot ist freigegeben — was heißt das konkret
 - Was darf in einen Prompt und was nicht
 - Wer erhöht das Credit-Budget, und wie fragt man an
-- Sind Browser-Tools, MCP und Memory freigegeben oder gesperrt
+- Sind Browser-Tools und MCP freigegeben oder gesperrt (Memory ist frei)
 - Wer ist ansprechbar bei Problemen
+- **Sandbox:** wir entwickeln unter WSL, und `chat.agent.sandbox.enabled`
+  funktioniert laut Doku genau dort (macOS, Linux, WSL2). Schränkt Datei- und
+  Netzzugriff für Befehle ein, die der Agent ausführt. Wollen wir das als
+  Empfehlung setzen?
+  ▸ Quelle: VS Code Docs, *Security* — vorher selbst ausprobieren
 
 ▸ Bei Unklarheit: "weiß ich nicht, ich kläre das". Nicht raten.
 
-### 0:46 Der Schlusssatz
+### 0:48 Der Schlusssatz
 
 Eine Sache zum Mitnehmen, wenn ihr den Rest vergesst:
 
@@ -660,7 +796,7 @@ anders machen".
 
 ---
 
-## Teil 6 — Fragen und Feedback · ab 0:47
+## Teil 6 — Fragen und Feedback · ab 0:49
 
 ▸ Die Chat-Antworten von ganz am Anfang jetzt aufgreifen.
 
@@ -671,6 +807,12 @@ durch.
 Das füllt die erste Stille.
 
 ### Feedback einsammeln
+
+> ⚠️ **Markus: sitzt an der falschen Stelle.** Direkt nach dem Q&A eine
+> Feedback-Umfrage einzuschieben, unterbricht den Fluss — die Leute sind
+> gedanklich schon draußen. Muss überarbeitet werden, siehe offene Punkte.
+> Möglichkeiten: ans allerletzte Ende hinter "Danke", oder ganz weglassen und
+> stattdessen nach dem Meeting eine kurze Nachricht schicken.
 
 ▸ **Wichtig: Markus hält denselben Vortrag eine Woche später nochmal.**
 
@@ -702,7 +844,19 @@ Danke fürs Zuhören.
 
 ## Das Handout
 
-Muss vor dem Vortrag stehen, wird am Ende verlinkt. Eine Seite, zum Abarbeiten:
+**Liegt als `handout.html` im Repo-Root.** Eine Seite A4, zweispaltig, zum
+Ausdrucken oder als PDF verschicken (Browser → Drucken → *Als PDF speichern*).
+
+Inhalt: die fünf Schritte für morgen früh · rein/raus für die
+`copilot-instructions.md` · Befehle · `#`-Referenzen · Prompt-Regeln ·
+Checkpoints · Credits sparen · Einstellungen · Tastenkürzel · Memory · die drei
+Merksätze · awesome-copilot und ECC · Links.
+
+▸ **Vor dem Verteilen einmal selbst lesen** — es ist dein Handout.
+▸ `/create-instructions` steht bewusst **nicht** drauf, solange die
+Schreibweise nicht geprüft ist (siehe offene Punkte).
+
+Der Ablauf im Vortrag zum Abarbeiten:
 
 1. `/init` laufen lassen — erzeugt `.github/copilot-instructions.md`
 2. Entwurf überarbeiten. Rein gehören vier Blöcke:
@@ -724,20 +878,68 @@ Muss vor dem Vortrag stehen, wird am Ende verlinkt. Eine Seite, zum Abarbeiten:
 
 ## Offene Punkte
 
-- [ ] **Hook vorher testen** — läuft die Vision-Demo zuverlässig? Sonst streichen
-- [ ] Teil 5 inhaltlich füllen (nur Markus)
-- [ ] Prüfen: ist Copilot Memory bei uns freigeschaltet?
-- [ ] Prüfen: sind Browser-Tools per Policy erlaubt?
-- [ ] Am Wochenende: zwei bis drei konkrete Beispiele aus `awesome-copilot`
-      aussuchen
+Stand 03.08.2026. Vortrag ca. 07.08. — vier Tage.
+Demo-Details stehen in `demo-ablauf.md`, hier nur, was den Vortrag blockiert.
+
+### Erledigt
+
+- [x] Skript steht und ist mit Markus durch
+- [x] Folien aus dem Skript abgeleitet
+- [x] Demo-Repo lauffähig, als npm-Workspace eingebunden
+- [x] Überarbeitete Instructions als Gegenstück zu `/init` geschrieben
+      (`demo-vorlagen/copilot-instructions-final.md`)
+- [x] Hook getestet — die Vision-Demo läuft, bleibt im Vortrag
+
+### Nur Markus — blockiert den Vortrag
+
+- [ ] **Teil 5 inhaltlich füllen.** Die Folie hat noch Platzhalter
+- [ ] **`/plan` einmal durchspielen** und die Stelle festlegen, an der du im Plan
+      korrigierst
+- [ ] Demo-Ausgangszustand committen — `npm run demo:reset` geht gegen den
+      letzten Commit
+
+### Freigaben prüfen
+
+- [x] Copilot Memory ist freigeschaltet (03.08.2026) — Block läuft vollständig
+- [ ] Sind Browser-Tools per Policy erlaubt?
+
+### Aus den offiziellen Best Practices nachgetragen
+
+Siehe `research/best-practices-vscode.md`. Selbst ausprobieren:
+
+- [ ] **`/create-instruction` oder `/create-instructions`?** Die Cheat-Sheet-Seite
+      und die Instructions-Seite widersprechen sich. Betrifft den `/init`-Block
+- [ ] Ist `chat.checkpoints.enabled` bei dir an? Wenn ja, an der laufenden Demo
+      zeigen statt nur davon erzählen
+- [ ] `chat.agent.sandbox.enabled` unter WSL ausprobieren — Kandidat für Teil 5
+- [ ] Sitzt die Kostenanzeige da, wo die Doku sie beschreibt?
+
+### Entscheidungen
+
+- [ ] **Feedback-Folie umbauen** — sitzt hinter dem Q&A und fühlt sich dort
+      falsch an. Ans Ende hinter "Danke", oder streichen und stattdessen nach
+      dem Meeting eine Nachricht schicken
+- [ ] Bleibt Teil 4 (VS Code vs. IntelliJ)?
+- [ ] Nach Demo 1 zurücksetzen oder den Fix stehen lassen?
+- [ ] **Rahmenbedingung 1 in `CLAUDE.md` anpassen.** Der Hackathon-Satz ist
+      entschieden und drin — die Regel verbietet aber jede Erwähnung von Claude
+      Code, auch als Randnotiz. Solange das nicht angepasst ist, widerspricht
+      sich das Projekt selbst
+
+### Am Wochenende
+
+- [ ] Zwei bis drei konkrete Beispiele aus `awesome-copilot` aussuchen
 - [ ] ECC-Repo öffnen, dessen `copilot-instructions.md` selbst lesen — taugt sie
       als Positiv- oder als Warnbeispiel?
-- [ ] Entscheiden: fällt der Hackathon-Satz? Wenn ja, Rahmenbedingung 1 in
-      `CLAUDE.md` um eine Ausnahme ergänzen
-- [ ] `/init` im Demo-Repo einmal laufen lassen und die überarbeitete Fassung
-      danebenlegen
-- [ ] Entscheiden, ob Teil 4 bleibt
-- [ ] Handout schreiben und verlinkbar ablegen
-- [ ] Demo-Repo auf die Aufgabe zuschneiden
-- [ ] Fallback-Screenshots für beide Demos
-- [ ] Am Vortag: Release Notes checken, Versionsnummern nachziehen
+- [ ] `demo-vorlagen/copilot-instructions-final.md` auf dein Empfinden drehen
+- [ ] `handout.html` gegenlesen und entscheiden, wie du es verteilst
+      (PDF in den Chat, oder irgendwo hosten und verlinken)
+- [ ] Demo einmal komplett mit Uhr durchspielen
+- [ ] Fallback-Screenshots erzeugen (Liste in `demo-ablauf.md`)
+
+### Am Vortag
+
+- [ ] Release Notes und GitHub Changelog checken, Versionsnummern und
+      Stand-Marker nachziehen
+- [ ] ECC-Zahlen neu ablesen
+- [ ] Auto-Update im Demo-Profil aus

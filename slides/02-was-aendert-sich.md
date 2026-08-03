@@ -25,8 +25,6 @@ nicht einfach einen Link schicke."
 | 1.129 | 15.07.2026 |
 | 1.129.1 | 17.07.2026 |
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
 Zeit: 0:06
 
@@ -49,7 +47,7 @@ Zeile ergänzen. Sonst kippt genau hier das Aktualitätsversprechen.
 - **Browser-Tools** — der Agent testet die Web-App selbst
 - **Parallele Chats** — Implementierung und Review getrennt
 
-<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
+<p class="stand">VS Code 1.129.1</p>
 
 Note:
 Zeit: 0:07
@@ -80,7 +78,7 @@ Abbinder: "So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema."
 - Playwright-Code ausführen für längere Abläufe
 - Eure Tabs bleiben privat bis *Share with Agent*
 
-<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
+<p class="stand">VS Code 1.129.1</p>
 
 Note:
 Vertiefung. Nur bei Nachfrage.

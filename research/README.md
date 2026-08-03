@@ -11,6 +11,8 @@ Wahrheit** – Copilot-Features ändern sich im Wochenrhythmus.
 | ---------------------------------------------------- | ------------------------------------------------------------ |
 | [offizielle-doku.md](offizielle-doku.md)             | VS Code + GitHub Doku: Instructions, Skills, Agents, Kontext, Prompting |
 | [instructions-inhalt-und-init.md](instructions-inhalt-und-init.md) | `/init` und was inhaltlich in eine `copilot-instructions.md` gehört |
+| [best-practices-vscode.md](best-practices-vscode.md) | Offizielle Best Practices, Abgleich mit dem Vortrag: Checkpoints, Cheat Sheet, Credits sparen, Sandbox |
+| [ecc-hackathon-repo.md](ecc-hackathon-repo.md) | Das ECC-Repo als zweites Beispiel neben awesome-copilot |
 | [neue-features-2026.md](neue-features-2026.md)       | Was in 1.123–1.129 dazukam, und was davon in den Vortrag gehört |
 | [modelle-und-kosten.md](modelle-und-kosten.md)       | Modellauswahl und die neue tokenbasierte Abrechnung           |
 | [praktiker-blogs.md](praktiker-blogs.md)             | Blogs von Böckeler, Willison, Osmani, Ronacher, Hashimoto u.a. |

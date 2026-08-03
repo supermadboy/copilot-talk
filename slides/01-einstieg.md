@@ -2,9 +2,7 @@
 
 ## Was nervt euch an Copilot?
 
-Eine Sache. In den Chat. Jetzt.
-
-<p class="muted">Ich greife das in Teil 6 auf.</p>
+Eine Sache in den Chat
 
 Note:
 Zeit: 0:01
@@ -28,7 +26,7 @@ sind, und kannst Teil 2 entsprechend flach oder tief fahren.
 
 <p class="big">Kaputtes UI reinziehen →<br />Copilot nennt Fehler und Datei</p>
 
-<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
+<p class="stand">VS Code 1.129.1</p>
 
 Note:
 Zeit: 0:03 — LIVE-DEMO 1, harte Grenze 90 Sekunden.
@@ -76,8 +74,6 @@ Optionale Vertiefung. Nur zeigen, wenn im Chat nachgefragt wird.
 | **2** | Wie ich arbeite | 18 min |
 | **3** | Was ihr in euer Repo legt | 14 min |
 | **4** | Regeln bei uns, und eure Fragen | Rest |
-
-<p class="muted">Block 2 und 3 sind der eigentliche Vortrag.</p>
 
 Note:
 Zeit: 0:05 — maximal eine Minute. Orientierung, kein Inhalt.

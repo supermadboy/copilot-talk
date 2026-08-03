@@ -4,10 +4,10 @@
 
 wer eine `copilot-instructions.md` im Repo hat.
 
-<p class="muted">Reaktionsleiste in Teams — nicht in den Chat.</p>
+<p>Reaktionsleiste in Teams — nicht in den Chat.</p>
 
 Note:
-Zeit: 0:27
+Zeit: 0:29
 
 **Explizit sagen, welche Reaktion gemeint ist**, sonst passiert remote nichts.
 "Daumen hoch, oben in der Reaktionsleiste."
@@ -26,16 +26,23 @@ alle anderen — und liefert dir die Überleitung.
 <p class="big">Sieben Möglichkeiten.<br />Ihr braucht zwei.</p>
 
 Note:
-Zeit: 0:27 — Block 3 läuft bis 0:41. Der "geht nach Hause und macht das"-Teil.
+Zeit: 0:29 — Block 3 läuft bis 0:43. Der "geht nach Hause und macht das"-Teil.
 
-"Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
-anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
-Plugins. Sieht überwältigend aus. Gute Nachricht: für neunzig Prozent braucht
-ihr zwei davon."
+**Die sieben Möglichkeiten aufzählen:**
 
-**Optional:** hier die Fahrplan-Folie von 0:05 kurz nochmal einblenden.
-Das ist die Stelle, an der es von "wie ich arbeite" auf "was ihr tut"
-umschaltet.
+- Instructions
+- Skills
+- Custom Agents
+- MCP
+- Hooks
+- Prompt Files
+- Plugins
+
+**Dann sofort entlasten:** "Sieht überwältigend aus. Für neunzig Prozent
+braucht ihr zwei davon."
+
+**Optional:** Fahrplan-Folie von 0:05 kurz nochmal einblenden — hier schaltet
+es von "wie ich arbeite" auf "was ihr tut" um.
 
 ---
 
@@ -49,10 +56,10 @@ umschaltet.
 | Rolle mit weniger Tools | Custom Agents |
 | Zugriff auf externe API/DB | MCP |
 
-<p class="stand">VS Code Docs · <em>Customization options at a glance</em></p>
+<p class="quelle">VS Code Docs · <em>Customization options at a glance</em></p>
 
 Note:
-Zeit: 0:28
+Zeit: 0:30
 
 **Diese Tabelle ist offiziell — nicht neu erfunden.** Nicht vorlesen, auf die
 zwei oberen Zeilen zeigen.
@@ -68,12 +75,12 @@ Skills.** MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 <p class="big"><code>/init</code></p>
 
-<p class="muted">Copilot liest das Repo und schreibt die Datei selbst.</p>
+<p>Copilot liest das Repo und schreibt die Datei selbst.</p>
 
-<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
+<p class="stand">VS Code 1.129.1</p>
 
 Note:
-Zeit: 0:29 — DEMO 7, zwei Minuten. Nach `/plan` die wichtigste Demo.
+Zeit: 0:31 — DEMO 7, zwei Minuten. Nach `/plan` die wichtigste Demo.
 
 `/init` in den Chat, laufen lassen, entstandene Datei aufmachen und **kurz
 durchscrollen**. Nicht vorlesen.
@@ -99,7 +106,7 @@ Details: demo-ablauf.md, Demo 7.
 <p class="big">Er kennt eure Begründungen nicht.<br />Und die Stolpersteine beim Bauen auch nicht.</p>
 
 Note:
-Zeit: 0:30
+Zeit: 0:32
 
 Das ist die Pointe der Demo. Auf **genau zwei Stellen** in der überarbeiteten
 Fassung zeigen:
@@ -119,10 +126,10 @@ Nicht mehr. Nicht die ganze Datei durchgehen.
 3. **Wo was liegt** — relative Pfade
 4. **Die nicht-offensichtlichen Regeln** — mit Begründung
 
-<p class="stand">GitHub Docs · <em>Adding repository custom instructions</em></p>
+<p class="quelle">GitHub Docs · <em>Adding repository custom instructions</em></p>
 
 Note:
-Zeit: 0:31 — drei Minuten. Das ist der Teil mit dem meisten Mitnehm-Wert.
+Zeit: 0:33 — drei Minuten. Das ist der Teil mit dem meisten Mitnehm-Wert.
 
 Zu 1: "Angular 20", nicht "Angular". Der Unterschied zwischen Code, der bei
 euch läuft, und Code aus einem drei Jahre alten Blogpost.
@@ -160,7 +167,7 @@ aufsummieren.
 </div>
 
 Note:
-Zeit: 0:32
+Zeit: 0:34
 
 Die Doku sagt das genauso: mit der Begründung entscheidet das Modell in den
 Fällen richtig, die ihr nicht aufgeschrieben habt.
@@ -181,10 +188,10 @@ const d = new Date();
 const x = users.filter(u => u.active);
 ```
 
-<p class="stand">GitHub Docs · <em>Use custom instructions</em></p>
+<p class="quelle">GitHub Docs · <em>Use custom instructions</em></p>
 
 Note:
-Zeit: 0:33
+Zeit: 0:35
 
 Wörtlich aus der VS-Code-Doku: das Modell reagiert besser auf Beispiele als
 auf abstrakte Regeln.
@@ -204,10 +211,10 @@ eine Regel: sieht man dem Code nicht an, wird ohne Begründung ignoriert.
 - Vages — "sei gründlicher" tut nichts
 - Externe Links — werden nicht verfolgt
 
-<p class="stand">GitHub Docs · <em>Adding repository custom instructions</em></p>
+<p class="quelle">GitHub Docs · <em>Adding repository custom instructions</em></p>
 
 Note:
-Zeit: 0:34
+Zeit: 0:36
 
 "Nicht was reingehört ist das Problem, sondern was raus muss."
 
@@ -231,12 +238,12 @@ Quelle: GitHub Blog, *Master your instructions files*.
 
 <p class="big">Instructions wirken nicht<br />bei den Inline-Vorschlägen.</p>
 
-<p class="muted">Nur im Chat und im Agenten.</p>
+<p>Nur im Chat und im Agenten.</p>
 
-<p class="stand">VS Code Docs · <em>Use custom instructions</em></p>
+<p class="quelle">VS Code Docs · <em>Use custom instructions</em></p>
 
 Note:
-Zeit: 0:35
+Zeit: 0:37
 
 Wörtlich aus der Doku: "not taken into account for inline suggestions as you
 type".
@@ -259,10 +266,10 @@ applyTo: '**/*.test.ts'
 - Ein Verhalten pro Test, kein Setup-Sharing
 ```
 
-<p class="muted">Mehrere kleine Dateien nach Thema schlagen eine große.</p>
+<p>Mehrere kleine Dateien nach Thema schlagen eine große.</p>
 
 Note:
-Zeit: 0:36
+Zeit: 0:38
 
 Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
 `.instructions.md` mit `applyTo`-Glob gilt nur für passende Dateien.
@@ -282,10 +289,10 @@ Steht auch so in der Doku: mehrere kleine nach Themen statt einer Riesendatei.
 - Zwanzig Skills kosten fast nichts, solange sie nicht greifen
 - Instructions sind dagegen **immer** dabei
 
-<p class="stand">VS Code Docs · <em>Use Agent Skills in VS Code</em></p>
+<p class="quelle">VS Code Docs · <em>Use Agent Skills in VS Code</em></p>
 
 Note:
-Zeit: 0:37
+Zeit: 0:39
 
 Der eigentliche Vorteil ist die dreistufige Ladung — und der ist für uns mit
 begrenztem Budget der relevante.
@@ -309,7 +316,7 @@ inzwischen `.agent.md`. Umbenennen, fertig.
 - Für die meisten: erst mal die Instructions richtig hinkriegen
 
 Note:
-Zeit: 0:39
+Zeit: 0:41
 
 Ehrlich bleiben, nicht verkaufen. "Klang gut. In der Praxis haben sie ordentlich
 Tokens gekostet und mir wenig gebracht, was ein normaler Review-Prompt nicht
@@ -345,10 +352,8 @@ Ein durchgebautes Gesamtsystem<br />
 
 <p class="big">Nicht übernehmen — lesen, wie die geschrieben sind.</p>
 
-<p class="stand">Stand: 03.08.2026 · Zahlen am Vortag prüfen</p>
-
 Note:
-Zeit: 0:40 — DEMO 8.
+Zeit: 0:42 — DEMO 8.
 
 **Beide Repos als Tabs vorher öffnen, jeweils schon auf der richtigen Datei.**
 Nicht auf dem Share durch zwei fremde Repos navigieren.
@@ -361,10 +366,14 @@ ECC: direkt in `.github/copilot-instructions.md` und `.github/prompts/`
 springen. Da liegen fertige `/plan`, `/tdd`, `/security-review`, `/build-fix`,
 `/refactor`. MIT-Lizenz, gut zweihunderttausend Sterne.
 
-**Optional, ein Satz:** "Das Ding ist übrigens aus einem Anthropic-Hackathon
-entstanden." Mehr nicht — nur über Blogs belegt, und wir reden hier über
-Copilot. Markus entscheidet, ob der Satz fällt.
-Siehe research/ecc-hackathon-repo.md.
+**Die Randnotiz, ein Satz:** "Das ist aus einem Hackathon entstanden, den der
+Autor gewonnen hat — und danach hat er sein komplettes Setup unter MIT
+rausgegeben."
+
+Nur über Blogs belegt, also "soweit ich weiß" sagen, nicht als Fakt verkaufen.
+Ein Satz, dann weiter. Siehe research/ecc-hackathon-repo.md.
+
+**Zahlen sind Stand 03.08.2026** — beim Refresh-Pass am Vortag neu ablesen.
 
 Falls jemand fragt, warum 281 Skills kein Widerspruch zur "kurz halten"-Regel
 sind: Skills werden dreistufig geladen, Instructions nicht.

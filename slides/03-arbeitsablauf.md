@@ -4,14 +4,41 @@
 
 ## So arbeite ich
 
-<p class="big">Eine echte Aufgabe.<br />Von vorne bis fertig.</p>
-
 Note:
 Zeit: 0:09 — ab hier 18 Minuten. Das ist der Grund, warum die Leute zuhören.
 
 Ansage: "Ich mache eine echte Aufgabe in einem kleinen Repo, so wie ich das
-tatsächlich mache. Und ich fange nicht bei der Aufgabe an, sondern eine Stufe
-davor: beim Setup."
+tatsächlich mache."
+
+---
+
+## Die Basics, in 60 Sekunden
+
+| | |
+| --- | --- |
+| `/plan` | Plan vor der Umsetzung |
+| `/init` | Instructions erzeugen |
+| `/compact` `/fork` | langen Chat kürzen, abzweigen |
+| `/explain` `/fix` `/tests` | die Klassiker |
+| `#file` `#codebase` `#fetch` | Kontext mitgeben |
+| `Strg+Alt+I` · `Strg+N` · `Strg+I` | Chat · neu · inline |
+
+<p class="quelle">VS Code Docs · <em>AI features cheat sheet</em> — Link kommt in den Chat</p>
+
+Note:
+Zeit: 0:09 — **60 Sekunden, nicht mehr. Nicht vorlesen.**
+
+Das ist die Vokabelfolie, damit gleich niemand aussteigt.
+
+Nur auf die drei Zeilen zeigen, die heute noch vorkommen: `/plan`, `/init`,
+`#fetch`.
+
+Satz dazu: "Wenn ihr davon nichts kennt — das ist der Link, den ihr euch
+speichert. Alles andere heute baut darauf auf."
+
+**Link jetzt in den Chat**, nicht abtippen lassen.
+
+Die Seite ist offiziell und wird gepflegt — deshalb Link statt Foliensammlung.
 
 ---
 
@@ -38,20 +65,41 @@ wird — offene Tabs, Branch-Name, Git-Status.
 
 ---
 
-## Regeln aus dem Eltern-Verzeichnis
+## Regeln für alle Repos auf einmal
+
+```text
+projekt/
+├── .github/copilot-instructions.md   ← gilt für alle drei
+├── frontend/
+├── backend/
+└── shared/
+```
 
 ```json
 "chat.useCustomizationsInParentRepositories": true
 ```
 
-<p class="muted">Gemeinsame Instructions gelten in allen Repos — einmal gepflegt.</p>
+<p class="quelle">VS Code Docs · <em>Use custom instructions in VS Code</em></p>
 
 Note:
 Zeit: 0:11
 
-Quelle: VS Code Docs, *Use custom instructions in VS Code*
+**So funktioniert es:** Copilot sucht Instructions normalerweise nur in dem
+Repo, in dem die Datei liegt, an der du gerade arbeitest. Mit der Einstellung
+schaut er zusätzlich **eine Ebene höher** — in den Ordner, in dem deine Repos
+nebeneinander liegen. Eine gemeinsame `.github/copilot-instructions.md` dort
+gilt dann in allen Repos darunter.
 
-Kurz zeigen, nicht ausbreiten. Der Punkt kommt in Block 3 nochmal.
+**Einschalten:** `Strg+,` → oben `useCustomizationsInParentRepositories`
+suchen → Haken setzen. Zwei Sekunden, live zeigen.
+
+Wörtlich in der Doku: "In a monorepo, enable
+`chat.useCustomizationsInParentRepositories` to discover instructions from the
+parent repository root."
+
+**Wenn jemand nach Submodulen oder verschachtelten Repos fragt:** die Doku sagt
+nur "parent repository root" und definiert nicht genauer, was als Elternteil
+zählt. Ehrliche Antwort: "weiß ich nicht, steht so nicht in der Doku."
 
 Danach die Aufgabe ankündigen und ins Demo-Repo wechseln.
 
@@ -83,8 +131,6 @@ Repo-Wurzelverzeichnis)
 - Bewusst eins einstellen und dabeibleiben
 - Runterschalten für Fleißarbeit — hoch müsst ihr selten
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
 Zeit: 0:12 — hier weichst du bewusst von der offiziellen Empfehlung ab.
 **Beide Sichten nennen.**
@@ -110,8 +156,6 @@ dann habe ich mehr Zeit verloren als ich an Credits gespart habe."
 | Lange autonome Arbeit | die stärksten Modelle |
 | Screenshots, Diagramme | multimodale Modelle |
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
 Vertiefung. Bewusst ohne Modellnamen.
 
@@ -127,8 +171,6 @@ Wenn jemand nach konkreten Namen fragt: auf die GitHub-Doku verweisen,
 - Neu: **Gesamtkosten pro Session**, aufgeschlüsselt nach Subagent
 - Ein Modell, das es beim ersten Mal trifft, ist billiger als drei Anläufe
 
-<p class="stand">Stand: 03.08.2026</p>
-
 Note:
 Zeit: 0:13 — DEMO 3, Session-Kosten einblenden.
 
@@ -143,6 +185,28 @@ Modells aus."
 
 **Vor dem Vortrag prüfen:** wo genau sitzt die Anzeige in der aktuellen
 Version? Nicht auf dem Share danach suchen müssen.
+
+---
+
+## Vier Hebel, die wirklich sparen
+
+- **Neuer Chat bei neuem Thema** — sonst zahlt ihr den alten Kram mit
+- **`/compact`**, wenn ein Chat lang wird, ihr aber dranbleiben wollt
+- **Tools abschalten**, die ihr nicht braucht — *Configure Tools*
+- **Generierte Dateien ausschließen** — `.gitignore`, `files.exclude`
+
+<p class="quelle">VS Code Docs · <em>Optimize AI credit usage</em></p>
+
+Note:
+Zeit: 0:14 — **zwanzig Sekunden, nicht ausbreiten.** Wer mehr will, kriegt den
+Link.
+
+Zu Punkt 1: alles in einer Unterhaltung heißt, der ganze Verlauf geht bei jeder
+Anfrage nochmal mit.
+
+Zu Punkt 4: sonst indiziert er euren `dist`-Ordner mit.
+
+**Für harte 30 Minuten: diese Folie streichen.**
 
 ---
 
@@ -169,7 +233,7 @@ davorschreibt."
 - Strukturiertes Vorgehen: **+41 %** Prozessqualität
 - **+17 %** Korrektheit des Ergebnisses
 
-<p class="stand">RigorBench, arXiv 2606.22678, Juni 2026</p>
+<p class="quelle">Madiraju &amp; Madiraju · <em>RigorBench</em> · arXiv 2606.22678, Juni 2026</p>
 
 Note:
 Zeit: 0:15
@@ -210,7 +274,7 @@ Note:
 Zeit: 0:16 — LIVE, DEMO 4. Die wichtigste Demo des Vortrags.
 
 Die beiden letzten Zeilen sind kein Beiwerk — das sind die Akzeptanzkriterien.
-Beim Tippen kurz drauf zeigen, du kommst bei 0:24 darauf zurück.
+Beim Tippen kurz drauf zeigen, du kommst bei 0:26 darauf zurück.
 
 Plan-Agent erzeugt: Zusammenfassung, Implementierungsschritte,
 Verifikationsschritte. Er stellt teilweise Rückfragen.
@@ -237,6 +301,13 @@ Schreibt in den Chat, wo Copilot den Plan speichert.
 Note:
 Zeit: 0:19
 
+**DIE ANTWORT** (falls du sie brauchst — hier noch NICHT sagen):
+
+- `/memories/session/plan.md` — Session-Memory
+- Liegt **lokal**, nicht im Projektbaum. Also nicht im Repo, nicht im Git
+- Sichtbar über Command Palette → *Chat: Show Memory Files*
+- Nach Ende der Conversation **weg**
+
 Kurz halten, 30 Sekunden. Ein bis zwei Antworten vorlesen.
 
 Die meisten tippen auf eine Datei im Repo. Das ist die Pointe der nächsten
@@ -247,36 +318,44 @@ Folie — **hier nicht auflösen.**
 ## Drei Arten von Gedächtnis
 
 - **Session** — der Plan von eben. Nach dem Chat weg
-- **Repository** — gilt in diesem Projekt, überlebt den Chat
-- **User** — gilt in *allen* euren Projekten
+- **Repository** — wie *dieses* Projekt gebaut und getestet wird
+- **User** — wie *ihr* arbeitet, gilt in allen Projekten
 - Davon werden die **ersten 200 Zeilen in jeden Chat geladen**
 
-<p class="stand">Stand: 03.08.2026 · VS Code 1.129.1</p>
+<p class="stand">VS Code 1.129.1</p>
 
 Note:
 Zeit: 0:19 — DEMO 5.
 
-Auflösung der Raten-Folie: `/memories/session/plan.md`, Session-Memory.
-Nach dem Chat weg.
+**Auflösung der Raten-Folie:** `/memories/session/plan.md`, Session-Memory,
+liegt lokal außerhalb des Repos. Nach dem Chat weg.
+
+**Wie kommt da was rein? Ihr sagt es ihm, in normaler Sprache.**
+"Merk dir das" reicht. Er entscheidet selbst, auf welche Ebene es gehört, und
+legt die Datei an oder ergänzt sie. Kein Pfad, keine Datei von Hand.
+
+Faustregel, was wo landet:
+- Repository → Build- und Testbefehle, Projektkonventionen
+- User → deine Vorlieben, wiederkehrende Befehle, Arbeitsmuster
+
+**Memory ist mehr als der Plan.** Der Plan ist nur der Fall, den sie gerade
+gesehen haben — den legt der Agent von selbst in die Session-Ebene. Die anderen
+beiden Ebenen befüllt ihr bewusst.
 
 Command Palette → **Chat: Show Memory Files** → alle drei Ebenen zeigen.
 
-Der Teil, der es interessant macht, ist die User-Ebene: 200 Zeilen, in jedem
-Projekt, ohne dass ihr was tut.
+**Wenn Zeit ist, live machen:** "merk dir, dass ich Tests immer selbst
+ausführe" → dann *Chat: Show Memory Files* → neue Zeile zeigen. Das ist der
+Moment, in dem es greifbar wird.
 
-"Wenn ihr rausgefunden habt, wie ihr etwas gerne hättet — sagt dem Agenten
-'merk dir das'. Er legt es selbst an der richtigen Stelle ab. Beim nächsten
-Projekt weiß er es noch."
+Zwei Einschränkungen nennen: Preview, und einzelne Einträge sind nicht
+löschbar — nur alles auf einmal mit *Chat: Clear All Memory Files*.
+
+Memory ist bei uns **freigeschaltet** (03.08.2026), der Block läuft vollständig.
+
+**Vorher:** eigene User-Memory-Datei durchsehen, die landet auf dem Share.
 
 Quelle: VS Code Docs, *Memory in VS Code agents*
-
-Zwei Einschränkungen nennen: Preview, standardmäßig **aus**, und einzelne
-Einträge sind nicht löschbar — nur alles auf einmal mit
-*Chat: Clear All Memory Files*.
-
-**Vorher prüfen:** ist Memory bei uns freigeschaltet? Wenn nein, den Block auf
-die Session-Ebene kürzen. Und: eigene User-Memory-Datei vorher durchsehen,
-die landet auf dem Share.
 
 ---
 
@@ -300,6 +379,35 @@ Das ist die Brücke zu Block 3 — dort kommt es als Instructions-Beispiel wiede
 
 ---
 
+## Und wenn er trotzdem Mist baut
+
+- Vor **jedem** Chat-Request ein Snapshot der betroffenen Dateien
+- Im Chat über den Request hovern → **Restore Checkpoint**
+- Dateien zurück, Request weg aus dem Verlauf — **Redo** geht
+- Einschalten: `chat.checkpoints.enabled`
+
+<p class="quelle">VS Code Docs · <em>Checkpoints</em></p>
+
+Note:
+Zeit: 0:23 — kennt kaum jemand, rettet genau dann, wenn es schiefgeht.
+
+**Kein Ersatz für Git.** Wörtlich in der Doku: "Checkpoints are designed for
+quick iteration within a chat session and are temporary. They complement Git
+but don't replace it."
+
+Der praktische Nutzen, und das ist der Satz, der hängen bleiben soll:
+
+> "Ihr könnt den Agenten mutiger laufen lassen. Ihr habt einen Rückwärtsgang,
+> der schneller ist als `git checkout`."
+
+Passt inhaltlich direkt zum Schlusssatz des Vortrags — der Agent schreibt
+schneller, als ihr prüfen könnt. Das hier ist die eingebaute Antwort darauf.
+
+**Vor dem Vortrag prüfen:** ist `chat.checkpoints.enabled` bei dir an? Wenn ja,
+kannst du es an der laufenden Demo zeigen, statt nur davon zu erzählen.
+
+---
+
 <p class="kicker">Entscheidung 3</p>
 
 ## Kontext gezielt geben
@@ -310,7 +418,7 @@ Das ist die Brücke zu Block 3 — dort kommt es als Instructions-Beispiel wiede
 - `#fetch <url>` — die aktuelle Doku statt Trainingswissen
 
 Note:
-Zeit: 0:24 — DEMO 6 (`#fetch`).
+Zeit: 0:25 — DEMO 6 (`#fetch`).
 
 Für harte 30 Minuten: diesen Block auf genau diese vier Referenzen kürzen.
 
@@ -324,6 +432,24 @@ hin, und er benutzt die."
 Häufigster Fehler in die andere Richtung: alles reinwerfen. Das große
 Kontextfenster vollzumachen kostet Geld und macht die Antwort schlechter.
 
+**Falls die Frage kommt "ich hänge Dateien lieber per Knopf an, ist das
+schlechter?" — nein.** Was zählt, ist *was* im Kontext landet, nicht wie es
+dahin kommt. Die Doku beschreibt nur die `#`-Variante, sagt aber nirgends, dass
+Anhängen schlechter wäre.
+
+Der Vorteil von `#` ist Tempo — und dass es Dinge gibt, für die es keinen Knopf
+gibt: `#fetch`, `#problems`, `#changes`. Genau die drei lohnen sich zu lernen,
+der Rest ist Geschmackssache.
+
+**Ein Satz Vorsicht zu `#fetch`, direkt nach der Demo:**
+
+> "Was von einer fremden Seite reinkommt, ist Text, den ihr nicht kontrolliert.
+> Steht da 'ignoriere alle vorherigen Anweisungen', liest der Agent das mit.
+> Heißt nicht: lasst es bleiben. Heißt: holt Doku und nicht irgendwas."
+
+Quelle: VS Code Docs, *Security* — Prompt Injection über Tool-Ausgaben.
+**Ein Satz. Kein Sicherheitsvortrag.**
+
 ---
 
 ## Vier Sachen zum Prompt
@@ -333,15 +459,65 @@ Kontextfenster vollzumachen kostet Geld und macht die Antwort schlechter.
 3. **Sagen, wie das Ergebnis aussehen soll**
 4. **Rückfragen einfordern** statt raten lassen
 
-<p class="muted">VS Code Docs · <em>Prompt engineering for Copilot Chat</em></p>
+<p class="quelle">VS Code Docs · <em>Prompt engineering for Copilot Chat</em></p>
 
 Note:
-Zeit: 0:25
+Zeit: 0:26
 
 Nicht "mach das besser", sondern "reduzier die Komplexität" oder "füg
 Null-Prüfungen hinzu".
 
-Punkt drei ist der wichtigste — nächste Folie.
+Punkt drei ist der wichtigste. Nächste Folie zeigt denselben Wunsch zweimal.
+
+---
+
+## Derselbe Wunsch, zweimal
+
+<div class="cols">
+<div class="card bad">
+
+### So nicht
+
+```text
+Mach die Validierung
+besser.
+```
+
+</div>
+<div class="card good">
+
+### So
+
+```text
+Schreib eine TypeScript-Funktion,
+die E-Mail-Adressen validiert.
+true für gültige, sonst false.
+Kein Regex.
+
+Testfälle:
+"a@b.de" → true
+"a@"     → false
+""       → false
+```
+
+</div>
+</div>
+
+Note:
+Zeit: 0:26
+
+**Rechts stehen alle vier Punkte drin:**
+
+- konkret — Sprache und Rückgabewert benannt
+- eine Aufgabe, nicht drei
+- erwartetes Ergebnis als Testfälle
+- eine Rahmenbedingung ("kein Regex")
+
+Links steht nichts davon. Deshalb rät das Modell, und ihr diskutiert danach
+zwei Runden über etwas, das ihr vorher in einem Satz hättet festlegen können.
+
+Der eigentliche Punkt ist nicht "schreib mehr". Es ist: **die Testfälle sind
+die Abnahme.** Damit kann er selbst prüfen, ob er fertig ist.
 
 ---
 
@@ -349,10 +525,10 @@ Punkt drei ist der wichtigste — nächste Folie.
 
 <p class="big">Akzeptanzkriterien<br />gehören in den Prompt.</p>
 
-<p class="muted">— sinngemäß aus der offiziellen VS-Code-Doku</p>
+<p class="quelle">VS Code Docs · <em>Prompt engineering for Copilot Chat</em></p>
 
 Note:
-Zeit: 0:26
+Zeit: 0:27
 
 Wörtlich sagt die Doku: Testfälle, erwartete Ergebnisse oder
 Akzeptanzkriterien mitgeben sei "one of the highest-leverage things you can
