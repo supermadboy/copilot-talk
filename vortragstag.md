@@ -36,6 +36,7 @@ Nötigste zum Danebenlegen.
 | **Browser — ECC** | Tab, schon auf `.github/copilot-instructions.md` |
 | **Editor** | `demo-vorlagen/copilot-instructions-final.md` |
 | **Desktop** | Screenshot der kaputten Ansicht, bereit zum Reinziehen |
+| **Zwischenablage / Notiz** | Feedback-Formular-Link und Handout-Link |
 
 ## Sauberkeit auf dem Share
 
@@ -71,6 +72,15 @@ Der Punkt, der remote am ehesten wehtut — du zeigst echte Arbeitsumgebungen.
 
 Alles, was du tippst oder klickst, in Reihenfolge.
 **Fett** = du musst etwas tun, sonst passiert nichts.
+
+## 0:01 · Umfrage IDE
+
+> **Reaktionsleiste, zwei Runden, je auszählen:**
+> 1. "Daumen hoch, wer VS Code benutzt."
+> 2. "Und wer mit was anderem arbeitet."
+>
+> **Ergebnis merken** — du brauchst es in Block 2 (Tiefe) und Block 4.
+> VS Code: ____   Andere: ____
 
 ## 0:01 · Chat-Frage
 
@@ -118,9 +128,31 @@ Bestehende Tests müssen grün bleiben.
 Keine neue Abhängigkeit.
 ```
 
-> **Plan laut lesen. Eine Zeile korrigieren.** Sonst ist die Demo wertlos.
+> **Plan laut lesen.** Sonst ist die Demo wertlos.
+
+Korrektur als **Folge-Prompt** (nicht `plan.md` editieren):
+
+```
+Der neue Typ gehört nach src/types.ts, zu Entry und WeekSummary.
+Pass den Plan an.
+```
+
+> Satz dazu: "Er kann das nicht wissen — es steht nirgends. Genau dafür kommt
+> gleich die `copilot-instructions.md`."
 > Erst danach implementieren lassen.
-> Deine Korrekturstelle aus dem Probelauf: ________________
+>
+> Nach der Umsetzung laut prüfen: `format.ts` und `package.json` nicht
+> angefasst, Tests grün. **Nicht auf die Zeilenzahl schauen.**
+
+**0:18 — warum überhaupt planen (drei Sätze):**
+
+> 1. "Ich kann euch in vier Minuten nicht beweisen, dass das Ergebnis besser
+>    wird. Dafür bräuchte ich hundert Durchläufe."
+> 2. "Was ich zeigen kann: ich habe den Fehler gesehen, bevor er Code war."
+> 3. "Für 'wird besser' verlasse ich mich auf die Zahlen von vorhin."
+>
+> Nachfrage „kann man das nicht nachträglich korrigieren?" →
+> "Klar. Nur ist das die teuerste Stelle im ganzen Ablauf."
 
 ## 0:19 · Raten-Folie
 
@@ -148,7 +180,7 @@ dann nochmal *Chat: Show Memory Files* und die neue Zeile zeigen.
 > "Ihr habt einen Rückwärtsgang, der schneller ist als `git checkout`."
 > Kein Ersatz für Git.
 
-## 0:25 · Demo 6 — `#fetch`
+## 0:24 · Demo 6 — `#fetch`
 
 ```
 #fetch https://code.visualstudio.com/updates
@@ -157,15 +189,14 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 
 > Danach **ein Satz** zu Prompt Injection: was von einer fremden Seite
 > reinkommt, ist Text, den du nicht kontrollierst.
-> Fällt als Erstes raus, wenn die Zeit knapp wird.
 
-## 0:29 · Teams-Reaktion
+## 0:27 · Teams-Reaktion
 
 > **Explizit sagen:** "Daumen hoch, oben in der Reaktionsleiste — wer eine
 > `copilot-instructions.md` im Repo hat."
 > 10 Sekunden warten, **laut auszählen**.
 
-## 0:31 · Demo 7 — `/init`
+## 0:29 · Demo 7 — `/init`
 
 ```
 /init
@@ -177,31 +208,42 @@ Was ist in dieser Version neu, in drei Stichpunkten?
    - eine Regel **mit Begründung**
    - die Zeile **"führe Tests und Linter nicht selbst aus"**
 
-## 0:42 · Demo 8 — Fremde Bausteine
+## 0:40 · Demo 8 — Fremde Bausteine
 
 - awesome-copilot: deine Beispiele → ______, ______, ______
 - ECC: `.github/copilot-instructions.md` und `.github/prompts/`
 - Ein Satz zum Hackathon, dann weiter
 
-## 0:43 · IntelliJ-Umfrage
+## 0:41 · Block 4 — IDE-Vergleich
 
-> **Reaktionsleiste, zweimal:**
-> 1. "Daumen hoch, wer IntelliJ benutzt." → auszählen
-> 2. "Und wer VS Code." → auszählen
+> **Nicht nochmal fragen.** Auf die Umfrage von 0:01 zurückkommen:
+> "Am Anfang haben ein paar von euch gesagt, sie arbeiten mit was anderem.
+> Für die ist der nächste Punkt."
+> Bei überwiegend VS Code: kürzen oder überspringen.
 
-## 0:48 · Checkliste
+## 0:47 · Checkliste
 
 > **Link jetzt in den Chat posten**, nicht erst am Schluss.
 
-## 0:49 · Q&A
+## 0:48 · Q&A
 
 > Die Chat-Antworten von 0:01 aufgreifen. **Zwei bis drei vorlesen und
 > beantworten**, auch wenn niemand fragt.
+> Danach allgemein offene Fragen, so lange es trägt.
 
-## Zum Schluss
+## Danach, in dieser Reihenfolge
 
-> Links in den Chat. **Feedback-Antworten wegspeichern, bevor das Meeting
-> zugeht.**
+1. **Zum Nachlesen** — Links in den Chat, Handout nicht vergessen
+2. **Danke** — hier ist der Vortrag zu Ende, wer gehen will, geht
+3. **Was hat gefehlt?** — die Feedback-Folie kommt **hinter** dem Danke
+
+> **Formular-Link in den Chat.** "Anonym, zwei Minuten, bleibt offen — geht
+> auch heute Abend noch."
+> Begründung dazusagen: "Ich halte den Vortrag nächste Woche nochmal und baue
+> aus euren Antworten das Handout."
+>
+> Nicht nach dem Danke abmoderieren und schließen — es kommt noch eine Folie.
+> **Chat-Antworten wegspeichern, bevor das Meeting zugeht.**
 
 ---
 
@@ -212,5 +254,5 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 | Demo hakt | Nicht reparieren. Fallback-Screenshot, weiter |
 | Repo kaputt | `npm run demo:reset` |
 | Antwort dauert lang | Weiterreden, nicht schweigend warten |
-| Zeit wird knapp | Block 4 streichen, `#fetch` streichen, Custom Agents streichen |
+| Zeit wird knapp | Block 4, Prompt-Tipps, Credit-Hebel, Custom Agents streichen — **Demos bleiben** |
 | Du bist bei 30 min durch | Nach dem Schlusssatz aufhören, in die Fragen gehen |

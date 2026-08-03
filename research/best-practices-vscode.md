@@ -73,10 +73,9 @@ Tastenkürzel (Windows/Linux):
 | Modell-Picker | `Strg+Alt+.` |
 | Umbenennen mit KI | `F2` |
 
-> ⚠️ **Widerspruch prüfen.** Die Cheat-Sheet-Seite nennt `/create-instruction`
-> (Singular), die Seite *Use custom instructions* nennt `/create-instructions`
-> (Plural). Vor dem Vortrag ausprobieren, welches stimmt — sonst tippst du live
-> ins Leere. Betrifft den `/init`-Block in Teil 3.
+> ✅ **Geklärt (Markus, 03.08.2026): `/create-instructions`, mit `s`.**
+> Die Cheat-Sheet-Seite nennt fälschlich `/create-instruction` im Singular —
+> das ist ein Fehler in der Doku. Im Vortrag und im Handout steht der Plural.
 
 ### 2.3 Credits sparen — konkrete Hebel
 
@@ -103,7 +102,9 @@ Wörtlich: "On macOS and Linux, including WSL2 environments, enable
 `chat.agent.sandbox.enabled` … to restrict file system and network access for
 agent-executed commands."
 
-**Das betrifft uns direkt** — Entwicklung läuft unter WSL. Kandidat für Teil 5.
+**Nicht übernommen.** Markus hat die Sandbox selbst deaktiviert (03.08.2026) —
+also weder als Empfehlung im Vortrag noch im Handout. Wenn jemand fragt:
+"gibt's, hab ich aus."
 
 ### 2.5 Prompt Injection
 

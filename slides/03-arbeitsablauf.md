@@ -16,36 +16,29 @@ tatsächlich mache."
 
 | | |
 | --- | --- |
-| `/plan` | Plan vor der Umsetzung |
-| `/init` | Instructions erzeugen |
-| `/compact` `/fork` | langen Chat kürzen, abzweigen |
-| `/explain` `/fix` `/tests` | die Klassiker |
-| `#file` `#codebase` `#fetch` | Kontext mitgeben |
-| `Strg+Alt+I` · `Strg+N` · `Strg+I` | Chat · neu · inline |
+| `Strg+Alt+I` · `Strg+I` | Chat · Inline-Chat |
+| `/explain` `/fix` `/tests` | Einzelaufgaben |
+| `/clear` `/fork` | neue Session · abzweigen |
 
 <p class="quelle">VS Code Docs · <em>AI features cheat sheet</em> — Link kommt in den Chat</p>
 
 Note:
 Zeit: 0:09 — **60 Sekunden, nicht mehr. Nicht vorlesen.**
 
-Das ist die Vokabelfolie, damit gleich niemand aussteigt.
-
-Nur auf die drei Zeilen zeigen, die heute noch vorkommen: `/plan`, `/init`,
-`#fetch`.
+Bewusst nur das, was heute **nicht** mehr vorkommt. `/plan`, `/init` und die
+`#`-Referenzen kriegen später eigene Folien — hier stünden sie doppelt.
 
 Satz dazu: "Wenn ihr davon nichts kennt — das ist der Link, den ihr euch
-speichert. Alles andere heute baut darauf auf."
+speichert. Alles Weitere steht auch im Handout."
 
 **Link jetzt in den Chat**, nicht abtippen lassen.
-
-Die Seite ist offiziell und wird gepflegt — deshalb Link statt Foliensammlung.
 
 ---
 
 ## Ein Workspace für alles
 
-- Ein Projekt, mehrere Repos → **ein** Workspace, nicht drei Fenster
-- `#codebase` sieht dann alle Repos auf einmal
+- Mehrere Repos → **ein** Workspace, nicht drei Fenster
+- `#codebase` sieht dann alle auf einmal
 - Er findet, dass das Feld im Backend anders heißt
 - Regeln einmal pflegen statt dreimal
 
@@ -126,10 +119,10 @@ Repo-Wurzelverzeichnis)
 
 ## Welches Modell?
 
-- **Offiziell:** `Auto` wählt aus und ist günstiger
-- **Meine Erfahrung:** `Auto` greift zu oft zu den schwachen
+- **Offiziell:** `Auto` wählt aus, ist günstiger
+- **Meine Erfahrung:** greift zu oft zu den schwachen
 - Bewusst eins einstellen und dabeibleiben
-- Runterschalten für Fleißarbeit — hoch müsst ihr selten
+- Runter für Fleißarbeit — hoch müsst ihr selten
 
 Note:
 Zeit: 0:12 — hier weichst du bewusst von der offiziellen Empfehlung ab.
@@ -164,15 +157,17 @@ Wenn jemand nach konkreten Namen fragt: auf die GitHub-Doku verweisen,
 
 ---
 
-## Modellwahl ist jetzt auch eine Geldfrage
+## Modellwahl ist auch eine Geldfrage
 
-- Seit 01.06.2026 **tokenbasiert** — AI Credits, 1 Credit = 1 Cent
-- Business: 30 $ pro Monat
-- Neu: **Gesamtkosten pro Session**, aufgeschlüsselt nach Subagent
-- Ein Modell, das es beim ersten Mal trifft, ist billiger als drei Anläufe
+- Seit 01.06.2026 **tokenbasiert** — 30 $ im Monat
+- **Gesamtkosten pro Session** sind sichtbar
+- Sparen: neuer Chat je Thema, `/compact` bei langen
+- Sparen: ungenutzte Tools aus, `dist` ausschließen
+
+<p class="quelle">VS Code Docs · <em>Optimize AI credit usage</em></p>
 
 Note:
-Zeit: 0:13 — DEMO 3, Session-Kosten einblenden.
+Zeit: 0:13 — DEMO 3, Session-Kosten einblenden. **Nicht ausbreiten.**
 
 **Nur sagen, was verifiziert ist. Nichts über die Vertragslage behaupten.**
 
@@ -181,32 +176,17 @@ einen Prompt abgesetzt. Der Punkt ist, dass es die Anzeige überhaupt gibt.
 
 Kernsatz: "Modellwahl war früher eine Qualitätsfrage, heute ist sie auch eine
 Geldfrage — aber die Rechnung geht meistens trotzdem zugunsten des besseren
-Modells aus."
+Modells aus. Ein Modell, das es beim ersten Mal trifft, ist billiger als drei
+Anläufe mit dem günstigen."
+
+Zu den Spar-Punkten: alles in einer Unterhaltung heißt, der ganze Verlauf geht
+bei jeder Anfrage mit. Und ohne `files.exclude` indiziert er euren
+`dist`-Ordner.
 
 **Vor dem Vortrag prüfen:** wo genau sitzt die Anzeige in der aktuellen
 Version? Nicht auf dem Share danach suchen müssen.
 
----
-
-## Vier Hebel, die wirklich sparen
-
-- **Neuer Chat bei neuem Thema** — sonst zahlt ihr den alten Kram mit
-- **`/compact`**, wenn ein Chat lang wird, ihr aber dranbleiben wollt
-- **Tools abschalten**, die ihr nicht braucht — *Configure Tools*
-- **Generierte Dateien ausschließen** — `.gitignore`, `files.exclude`
-
-<p class="quelle">VS Code Docs · <em>Optimize AI credit usage</em></p>
-
-Note:
-Zeit: 0:14 — **zwanzig Sekunden, nicht ausbreiten.** Wer mehr will, kriegt den
-Link.
-
-Zu Punkt 1: alles in einer Unterhaltung heißt, der ganze Verlauf geht bei jeder
-Anfrage nochmal mit.
-
-Zu Punkt 4: sonst indiziert er euren `dist`-Ordner mit.
-
-**Für harte 30 Minuten: diese Folie streichen.**
+**Für harte 30 Minuten: die beiden Spar-Zeilen weglassen und weiter.**
 
 ---
 
@@ -228,10 +208,10 @@ davorschreibt."
 
 ## Es ist gemessen
 
-- Plan-Agent in VS Code, `implementation-planner` bei GitHub
-- Der offizielle Planer hat **drei Tools**: lesen, suchen, schreiben
-- Strukturiertes Vorgehen: **+41 %** Prozessqualität
+- Beide Hersteller haben es eingebaut
+- Der offizielle Planer kann **nichts ausführen**
 - **+17 %** Korrektheit des Ergebnisses
+- Agenten planen von sich aus **nie**
 
 <p class="quelle">Madiraju &amp; Madiraju · <em>RigorBench</em> · arXiv 2606.22678, Juni 2026</p>
 
@@ -274,13 +254,22 @@ Note:
 Zeit: 0:16 — LIVE, DEMO 4. Die wichtigste Demo des Vortrags.
 
 Die beiden letzten Zeilen sind kein Beiwerk — das sind die Akzeptanzkriterien.
-Beim Tippen kurz drauf zeigen, du kommst bei 0:26 darauf zurück.
+Beim Tippen kurz drauf zeigen, du kommst bei 0:25 darauf zurück.
 
 Plan-Agent erzeugt: Zusammenfassung, Implementierungsschritte,
 Verifikationsschritte. Er stellt teilweise Rückfragen.
 
-**Den Plan wirklich lesen und laut kommentieren. Eine Zeile korrigieren.**
-Nicht scrollen und "sieht gut aus" sagen — dann ist die Demo wertlos.
+**Den Plan wirklich lesen und laut kommentieren.** Nicht scrollen und "sieht
+gut aus" sagen — dann ist die Demo wertlos.
+
+**Korrigiert wird per Folge-Prompt im Chat**, nicht durch Editieren einer Datei:
+
+> Der neue Typ gehört nach src/types.ts, zu Entry und WeekSummary.
+> Pass den Plan an.
+
+Quelle: VS Code Docs, *Planning with agents* — "submit follow-up prompts to
+iterate on the plan". **Nicht in `plan.md` herumtippen** — ob eine Handänderung
+dort übernommen wird, steht nirgends.
 
 Satz dazu: "Ich korrigiere hier eine Zeile. Wenn ich denselben Fehler erst
 nach der Implementierung finde, kostet er mich zwanzig Minuten und einen Diff,
@@ -288,7 +277,44 @@ den ich nicht mehr auseinanderklamüsern will."
 
 Erst danach implementieren lassen.
 
-Wo du korrigierst: siehe demo-ablauf.md, Demo 4 — beim Proben festlegen.
+**Korrekturstelle (aus dem Probelauf):** der neue Typ soll nach `src/types.ts`,
+nicht lokal in `timesheet.ts`. Satz dazu: "Er kann das nicht wissen — es steht
+nirgends. Genau dafür kommt gleich die `copilot-instructions.md`."
+
+Nach der Umsetzung laut prüfen: `format.ts` und `package.json` nicht angefasst,
+Tests grün. **Nicht auf die Zeilenzahl schauen.**
+
+---
+
+## Was der Plan wirklich bringt
+
+<p class="big">Der Fehler kostet hier eine Zeile.<br />Im fertigen Diff kostet er zwanzig Minuten.</p>
+
+Note:
+Zeit: 0:18 — **drei Sätze, dann weiter. Nicht rechtfertigen.**
+
+Die ehrliche Ansage zuerst, die nimmt jeder Nachfrage den Wind:
+
+> "Ich kann euch in vier Minuten nicht beweisen, dass das Ergebnis besser wird.
+> Dafür bräuchte ich hundert Durchläufe, nicht einen."
+
+Dann das, was du **tatsächlich** gezeigt hast:
+
+> "Was ich euch zeigen kann: ich habe den Fehler gesehen, bevor er Code war.
+> Ohne Plan hätte ich jetzt fünfundsechzig geänderte Zeilen vor mir und müsste
+> raten, wo das Missverständnis steckt."
+
+Für "das Ergebnis wird besser" verweist du zurück auf die Zahlen von 0:15 —
++17 % Korrektheit — und darauf, dass beide Hersteller es eingebaut haben.
+**Nicht selbst behaupten, was die Studie trägt.**
+
+**Wenn jemand nachbohrt** ("kann man das nicht nachträglich korrigieren?"):
+"Klar. Nur ist Nachbessern im fertigen Diff die teuerste Stelle im ganzen
+Ablauf. Genau das ist der Punkt."
+
+**Optional, nur wenn vorbereitet:** zwei `git diff --stat` nebeneinander, einmal
+mit und einmal ohne Plan. Nur zeigen, wenn der Unterschied deutlich ist — und
+dazusagen, dass ein Durchlauf kein Beweis ist.
 
 ---
 
@@ -318,9 +344,9 @@ Folie — **hier nicht auflösen.**
 ## Drei Arten von Gedächtnis
 
 - **Session** — der Plan von eben. Nach dem Chat weg
-- **Repository** — wie *dieses* Projekt gebaut und getestet wird
-- **User** — wie *ihr* arbeitet, gilt in allen Projekten
-- Davon werden die **ersten 200 Zeilen in jeden Chat geladen**
+- **Repository** — wie *dieses* Projekt gebaut wird
+- **User** — wie *ihr* arbeitet, überall
+- Davon **200 Zeilen in jedem Chat**
 
 <p class="stand">VS Code 1.129.1</p>
 
@@ -363,8 +389,8 @@ Quelle: VS Code Docs, *Memory in VS Code agents*
 
 - Sonst dreht er sich im Kreis und verbrennt Credits
 - Er liest Testausgaben oft falsch aus
-- Ablauf: er schreibt, ich führe aus, ich kippe das Ergebnis rein
-- Kostet zehn Sekunden, spart eine Menge Tokens
+- Er schreibt, ich führe aus, ich kippe das Ergebnis rein
+- Zehn Sekunden für mich, viele Tokens gespart
 
 Note:
 Zeit: 0:22 — läuft gegen das, was überall empfohlen wird. Genau deshalb erzählen.
@@ -381,9 +407,9 @@ Das ist die Brücke zu Block 3 — dort kommt es als Instructions-Beispiel wiede
 
 ## Und wenn er trotzdem Mist baut
 
-- Vor **jedem** Chat-Request ein Snapshot der betroffenen Dateien
-- Im Chat über den Request hovern → **Restore Checkpoint**
-- Dateien zurück, Request weg aus dem Verlauf — **Redo** geht
+- Vor **jedem** Request ein Snapshot der Dateien
+- Über den Request hovern → **Restore Checkpoint**
+- Dateien zurück, **Redo** geht — aber kein Ersatz für Git
 - Einschalten: `chat.checkpoints.enabled`
 
 <p class="quelle">VS Code Docs · <em>Checkpoints</em></p>
@@ -412,10 +438,10 @@ kannst du es an der laufenden Demo zeigen, statt nur davon zu erzählen.
 
 ## Kontext gezielt geben
 
-- `#file` `#selection` — genau die Stelle, nicht das Projekt
-- `#codebase` — wenn ihr selbst nicht wisst, wo es steht
-- `#changes` `#problems` — der Diff und die Fehlerliste
-- `#fetch <url>` — die aktuelle Doku statt Trainingswissen
+- `#file` `#selection` — die Stelle, nicht das Projekt
+- `#codebase` — wenn ihr selbst nicht wisst, wo
+- `#changes` `#problems` — Diff und Fehlerliste
+- `#fetch <url>` — aktuelle Doku statt Trainingswissen
 
 Note:
 Zeit: 0:25 — DEMO 6 (`#fetch`).
@@ -462,7 +488,7 @@ Quelle: VS Code Docs, *Security* — Prompt Injection über Tool-Ausgaben.
 <p class="quelle">VS Code Docs · <em>Prompt engineering for Copilot Chat</em></p>
 
 Note:
-Zeit: 0:26
+Zeit: 0:25
 
 Nicht "mach das besser", sondern "reduzier die Komplexität" oder "füg
 Null-Prüfungen hinzu".
@@ -516,23 +542,9 @@ Zeit: 0:26
 Links steht nichts davon. Deshalb rät das Modell, und ihr diskutiert danach
 zwei Runden über etwas, das ihr vorher in einem Satz hättet festlegen können.
 
-Der eigentliche Punkt ist nicht "schreib mehr". Es ist: **die Testfälle sind
-die Abnahme.** Damit kann er selbst prüfen, ob er fertig ist.
-
----
-
-## Der eine Satz, der am meisten bringt
-
-<p class="big">Akzeptanzkriterien<br />gehören in den Prompt.</p>
-
-<p class="quelle">VS Code Docs · <em>Prompt engineering for Copilot Chat</em></p>
-
-Note:
-Zeit: 0:27
-
-Wörtlich sagt die Doku: Testfälle, erwartete Ergebnisse oder
-Akzeptanzkriterien mitgeben sei "one of the highest-leverage things you can
-do" — weil das Modell seine eigene Arbeit damit prüfen kann.
+**Der Kernsatz, laut sagen:** "Die Testfälle sind die Abnahme. Damit kann er
+selbst prüfen, ob er fertig ist." Die Doku nennt das "one of the
+highest-leverage things you can do".
 
 Zurückbinden an die Demo: "Bestehende Tests müssen grün bleiben" stand vorhin
 schon im Plan-Prompt. Darauf zeigen.

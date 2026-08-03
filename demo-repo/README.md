@@ -40,19 +40,9 @@ Ein `npm install` im Wurzelverzeichnis reicht für beides — Folien und Demo.
 | `src/data.ts`      | Beispielwoche                                   |
 | `src/types.ts`     | `Entry` und `WeekSummary`                       |
 
-## Hinweis für den Vortrag
+## Zurücksetzen
 
-Dieses Repo hat **absichtlich** ein paar Schwachstellen — sie sind das
-Demo-Material:
-
-- `calc()` in `timesheet.ts` ist unklar benannt und rechnet Überstunden ohne
-  Untergrenze, deshalb steht bei einer unvollen Woche `-10h` in der Ansicht
-- getestet ist nur `formatDuration`, der Rest nicht
-- es gibt noch keine `.github/copilot-instructions.md` — die entsteht in der
-  Demo mit `/init`
-
-**Zurücksetzen nach einer Demo** — aus dem Wurzelverzeichnis, setzt nur
-`demo-repo/` zurück:
+Aus dem Wurzelverzeichnis, setzt nur `demo-repo/` zurück:
 
 ```bash
 npm run demo:reset

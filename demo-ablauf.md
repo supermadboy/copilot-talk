@@ -31,6 +31,14 @@ steht **`Überstunden: -10h`**. `calc()` in `src/timesheet.ts` rechnet
 erzeugt `/init` in Demo 7 live. Die überarbeitete Fassung, die du danebenlegst,
 liegt in `demo-vorlagen/copilot-instructions-final.md`.
 
+**Das README verrät nichts mehr.** Es stand dort ein Abschnitt "Hinweis für den
+Vortrag", der den Bug in `calc()` beim Namen nannte und ankündigte, dass die
+Instructions per `/init` entstehen. Beides hätte Copilot mitgelesen: bei Demo 1
+hätte er die Antwort aus dem README statt aus dem Screenshot holen können, und
+bei Demo 7 hätte `/init` eine Anleitung für sich selbst vorgefunden.
+**Der Abschnitt ist raus.** Was das Repo absichtlich falsch macht, steht nur
+noch hier.
+
 **Voraussetzung für den Reset:** der Ausgangszustand muss committet sein.
 Siehe Reset-Karte unten.
 
@@ -42,15 +50,16 @@ Siehe Reset-Karte unten.
 | --- | ---- | ------------------------------ | ---------- | ------- | --------------------- |
 | 1   | 0:03 | Vision: Screenshot in den Chat | ja         | **hoch**| Screenshot + erzählen |
 | 2   | 0:10 | Multi-Repo-Workspace           | nein       | niedrig | Screenshot            |
-| 3   | 0:14 | Session-Kosten einblenden      | nein       | niedrig | Screenshot            |
-| 4   | 0:15 | `/plan` auf echter Aufgabe     | ja         | mittel  | vorbereiteter Plan    |
-| 5   | 0:20 | Chat: Show Memory Files        | nein       | niedrig | Screenshot            |
+| 3   | 0:13 | Session-Kosten einblenden      | nein       | niedrig | Screenshot            |
+| 4   | 0:16 | `/plan` auf echter Aufgabe     | ja         | mittel  | vorbereiteter Plan    |
+| 5   | 0:19 | Chat: Show Memory Files        | nein       | niedrig | Screenshot            |
 | 6   | 0:25 | `#fetch` mit URL               | nein       | mittel  | Screenshot            |
-| 7   | 0:29 | `/init` erzeugt Instructions   | ja         | mittel  | fertige Datei zeigen  |
-| 8   | 0:40 | awesome-copilot + ECC          | nein       | niedrig | Screenshot            |
+| 7   | 0:31 | `/init` erzeugt Instructions   | ja         | mittel  | fertige Datei zeigen  |
+| 8   | 0:42 | awesome-copilot + ECC          | nein       | niedrig | Screenshot            |
 
 Demo 1, 4 und 7 sind die, die den Vortrag tragen. 2, 3, 5, 8 sind Zeigen-und-
-Weiter, 30 Sekunden. Bei Zeitdruck fällt 6 zuerst raus, danach 8.
+Weiter, 30 Sekunden. **Alle Demos bleiben** — gekürzt wird bei den Blöcken
+ohne Demo (Teil 4, Prompt-Tipps, Credit-Hebel, Custom Agents).
 
 ---
 
@@ -122,7 +131,7 @@ Share sichtbar wird — offene Tabs, Branch-Name, Git-Status.
 
 ---
 
-## Demo 3 — Session-Kosten · 0:14
+## Demo 3 — Session-Kosten · 0:13
 
 **Was du zeigen willst:** Modellwahl ist heute auch eine Geldfrage — und man
 kann sie nachrechnen.
@@ -143,7 +152,7 @@ suchen müssen.
 
 ---
 
-## Demo 4 — `/plan` · 0:15 bis 0:19
+## Demo 4 — `/plan` · 0:16 bis 0:19
 
 > **Das ist die wichtigste Demo des Vortrags.** Wenn du eine probst, dann die.
 
@@ -184,7 +193,8 @@ wichtigste"). Beim Tippen kurz drauf zeigen.
 1. ▸ Prompt absetzen. Er geht durch den Code, stellt teilweise Rückfragen.
 2. ▸ **Plan wirklich lesen und laut mitkommentieren.** Nicht scrollen und
    "sieht gut aus" sagen — dann ist die Demo wertlos.
-3. ▸ **Eine Zeile korrigieren.** Egal welche, aber sichtbar.
+3. ▸ **Per Folge-Prompt korrigieren** — nicht `plan.md` editieren:
+   `Der neue Typ gehört nach src/types.ts, zu Entry und WeekSummary. Pass den Plan an.`
 4. ▸ Erst danach implementieren lassen.
 
 **Dein Satz dabei:** Ich korrigiere hier eine Zeile. Denselben Fehler nach der
@@ -206,6 +216,19 @@ Kandidaten in diesem Repo:
 ▸ Beim Proben notieren, was er typischerweise vorschlägt, dann weißt du am
 Vortragstag, wo du zugreifst.
 
+**Beobachtung aus dem Probelauf (03.08.2026):** angefasst wurden `main.ts`,
+`timesheet.ts` und `styles.css` — 65 Zeilen. `format.ts`, `format.test.ts` und
+`package.json` blieben unberührt, beide Akzeptanzkriterien also eingehalten.
+
+**`types.ts` war nicht dabei.** Der neue Typ landete lokal statt bei `Entry`
+und `WeekSummary`. Das ist die Korrekturstelle mit dem besten Anschluss:
+
+> "Er kann das nicht wissen — es steht nirgends. Genau dafür kommt gleich die
+> `copilot-instructions.md`."
+
+▸ Die Regel steht in `demo-vorlagen/copilot-instructions-final.md` unter
+*Regeln*. Damit greift Demo 7 die Korrektur aus Demo 4 wieder auf.
+
 ### Was schiefgehen kann
 
 | Problem                          | Reaktion                                        |
@@ -225,7 +248,7 @@ Plan von eben liegt nicht im Repo."* Also **nicht** vorher den Chat schließen.
 
 ---
 
-## Demo 5 — Memory Files · 0:20
+## Demo 5 — Memory Files · 0:19
 
 **Was du zeigen willst:** Drei Ebenen, und von der User-Ebene werden die ersten
 200 Zeilen in jeden Chat geladen.
@@ -271,11 +294,11 @@ dass alles schnell veraltet, und holst es hier live rein.
 ▸ **URL vorher testen.** `#fetch` scheitert an Seiten, die viel JavaScript
 brauchen oder Bot-Schutz haben.
 
-▸ **Fallback:** Screenshot. Bei Zeitdruck fällt diese Demo raus.
+▸ **Fallback:** Screenshot.
 
 ---
 
-## Demo 7 — `/init` · 0:29 bis 0:31
+## Demo 7 — `/init` · 0:31 bis 0:33
 
 > Nach `/plan` die zweitwichtigste Demo. Sie ist der Beweis für "ihr müsst das
 > nicht von Hand schreiben" — und gleichzeitig für "der Entwurf reicht nicht".
@@ -349,7 +372,7 @@ bestimmte** Regel will statt des Rundumschlags. 20 Sekunden. Vorher testen.
 
 ---
 
-## Demo 8 — awesome-copilot und ECC · 0:40
+## Demo 8 — awesome-copilot und ECC · 0:42
 
 **Was du zeigen willst:** Zwei Extreme, dieselbe Botschaft — lesen, nicht
 übernehmen.
@@ -438,6 +461,99 @@ Rücksetzpunkt mit.
 
 ---
 
+## Probelauf am 04.08.2026 — drei Sachen gezielt testen
+
+Alle drei sind Stellen, an denen auf den Folien etwas behauptet wird, das noch
+nicht überprüft ist. Wenn eine davon nicht so funktioniert, muss die Folie
+geändert werden — nicht die Erzählung.
+
+> ⚠️ **Vorher committen.** `demo-repo/README.md` wurde gerade geändert (siehe
+> unten). Der Ausgangszustand für `npm run demo:reset` ist der letzte Commit.
+
+### Test 1 · Plan per Folge-Prompt anpassen
+
+1. `/plan`-Prompt absetzen wie in Demo 4
+2. Warten, bis der Plan steht
+3. Folge-Prompt schicken:
+
+```
+Der neue Typ gehört nach src/types.ts, zu Entry und WeekSummary.
+Pass den Plan an.
+```
+
+**Worauf du achtest:**
+
+- [ ] Ändert er den **Plan** — oder fängt er direkt an zu implementieren?
+      Das ist der kritische Punkt. Wenn er losläuft, ist die Demo kaputt und du
+      brauchst eine andere Formulierung, z.B. "Ändere nur den Plan, implementiere
+      noch nicht."
+- [ ] Wie lange dauert die Anpassung? Über 30 Sekunden wird es live zäh
+- [ ] Sieht man die Änderung gut genug, um im Share darauf zu zeigen?
+- [ ] Bleibt der restliche Plan stehen, oder schreibt er alles neu?
+
+▸ Die funktionierende Formulierung danach in `vortragstag.md` eintragen.
+
+### Test 2 · `/init`
+
+```
+/init
+```
+
+**Worauf du achtest:**
+
+- [ ] Wie lange dauert es? Über eine Minute wird live zäh — dann brauchst du
+      einen Satz zum Überbrücken (die vier Blöcke aus 0:33 passen genau dahin)
+- [ ] Stellt er Rückfragen, oder schreibt er einfach los?
+- [ ] Legt er die Datei unter `.github/copilot-instructions.md` an, oder woanders?
+- [ ] **Der kritische Punkt:** wie gut ist das Ergebnis wirklich? Die Folie
+      danach behauptet *"Er kennt eure Begründungen nicht und die Stolpersteine
+      beim Bauen auch nicht."* Wenn er die Build-Befehle sauber aus der
+      `package.json` zieht und noch Begründungen dazuerfindet, trägt der
+      Kontrast nicht mehr — dann muss ich die Folie umformulieren auf das, was
+      tatsächlich fehlt
+- [ ] Erwähnt er den Bug in `calc()` oder die fehlenden Tests? Das wäre ein
+      hübscher Nebeneffekt zum Mitnehmen
+
+▸ **Ergebnis aufheben.** Kopier die erzeugte Datei nach
+`demo-vorlagen/init-ergebnis-probelauf.md`, dann haben wir sie zum Vergleichen
+und als Fallback, falls es live schiefgeht.
+
+▸ **Danach `.github/copilot-instructions.md` wieder löschen** — beim Vortrag
+muss sie weg sein, sonst gibt es nichts zu erzeugen. `npm run demo:reset`
+entfernt sie mit, weil sie nicht committet ist.
+
+### Test 3 · Memory befüllen
+
+Im Chat:
+
+```
+Merk dir, dass ich Tests immer selbst ausführe.
+```
+
+Dann Command Palette → **Chat: Show Memory Files**.
+
+**Worauf du achtest:**
+
+- [ ] Wird überhaupt eine Datei angelegt oder ergänzt?
+- [ ] **Auf welcher Ebene?** Das ist der interessante Teil. Die Folie behauptet:
+      *Repository* = wie dieses Projekt gebaut wird, *User* = wie du arbeitest.
+      "Ich führe Tests immer selbst aus" ist eine Arbeitsweise, müsste also in
+      **User** landen. Wenn er es ins Repository legt, stimmt die Aufteilung auf
+      der Folie so nicht und ich formuliere sie um
+- [ ] Was schreibt er wörtlich rein? Wenn der Eintrag gut lesbar ist, ist das
+      dein bester Moment — dann zeigst du ihn live statt davon zu erzählen
+- [ ] Sagt er im Chat, dass er es sich gemerkt hat, oder passiert es stumm?
+
+▸ **Danach aufräumen nicht vergessen.** Wenn du den Eintrag vor dem Vortrag
+nicht drin haben willst: einzeln löschen geht nicht, nur
+*Chat: Clear All Memory Files* — das wirft alles weg.
+
+▸ **Und:** wenn du den Eintrag stehen lässt, ist er beim Vortrag schon da. Dann
+kannst du ihn nicht mehr live entstehen lassen. Überleg dir vorher, was du
+zeigen willst.
+
+---
+
 ## Probelauf
 
 Einmal komplett, mit Uhr, ohne Anhalten. Dabei mitschreiben:
@@ -446,20 +562,12 @@ Einmal komplett, mit Uhr, ohne Anhalten. Dabei mitschreiben:
    bist, muss Teil 1 kürzer)
 2. Welche Demo hat länger gedauert als geplant?
 3. Was hat Copilot bei `/plan` vorgeschlagen? → Korrekturstelle festlegen
-4. Ist Demo 1 dreimal sauber gelaufen? Wenn nein → streichen
+4. Lief alles? Demo 1 ist bereits als laufend bestätigt
 
 ---
 
 ## Offene Punkte
 
-- [ ] Demo-Ausgangszustand committen (Voraussetzung für `npm run demo:reset`)
-- [ ] `demo-vorlagen/copilot-instructions-final.md` durchlesen und auf dein
-      Empfinden anpassen — das ist dein Beispiel, nicht meins
-- [ ] `/init`-Verhalten bei vorhandener Datei testen
-- [ ] Entscheiden: nach Demo 1 zurücksetzen oder Fix stehen lassen
-- [ ] `#fetch`-URL testen
-- [ ] User-Memory-Datei durchsehen, bevor sie auf dem Share landet
-- [ ] Fallback-Screenshots erzeugen (Liste oben)
-- [ ] Raten-Folie geprobt? Sitzt jetzt bei 0:19 zwischen Demo 4 und Demo 5
-      ("wo speichert Copilot den Plan?"). **Nicht auflösen** — die Auflösung
-      ist Demo 5.
+Stehen gesammelt in [`todo.md`](todo.md). Die demo-spezifischen Prüfpunkte
+findest du oben bei der jeweiligen Demo und im Abschnitt
+*Probelauf am 04.08.2026*.

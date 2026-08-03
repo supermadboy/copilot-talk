@@ -5,19 +5,20 @@
 <p class="big">Nein.</p>
 
 Note:
-Zeit: 0:43 — zwei Minuten.
+Zeit: 0:42 — zwei Minuten.
 
-**Erst die Umfrage, Reaktionsleiste:**
+**Nicht nochmal fragen** — die Umfrage lief bei 0:01. Stattdessen darauf
+zurückkommen:
 
-1. "Daumen hoch, wer IntelliJ benutzt." → auszählen
-2. "Und wer VS Code." → auszählen
+> "Am Anfang haben ein paar von euch gesagt, sie arbeiten mit was anderem.
+> Für die ist der nächste Punkt."
 
-Zwanzig Sekunden, und du weißt, wie du die nächsten zwei Minuten fährst:
-- überwiegend IntelliJ → auf die Portabilität gehen, das ist ihr Payoff
-- überwiegend VS Code → noch kürzer machen
+Danach richtet sich die Länge:
+- überwiegend andere IDEs → auf die Portabilität gehen, das ist ihr Payoff
+- überwiegend VS Code → kürzer machen oder ganz überspringen
 
-**Dann erst die Antwort.** Bewusst als Erstes. Im Publikum sitzen
-IntelliJ-Leute, und wenn die zwei Minuten lang Werbung hören, sind sie weg.
+**Die Antwort bewusst als Erstes.** Im Publikum sitzen IntelliJ-Leute, und wenn
+die zwei Minuten lang Werbung hören, sind sie weg.
 
 **Für harte 30 Minuten: diesen ganzen Block streichen.**
 Markus überlegt ohnehin, ob er ganz rausfliegt.
@@ -28,13 +29,12 @@ Markus überlegt ohnehin, ob er ganz rausfliegt.
 
 | | Status |
 | --- | --- |
-| Agent Mode | GA |
-| Custom Agents, Subagents, Plan-Agent | GA |
-| `AGENTS.md` / `CLAUDE.md` | unterstützt |
+| Agent Mode, Custom Agents, Plan | GA |
+| `AGENTS.md` | unterstützt |
 | Agent Skills | Preview |
 
 Note:
-Zeit: 0:43
+Zeit: 0:42
 
 Das war vor einem Jahr noch ein Graben. Heute ist es ein zeitlicher Versatz
 von etwa drei bis sechs Monaten.
@@ -46,13 +46,12 @@ für IDEA, PyCharm, WebStorm, Rider gleichermaßen.
 
 ## Wo VS Code vorne bleibt
 
-- **Neue Features zuerst** — und zwar im Wochenrhythmus
-- Agents Window mit parallelen Sessions
-- Browser-Tools
+- **Neue Features zuerst**, im Wochenrhythmus
+- Agents Window, Browser-Tools
 - Next Edit Suggestions
 
 Note:
-Zeit: 0:44
+Zeit: 0:43
 
 Der erste Punkt ist der einzige, der wirklich zählt. Die anderen drei sind
 Beispiele dafür.
@@ -68,7 +67,7 @@ Nicht behaupten, VS Code sei "besser". Es ist früher dran.
 <p>Prompt Files nicht.</p>
 
 Note:
-Zeit: 0:44
+Zeit: 0:43
 
 **Das ist der eigentliche Payoff von Block 4** — und der Grund, warum Block 3
 auch für die IntelliJ-Fraktion relevant war.

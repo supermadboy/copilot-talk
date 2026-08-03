@@ -50,11 +50,11 @@ es von "wie ich arbeite" auf "was ihr tut" um.
 
 | Ziel | Mittel |
 | --- | --- |
-| Gleiche Standards für allen Code | Always-on Instructions |
-| Andere Regeln je Dateityp | File-based Instructions |
-| Mehrschritt-Workflow mit Skripten | Agent Skills |
+| Standards für allen Code | Instructions |
+| Regeln je Dateityp | Instructions mit `applyTo` |
+| Ablauf mit Skripten | Skills |
 | Rolle mit weniger Tools | Custom Agents |
-| Zugriff auf externe API/DB | MCP |
+| Externe Daten | MCP |
 
 <p class="quelle">VS Code Docs · <em>Customization options at a glance</em></p>
 
@@ -92,7 +92,8 @@ Quelle: VS Code Docs, *Use custom instructions in VS Code* — "analyze your
 workspace and generate always-on custom instructions".
 
 Zwei Geschwister erwähnen:
-- `/create-instructions` — wenn ihr **eine bestimmte** Regel wollt
+- `/create-instructions` (**mit s**, geprüft) — wenn ihr **eine bestimmte**
+  Regel wollt statt des Rundumschlags
 - derselbe Knopf im Agent-Customizations-Editor, für Klicker
 
 Dann die vorbereitete überarbeitete Fassung daneben aufmachen (Split-View).
@@ -122,9 +123,9 @@ Nicht mehr. Nicht die ganze Datei durchgehen.
 ## Was reingehört
 
 1. **Was das Projekt ist** — Stack mit Versionen
-2. **Build, Test, Lint** — die Befehle *und* die Stolpersteine
+2. **Build, Test, Lint** — Befehle *und* Stolpersteine
 3. **Wo was liegt** — relative Pfade
-4. **Die nicht-offensichtlichen Regeln** — mit Begründung
+4. **Das Nicht-Offensichtliche** — mit Begründung
 
 <p class="quelle">GitHub Docs · <em>Adding repository custom instructions</em></p>
 
@@ -206,8 +207,8 @@ eine Regel: sieht man dem Code nicht an, wird ohne Begründung ignoriert.
 
 ## Was raus muss
 
-- Alles, was **Linter oder Formatter** schon prüfen
-- Taskspezifisches — *"Instructions must not be task specific"*
+- Was **Linter oder Formatter** schon prüfen
+- Taskspezifisches — es geht ums Projekt, nicht ums Ticket
 - Vages — "sei gründlicher" tut nichts
 - Externe Links — werden nicht verfolgt
 
@@ -284,10 +285,10 @@ Steht auch so in der Doku: mehrere kleine nach Themen statt einer Riesendatei.
 
 ## Skills — wenn Text nicht reicht
 
-- Ein Ordner mit `SKILL.md` plus Skripten und Vorlagen
+- Ein Ordner mit `SKILL.md` plus Skripten
 - Geladen in **drei Stufen**: Name → Inhalt → Dateien
-- Zwanzig Skills kosten fast nichts, solange sie nicht greifen
-- Instructions sind dagegen **immer** dabei
+- Zwanzig Skills kosten nichts, solange sie nicht greifen
+- Instructions sind **immer** dabei
 
 <p class="quelle">VS Code Docs · <em>Use Agent Skills in VS Code</em></p>
 
@@ -310,13 +311,13 @@ inzwischen `.agent.md`. Umbenennen, fertig.
 
 ## Custom Agents — ehrlich gesagt
 
-- Ich hatte welche für TypeScript- und Java-Review
+- Ich hatte welche für TS- und Java-Review
 - Wieder **abgeschaltet**: viel Tokens, wenig Mehrwert
-- Der eine gute Grund: eine Rolle soll **weniger** können
-- Für die meisten: erst mal die Instructions richtig hinkriegen
+- Guter Grund: eine Rolle soll **weniger** können
+- Sonst: erst mal die Instructions richtig hinkriegen
 
 Note:
-Zeit: 0:41
+Zeit: 0:40
 
 Ehrlich bleiben, nicht verkaufen. "Klang gut. In der Praxis haben sie ordentlich
 Tokens gekostet und mir wenig gebracht, was ein normaler Review-Prompt nicht
@@ -353,7 +354,7 @@ Ein durchgebautes Gesamtsystem<br />
 <p class="big">Nicht übernehmen — lesen, wie die geschrieben sind.</p>
 
 Note:
-Zeit: 0:42 — DEMO 8.
+Zeit: 0:41 — DEMO 8.
 
 **Beide Repos als Tabs vorher öffnen, jeweils schon auf der richtigen Datei.**
 Nicht auf dem Share durch zwei fremde Repos navigieren.

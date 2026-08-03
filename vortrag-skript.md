@@ -14,7 +14,7 @@ gebaut, nicht umgekehrt.
 Repos danach selbst vernünftig aufsetzen können. Jeder Abschnitt muss auf die
 Frage einzahlen: *was mache ich morgen früh anders?*
 
-**Zeitplan:** Kern 49 Minuten bis zum Schlusssatz.
+**Zeitplan:** Kern 47 Minuten bis zum Schlusssatz.
 Für harte 30: Teil 4 komplett streichen, Teil 1 auf zwei Sätze, in Teil 2 die
 Prompt-Tipps und die Credit-Hebel raus, in Teil 3 die Custom Agents und
 `.instructions.md`. Der `/init`-Block und die Checkpoints bleiben — das ist das
@@ -37,6 +37,27 @@ Am Ende kriegt ihr eine Checkliste, da steht alles drauf.
 
 Zwei Sachen vorweg: ich mache viel live, und wenn was schiefgeht, gehe ich
 einfach weiter. Und schreibt Fragen jederzeit in den Chat, ich sammle die ein.
+
+### 0:01 Wer arbeitet womit?
+
+▸ Interaktionsfolie, Reaktionsleiste. **Zwanzig Sekunden, zwei Runden.**
+
+Ganz kurz, damit ich weiß, mit wem ich es zu tun habe. Daumen hoch, wer VS Code
+benutzt.
+
+▸ Auszählen, laut sagen.
+
+Und jetzt Daumen hoch, wer mit was anderem arbeitet — IntelliJ, Rider, was auch
+immer.
+
+▸ Auszählen, laut sagen.
+
+▸ **Das Ergebnis merken, du brauchst es zweimal:** einmal, um Teil 2 flacher
+oder tiefer zu fahren, und einmal in Teil 4, wo du darauf zurückkommst statt
+nochmal zu fragen.
+
+▸ Bewusst die leichte Frage zuerst — ein Daumen kostet nichts. Danach sitzt die
+Chat-Frage lockerer.
 
 ### 0:01 Die Chat-Frage
 
@@ -144,7 +165,7 @@ So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema.
 
 ---
 
-## Teil 2 — So arbeite ich · 0:09 bis 0:29
+## Teil 2 — So arbeite ich · 0:09 bis 0:27
 
 > **Das Kernstück.** Hier ist alles drin, was die Leute mitnehmen sollen.
 
@@ -156,14 +177,15 @@ so wie ich das tatsächlich mache.
 Ganz kurz vorweg das Vokabular, damit gleich niemand aussteigt. Ich gehe das
 nicht durch, ich zeige es nur — den Link schicke ich in den Chat.
 
-▸ **Cheat-Sheet-Folie. 60 Sekunden, nicht mehr.** Nicht vorlesen. Auf die drei
-Zeilen zeigen, die im Vortrag noch vorkommen: `/plan`, `/init`, `#fetch`.
+▸ **Cheat-Sheet-Folie. 60 Sekunden, nicht mehr.** Nicht vorlesen.
+Die Folie zeigt bewusst nur, was später **nicht** mehr vorkommt — `/plan`,
+`/init` und die `#`-Referenzen kriegen eigene Folien.
 
 ▸ Quelle: VS Code Docs, *AI features cheat sheet* — die Seite ist offiziell und
 wird gepflegt, deshalb kommt sie als Link statt als Foliensammlung.
 
 Wenn ihr davon nichts kennt: das ist der Link, den ihr euch speichert. Alles
-andere heute baut darauf auf.
+Weitere steht auch im Handout.
 
 ### 0:10 Setup — ein Workspace für alles
 
@@ -306,13 +328,67 @@ Er geht durch den Code, stellt teilweise Rückfragen, und schreibt dann einen
 Plan: Zusammenfassung, Schritte, und wie man hinterher prüft, ob es geklappt
 hat.
 
-▸ **Den Plan wirklich lesen und laut kommentieren. Eine Zeile korrigieren.**
+▸ **Den Plan wirklich lesen und laut kommentieren.**
 
-Und das ist der ganze Punkt. Ich korrigiere hier eine Zeile. Wenn ich denselben
-Fehler erst nach der Implementierung finde, kostet er mich zwanzig Minuten und
-einen Diff, den ich nicht mehr auseinanderklamüsern will.
+Hier steht, dass der neue Typ in `timesheet.ts` angelegt wird. Bei uns liegen
+gemeinsame Typen aber in `types.ts`. Das ändere ich.
+
+▸ **Korrigiert wird per Folge-Prompt im Chat**, nicht durch Editieren einer
+Datei. Genau so:
+
+```
+Der neue Typ gehört nach src/types.ts, zu Entry und WeekSummary.
+Pass den Plan an.
+```
+
+▸ Quelle: VS Code Docs, *Planning with agents* — "Review the plan draft and
+submit follow-up prompts to iterate on the plan until it meets your
+requirements."
+
+▸ **Nicht in `plan.md` herumtippen.** Die Datei liegt zwar in der
+Session-Memory und lässt sich über *Chat: Show Memory Files* öffnen — ob eine
+Handänderung dort vom Agenten übernommen wird, steht nirgends. Live nicht
+riskieren.
+
+Und das ist der ganze Punkt — und zwar der einzige, den ich euch heute wirklich
+beweisen kann. **Diese Korrektur kostet mich gerade eine Zeile.** Wenn ich
+denselben Fehler erst im fertigen Diff finde, sitze ich zwanzig Minuten dran und
+muss durch fünfundsechzig geänderte Zeilen, um die eine zu finden.
+
+Der Plan ist die Stelle, an der ein Missverständnis noch billig ist.
 
 ▸ Erst danach implementieren lassen.
+
+### 0:18 Warum überhaupt planen — was du dazu sagst
+
+> **Markus' Frage: muss ich nicht zeigen, dass es mit Plan besser wird?**
+> Nein — und der Versuch würde nach hinten losgehen. Ein Durchlauf ist kein
+> Beweis, und das weiß jeder im Publikum. Sag stattdessen das hier.
+
+Ich kann euch in vier Minuten nicht beweisen, dass das Ergebnis besser wird.
+Dafür bräuchte ich hundert Durchläufe, nicht einen.
+
+Was ich euch zeigen kann, ist etwas anderes, und das reicht mir: **ich habe den
+Fehler gesehen, bevor er Code war.** Ohne Plan hätte ich jetzt fünfundsechzig
+geänderte Zeilen vor mir und müsste raten, wo das Missverständnis steckt.
+
+Für die Behauptung, dass auch das *Ergebnis* besser wird, verlasse ich mich
+nicht auf mein Bauchgefühl, sondern auf die Zahlen von vorhin — siebzehn Prozent
+mehr Korrektheit. Und darauf, dass beide Hersteller das Feature eingebaut haben.
+
+▸ **Drei Sätze, dann weiter.** Nicht rechtfertigen, nicht ausweiten.
+
+▸ **Wenn jemand nachbohrt** ("kann man das nicht einfach nachträglich
+korrigieren?"): "Klar. Nur ist Nachbessern im fertigen Diff die teuerste Stelle
+im ganzen Ablauf. Genau das ist der Punkt."
+
+▸ **Optionaler A/B-Vergleich, nur wenn zu Hause vorbereitet.** Denselben Prompt
+einmal *ohne* `/plan` laufen lassen, beide `git diff --stat` als Screenshot
+nebeneinander. Wirkt stark, **wenn** der Unterschied deutlich ist — mehr
+angefasste Dateien, `format.ts` mit drin, oder eine neue Abhängigkeit.
+> ⚠️ Kommt ohne Plan zufällig dasselbe raus: **Screenshot wegwerfen, nicht
+> zeigen.** Und wenn du ihn zeigst, sag dazu, dass es ein Durchlauf ist und kein
+> Beweis. Sonst zerlegt dir die erste Nachfrage die Glaubwürdigkeit.
 
 ### 0:19 Raten-Folie — wo liegt der Plan?
 
@@ -422,7 +498,7 @@ habt einen Rückwärtsgang, der schneller ist als `git checkout`.
 
 ▸ Das ist die Brücke zu Teil 3.
 
-### 0:25 Kontext und Prompts
+### 0:24 Kontext und Prompts
 
 > Für 30 Minuten: diesen Block auf die vier `#`-Referenzen kürzen.
 
@@ -499,12 +575,12 @@ nicht jedes Mal. Die gehören ins Repo.
 
 ---
 
-## Teil 3 — Euer Repo aufsetzen · 0:29 bis 0:43
+## Teil 3 — Euer Repo aufsetzen · 0:27 bis 0:41
 
 > Der "geht nach Hause und macht das"-Teil. Alles hier landet auf der
 > Checkliste am Ende.
 
-### 0:29 Teams-Reaktion
+### 0:27 Teams-Reaktion
 
 ▸ **Explizit sagen, welche Reaktion.**
 
@@ -513,7 +589,7 @@ wer eine `copilot-instructions.md` im Repo hat.
 
 ▸ 10 Sekunden warten, dann **laut auszählen**: "vier von zwanzig."
 
-### 0:30 Die Landkarte
+### 0:28 Die Landkarte
 
 Wenn ihr euch damit beschäftigt, findet ihr sieben Möglichkeiten, Copilot
 anzupassen: Instructions, Skills, Custom Agents, MCP, Hooks, Prompt Files,
@@ -527,7 +603,7 @@ MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 ▸ Quelle: VS Code Docs, *Customization options at a glance*
 
-### 0:31 Den ersten Entwurf schreiben lassen — `/init`
+### 0:29 Den ersten Entwurf schreiben lassen — `/init`
 
 `.github/copilot-instructions.md` im Repo, gilt für alle Anfragen. Das ist das
 Minimum, das jeder haben sollte.
@@ -557,7 +633,7 @@ aber das, was die Datei wertvoll macht.
 
 ▸ **Generierte Fassung und meine überarbeitete nebeneinander zeigen.**
 
-### 0:33 Was reingehört
+### 0:31 Was reingehört
 
 Vier Blöcke. Wenn die drin sind, habt ihr neunzig Prozent.
 
@@ -601,7 +677,7 @@ Tests aus, ich mache das und gebe dir die Ausgabe" — mit der Begründung, dass
 er sich sonst festfrisst. Genau so eine Regel: sieht man dem Code nicht an,
 wird ohne Begründung ignoriert.
 
-### 0:36 Was raus muss
+### 0:34 Was raus muss
 
 Und jetzt der Teil, den fast alle falsch machen: nicht was reingehört ist das
 Problem, sondern was raus muss.
@@ -625,7 +701,7 @@ klein an — eine einzige Zeile hilft schon.
 *Master your instructions files* — der Längen-Hinweis stammt aus dem Kontext
 Copilot Code Review
 
-### 0:37 Die Stolperfalle
+### 0:35 Die Stolperfalle
 
 Eine Sache, die viele nicht wissen und die für Verwirrung sorgt:
 
@@ -638,7 +714,7 @@ account for inline suggestions as you type"
 Wenn ihr euch also wundert, warum die Autovervollständigung eure schönen Regeln
 komplett ignoriert — daran liegt's. Das ist kein Bug bei euch.
 
-### 0:38 Pro Dateityp
+### 0:36 Pro Dateityp
 
 Wenn die Hauptdatei zu lang wird, zieht ihr Themen raus. Eine
 `.instructions.md` mit einem `applyTo`-Glob gilt nur für die Dateien, die zum
@@ -648,7 +724,7 @@ Muster passen — Testkonventionen zum Beispiel nur in Testdateien.
 
 Mehrere kleine Dateien nach Thema schlagen eine große. Steht auch so in der Doku.
 
-### 0:39 Skills — wenn Regeln nicht reichen
+### 0:37 Skills — wenn Regeln nicht reichen
 
 Instructions sind Text. Wenn ihr einen Ablauf habt, der aus mehreren Schritten
 besteht und vielleicht noch ein Skript oder eine Vorlage braucht, dann ist das
@@ -674,7 +750,7 @@ fertig.
 Übrigens: falls ihr noch `.chatmode.md`-Dateien rumliegen habt — die heißen
 inzwischen `.agent.md`. Umbenennen, fertig.
 
-### 0:41 Custom Agents — ehrlich gesagt
+### 0:39 Custom Agents — ehrlich gesagt
 
 Custom Agents nur kurz, und ich bin da ehrlich: **ich hatte welche und habe sie
 wieder abgeschaltet.**
@@ -689,7 +765,7 @@ schreiben. Er *kann* nichts ausführen. Das ist ein echter Grund.
 
 Für die meisten von uns: erst mal die Instructions richtig hinkriegen.
 
-### 0:42 Fremde Bausteine — abschauen statt erfinden
+### 0:40 Fremde Bausteine — abschauen statt erfinden
 
 `/init` schreibt euch den Entwurf. Für alles darüber hinaus müsst ihr auch nicht
 bei null anfangen — schaut euch an, wie andere das machen.
@@ -733,17 +809,17 @@ dreistufig geladen, Instructions nicht.
 
 ---
 
-## Teil 4 — VS Code vs. IntelliJ · 0:43 bis 0:45
+## Teil 4 — VS Code vs. IntelliJ · 0:41 bis 0:43
 
 > Markus überlegt noch, ob der Teil ganz rausfliegt.
 > **Für 30 Minuten: streichen.**
 
-▸ **Kurze Umfrage vorweg, Reaktionsleiste.** Erst: "Daumen hoch, wer IntelliJ
-benutzt." Auszählen. Dann: "und wer VS Code." Auszählen.
+▸ **Nicht nochmal fragen** — die Umfrage lief bei 0:01. Stattdessen darauf
+zurückkommen: "Am Anfang haben ein paar von euch gesagt, sie arbeiten mit was
+anderem. Für die ist der nächste Punkt."
 
-Das kostet zwanzig Sekunden und sagt dir, wie du die nächsten zwei Minuten
-fährst — bei überwiegend IntelliJ gehst du auf die Portabilität, bei
-überwiegend VS Code machst du es noch kürzer.
+▸ Danach richtet sich die Länge: bei überwiegend IntelliJ auf die Portabilität
+gehen, bei überwiegend VS Code noch kürzer machen oder ganz überspringen.
 
 Die Frage kommt sowieso, deshalb kurz: nein, ihr müsst nicht wechseln.
 
@@ -761,7 +837,7 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 
 ---
 
-## Teil 5 — Firmenregeln · 0:45 bis 0:48
+## Teil 5 — Firmenregeln · 0:43 bis 0:46
 
 > **Schreibt Markus selbst.** Nichts hier wird generiert.
 
@@ -771,15 +847,15 @@ Arbeit, die ihr ins Repo steckt, ist nicht an eine IDE gebunden.
 - Wer erhöht das Credit-Budget, und wie fragt man an
 - Sind Browser-Tools und MCP freigegeben oder gesperrt (Memory ist frei)
 - Wer ist ansprechbar bei Problemen
-- **Sandbox:** wir entwickeln unter WSL, und `chat.agent.sandbox.enabled`
-  funktioniert laut Doku genau dort (macOS, Linux, WSL2). Schränkt Datei- und
-  Netzzugriff für Befehle ein, die der Agent ausführt. Wollen wir das als
-  Empfehlung setzen?
-  ▸ Quelle: VS Code Docs, *Security* — vorher selbst ausprobieren
+
+▸ **Sandbox nicht empfehlen.** `chat.agent.sandbox.enabled` gibt es zwar und es
+läuft unter WSL2 — Markus hat es aber bewusst abgeschaltet. Also nicht als
+Empfehlung verkaufen. Wenn jemand danach fragt: "gibt's, hab ich aus, war mir
+im Weg."
 
 ▸ Bei Unklarheit: "weiß ich nicht, ich kläre das". Nicht raten.
 
-### 0:48 Der Schlusssatz
+### 0:46 Der Schlusssatz
 
 Eine Sache zum Mitnehmen, wenn ihr den Rest vergesst:
 
@@ -796,7 +872,7 @@ anders machen".
 
 ---
 
-## Teil 6 — Fragen und Feedback · ab 0:49
+## Teil 6 — Fragen und Feedback · ab 0:47
 
 ▸ Die Chat-Antworten von ganz am Anfang jetzt aufgreifen.
 
@@ -806,32 +882,10 @@ durch.
 ▸ **Zwei bis drei laut vorlesen und beantworten**, auch wenn niemand nachfragt.
 Das füllt die erste Stille.
 
-### Feedback einsammeln
+Und wenn sonst noch was offen ist — raus damit.
 
-> ⚠️ **Markus: sitzt an der falschen Stelle.** Direkt nach dem Q&A eine
-> Feedback-Umfrage einzuschieben, unterbricht den Fluss — die Leute sind
-> gedanklich schon draußen. Muss überarbeitet werden, siehe offene Punkte.
-> Möglichkeiten: ans allerletzte Ende hinter "Danke", oder ganz weglassen und
-> stattdessen nach dem Meeting eine kurze Nachricht schicken.
-
-▸ **Wichtig: Markus hält denselben Vortrag eine Woche später nochmal.**
-
-Zwei Sachen noch, bevor ihr geht.
-
-Erstens: schreibt mir in den Chat, was gefehlt hat. Ich baue daraus das Handout
-— dann steht da drin, was ihr wirklich braucht, und nicht nur, was ich für
-wichtig halte.
-
-Zweitens, und da bin ich ehrlich eigennützig: ich halte den Vortrag nächste
-Woche nochmal. Wenn euch was zu lang, zu kurz oder zu oberflächlich war —
-sagt's mir. Auch gern hinterher per Nachricht.
-
-▸ **Konkret fragen, nicht "gibt's Feedback".** Zum Beispiel:
-- Was war zu schnell?
-- Was hättet ihr lieber ausführlicher gehabt?
-- Was fehlt auf der Checkliste?
-
-▸ Antworten wegspeichern, bevor das Meeting zugeht.
+▸ Danach allgemein offene Fragen aufnehmen, so lange es trägt. Erst wenn nichts
+mehr kommt, weiter zu den Links.
 
 ### Zum Schluss
 
@@ -839,6 +893,42 @@ Die Links kommen in den Chat. Der wichtigste ist der auf die Release Notes —
 alles andere aus diesem Vortrag veraltet.
 
 Danke fürs Zuhören.
+
+### Und dann, nach dem Danke: Feedback
+
+▸ **Reihenfolge ist Absicht.** Erst die Fragen vom Anfang, dann offene Fragen
+allgemein, dann das Danke — und *danach* die Feedback-Folie. Wer gehen will,
+ist beim Danke raus; wer bleibt, gibt dir brauchbares Feedback.
+
+▸ **Wichtig: Markus hält denselben Vortrag eine Woche später nochmal.**
+
+Eine Sache noch, bevor ihr geht.
+
+Ich hab euch gerade einen Link in den Chat gestellt. Der ist **anonym** und
+dauert zwei Minuten.
+
+Warum ich das will, sage ich ehrlich: ich halte denselben Vortrag nächste Woche
+nochmal, und ich baue aus euren Antworten das Handout. Dann steht da drin, was
+ihr wirklich braucht, und nicht nur, was ich für wichtig halte.
+
+Der Link bleibt offen — ihr könnt das auch heute Abend noch machen.
+
+▸ **Link vorher vorbereiten und beim Anzeigen der Folie in den Chat posten.**
+Nicht erst suchen.
+
+▸ **Anonym ist der Punkt.** In einer internen Runde schreibt niemand
+"war zu oberflächlich" mit seinem Namen dran. Das ansagen, sonst nimmt es
+niemand als Einladung wahr.
+
+▸ Die drei Fragen im Formular — konkret, nicht "gibt's Feedback":
+- Was war zu schnell?
+- Was hättet ihr lieber ausführlicher gehabt?
+- Was fehlt auf der Checkliste?
+
+▸ Ein Freitextfeld reicht sonst. **Keine Pflichtfelder** — jedes Pflichtfeld
+kostet Antworten.
+
+▸ Chat-Antworten trotzdem wegspeichern, bevor das Meeting zugeht.
 
 ---
 
@@ -878,68 +968,8 @@ Der Ablauf im Vortrag zum Abarbeiten:
 
 ## Offene Punkte
 
-Stand 03.08.2026. Vortrag ca. 07.08. — vier Tage.
-Demo-Details stehen in `demo-ablauf.md`, hier nur, was den Vortrag blockiert.
+**Die Arbeitsliste steht in [`todo.md`](todo.md)** — dort sortiert nach
+morgen, Wochenende, Vortag und Vortragstag.
 
-### Erledigt
-
-- [x] Skript steht und ist mit Markus durch
-- [x] Folien aus dem Skript abgeleitet
-- [x] Demo-Repo lauffähig, als npm-Workspace eingebunden
-- [x] Überarbeitete Instructions als Gegenstück zu `/init` geschrieben
-      (`demo-vorlagen/copilot-instructions-final.md`)
-- [x] Hook getestet — die Vision-Demo läuft, bleibt im Vortrag
-
-### Nur Markus — blockiert den Vortrag
-
-- [ ] **Teil 5 inhaltlich füllen.** Die Folie hat noch Platzhalter
-- [ ] **`/plan` einmal durchspielen** und die Stelle festlegen, an der du im Plan
-      korrigierst
-- [ ] Demo-Ausgangszustand committen — `npm run demo:reset` geht gegen den
-      letzten Commit
-
-### Freigaben prüfen
-
-- [x] Copilot Memory ist freigeschaltet (03.08.2026) — Block läuft vollständig
-- [ ] Sind Browser-Tools per Policy erlaubt?
-
-### Aus den offiziellen Best Practices nachgetragen
-
-Siehe `research/best-practices-vscode.md`. Selbst ausprobieren:
-
-- [ ] **`/create-instruction` oder `/create-instructions`?** Die Cheat-Sheet-Seite
-      und die Instructions-Seite widersprechen sich. Betrifft den `/init`-Block
-- [ ] Ist `chat.checkpoints.enabled` bei dir an? Wenn ja, an der laufenden Demo
-      zeigen statt nur davon erzählen
-- [ ] `chat.agent.sandbox.enabled` unter WSL ausprobieren — Kandidat für Teil 5
-- [ ] Sitzt die Kostenanzeige da, wo die Doku sie beschreibt?
-
-### Entscheidungen
-
-- [ ] **Feedback-Folie umbauen** — sitzt hinter dem Q&A und fühlt sich dort
-      falsch an. Ans Ende hinter "Danke", oder streichen und stattdessen nach
-      dem Meeting eine Nachricht schicken
-- [ ] Bleibt Teil 4 (VS Code vs. IntelliJ)?
-- [ ] Nach Demo 1 zurücksetzen oder den Fix stehen lassen?
-- [ ] **Rahmenbedingung 1 in `CLAUDE.md` anpassen.** Der Hackathon-Satz ist
-      entschieden und drin — die Regel verbietet aber jede Erwähnung von Claude
-      Code, auch als Randnotiz. Solange das nicht angepasst ist, widerspricht
-      sich das Projekt selbst
-
-### Am Wochenende
-
-- [ ] Zwei bis drei konkrete Beispiele aus `awesome-copilot` aussuchen
-- [ ] ECC-Repo öffnen, dessen `copilot-instructions.md` selbst lesen — taugt sie
-      als Positiv- oder als Warnbeispiel?
-- [ ] `demo-vorlagen/copilot-instructions-final.md` auf dein Empfinden drehen
-- [ ] `handout.html` gegenlesen und entscheiden, wie du es verteilst
-      (PDF in den Chat, oder irgendwo hosten und verlinken)
-- [ ] Demo einmal komplett mit Uhr durchspielen
-- [ ] Fallback-Screenshots erzeugen (Liste in `demo-ablauf.md`)
-
-### Am Vortag
-
-- [ ] Release Notes und GitHub Changelog checken, Versionsnummern und
-      Stand-Marker nachziehen
-- [ ] ECC-Zahlen neu ablesen
-- [ ] Auto-Update im Demo-Profil aus
+Was am Vortragstag zu tun ist: [`vortragstag.md`](vortragstag.md).
+Demo-Details und Prüfpunkte: [`demo-ablauf.md`](demo-ablauf.md).

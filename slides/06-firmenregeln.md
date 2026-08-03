@@ -7,7 +7,7 @@
 - Platzhalter
 
 Note:
-Zeit: 0:45 — drei Minuten.
+Zeit: 0:44 — drei Minuten.
 
 **Diese Folie füllt Markus selbst.** Inhalte zu internen Regeln, Policies und
 Lizenzverträgen werden nicht generiert — hier steht nur, was tatsächlich gilt.
@@ -33,7 +33,7 @@ sagen als raten. Das Publikum merkt den Unterschied.
 <p>Alles andere folgt daraus.</p>
 
 Note:
-Zeit: 0:48
+Zeit: 0:47
 
 Die Klammer um den ganzen Vortrag.
 
@@ -49,12 +49,12 @@ gehen. Der Rest ist Bonus.
 ## Die Checkliste
 
 1. `/init` laufen lassen
-2. Entwurf überarbeiten — Stack, Build-Befehle, Pfade, Begründungen
-3. Rein: "führe Tests und Linter nicht selbst aus"
-4. Raus: Linter-Kram, Taskspezifisches, Vages, externe Links
+2. Entwurf überarbeiten — Stack, Befehle, Pfade, Begründungen
+3. Modell bewusst wählen, `/plan` vor jeder Mehr-Datei-Änderung
+4. Alles Weitere steht im Handout
 
 Note:
-Zeit: 0:48
+Zeit: 0:47
 
 "Und hier ist die Checkliste. Das ist das, was ich meine mit 'morgen früh
 anders machen'."
@@ -62,26 +62,5 @@ anders machen'."
 **Link jetzt in den Chat posten**, nicht erst am Ende. Sonst ist die Hälfte
 schon weg.
 
-Die vollständige Liste steht im Handout — hier nur die vier Schritte, die
-jeder heute noch machen kann.
-
---
-
-## Die vollständige Liste
-
-| | |
-| --- | --- |
-| 1–4 | siehe vorige Folie |
-| 5 | Kurz halten (< ~1.000 Zeilen) |
-| 6 | `.instructions.md` mit `applyTo` je Dateityp |
-| 7 | Workspace über alle Repos eines Projekts |
-| 8 | `chat.useCustomizationsInParentRepositories` |
-| 9 | Memory prüfen und einschalten |
-| 10 | Modell bewusst wählen statt `Auto` |
-| 11 | `/plan` vor allem, was mehr als eine Datei anfasst |
-
-Note:
-Vertiefung. Nur zeigen, wenn jemand danach fragt — sonst ist das Handout
-der richtige Ort dafür.
-
-Das Handout muss vor dem Vortrag stehen und verlinkbar sein.
+Die frühere Vertiefungsfolie mit der langen Liste ist bewusst raus — die stand
+eins zu eins im Handout. Wenn jemand die Vollversion will: Link.

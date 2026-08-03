@@ -27,13 +27,13 @@
 
       body {
         margin: 0;
-        padding: 10mm;
+        padding: 6mm 8mm;
         background: #fff;
         color: var(--fg);
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans",
           Helvetica, Arial, sans-serif;
-        font-size: 8.6pt;
-        line-height: 1.35;
+        font-size: 8.5pt;
+        line-height: 1.3;
       }
 
       /* --- Kopf ---------------------------------------------------------- */
@@ -64,14 +64,14 @@
 
       .cols {
         column-count: 2;
-        column-gap: 7mm;
+        column-gap: 6mm;
         column-fill: auto;
-        height: 245mm;
+        height: 228mm;
       }
 
       section {
         break-inside: avoid;
-        margin-bottom: 3.2mm;
+        margin-bottom: 2.5mm;
       }
 
       h2 {
@@ -103,7 +103,7 @@
       }
 
       li {
-        margin-bottom: 0.7mm;
+        margin-bottom: 0.5mm;
       }
 
       p {
@@ -125,7 +125,7 @@
       }
 
       td {
-        padding: 0.7mm 0;
+        padding: 0.55mm 0;
         vertical-align: top;
         border-bottom: 1px solid var(--line);
       }
@@ -244,9 +244,10 @@
         <table>
           <tr><td><code>/plan</code></td><td>Plan vor der Umsetzung</td></tr>
           <tr><td><code>/init</code></td><td>Instructions erzeugen</td></tr>
-          <tr><td><code>/compact</code></td><td>langen Chat zusammenfassen</td></tr>
-          <tr><td><code>/fork</code></td><td>Session abzweigen</td></tr>
-          <tr><td><code>/clear</code></td><td>neue Session</td></tr>
+          <tr><td><code>/create-instructions</code></td>
+              <td>eine bestimmte Regel erzeugen</td></tr>
+          <tr><td><code>/compact</code> <code>/fork</code> <code>/clear</code></td>
+              <td>Chat kürzen · abzweigen · neu</td></tr>
           <tr><td><code>/explain</code> <code>/fix</code> <code>/tests</code></td>
               <td>die Klassiker</td></tr>
         </table>
@@ -265,18 +266,17 @@
               <td>aktuelle Doku statt Trainingswissen</td></tr>
         </table>
         <p style="margin-top:1.2mm">
-          Bei <code>#fetch</code>: fremder Seiteninhalt ist Text, den du nicht
-          kontrollierst. Doku holen, nicht irgendwas.
+          <code>#fetch</code> holt fremden Text in den Kontext — Doku holen,
+          nicht irgendwas.
         </p>
       </section>
 
       <section>
         <h2>Vier Sachen zum Prompt</h2>
         <ol>
-          <li>Konkret sein — Sprache, Framework, Rahmenbedingungen</li>
-          <li>Zerlegen — kein ganzes Feature am Stück</li>
-          <li><strong>Sagen, wie das Ergebnis aussehen soll</strong> —
-            Testfälle, erwartete Werte</li>
+          <li>Konkret sein — Sprache, Framework, Grenzen</li>
+          <li>Zerlegen — kein Feature am Stück</li>
+          <li><strong>Testfälle mitgeben</strong> — die sind die Abnahme</li>
           <li>Rückfragen einfordern statt raten lassen</li>
         </ol>
       </section>
@@ -284,19 +284,17 @@
       <section>
         <h2>Wenn er Mist baut</h2>
         <p>Im Chat über den Request hovern →
-          <strong>Restore Checkpoint</strong>. Dateien sind zurück, der Request
-          verschwindet aus dem Verlauf, <strong>Redo</strong> geht.
-          Kein Ersatz für Git.</p>
+          <strong>Restore Checkpoint</strong>. Dateien zurück,
+          <strong>Redo</strong> geht. Kein Ersatz für Git.</p>
       </section>
 
       <section>
         <h2>Credits sparen</h2>
         <ul>
-          <li>Neuer Chat bei neuem Thema — sonst zahlst du den alten Verlauf mit</li>
-          <li><code>/compact</code>, wenn der Chat lang wird</li>
-          <li>Ungenutzte Tools abschalten (<em>Configure Tools</em>)</li>
-          <li>Generierte Dateien ausschließen —
-            <code>.gitignore</code>, <code>files.exclude</code></li>
+          <li>Neuer Chat je Thema, <code>/compact</code> bei langen — sonst
+            zahlst du den alten Verlauf mit</li>
+          <li>Ungenutzte Tools aus, generierte Dateien via
+            <code>files.exclude</code> raus</li>
         </ul>
       </section>
 
@@ -307,18 +305,6 @@
               <td>Rückwärtsgang im Chat</td></tr>
           <tr><td><code>chat.useCustomizationsInParentRepositories</code></td>
               <td>Instructions aus dem Eltern-Ordner, für mehrere Repos</td></tr>
-          <tr><td><code>chat.agent.sandbox.enabled</code></td>
-              <td>schränkt Datei- und Netzzugriff ein (macOS, Linux, WSL2)</td></tr>
-        </table>
-      </section>
-
-      <section>
-        <h2>Tastenkürzel</h2>
-        <table>
-          <tr><td><code>Strg+Alt+I</code></td><td>Chat öffnen</td></tr>
-          <tr><td><code>Strg+N</code></td><td>neue Session</td></tr>
-          <tr><td><code>Strg+I</code></td><td>Inline-Chat</td></tr>
-          <tr><td><code>Strg+Alt+.</code></td><td>Modell-Picker</td></tr>
         </table>
       </section>
 
@@ -328,8 +314,7 @@
         <table>
           <tr><td>Session</td><td>der Plan. Nach dem Chat weg</td></tr>
           <tr><td>Repository</td><td>wie <em>dieses</em> Projekt gebaut wird</td></tr>
-          <tr><td>User</td><td>wie <em>du</em> arbeitest — erste 200 Zeilen
-            landen in jedem Chat</td></tr>
+          <tr><td>User</td><td>wie <em>du</em> arbeitest — 200 Zeilen in jedem Chat</td></tr>
         </table>
       </section>
 
@@ -356,8 +341,7 @@
               <td>kuratierte Einzelteile zum Rauspicken</td></tr>
           <tr><td><code>affaan-m/ECC</code></td>
               <td>ein durchgebautes Gesamtsystem — dort in
-                <code>.github/copilot-instructions.md</code> und
-                <code>.github/prompts/</code> schauen</td></tr>
+                <code>.github/copilot-instructions.md</code> schauen</td></tr>
         </table>
         <p style="margin-top:1.2mm">Nicht übernehmen — lesen, <em>wie</em> die
           geschrieben sind.</p>

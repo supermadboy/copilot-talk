@@ -43,8 +43,8 @@ Zeile ergänzen. Sonst kippt genau hier das Aktualitätsversprechen.
 
 ## Drei Sachen, die was bringen
 
-- **Vision** — habt ihr gerade gesehen
-- **Browser-Tools** — der Agent testet die Web-App selbst
+- **Vision** — gerade gesehen
+- **Browser-Tools** — er testet die Web-App selbst
 - **Parallele Chats** — Implementierung und Review getrennt
 
 <p class="stand">VS Code 1.129.1</p>
@@ -73,9 +73,9 @@ Abbinder: "So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema."
 
 ## Browser-Tools: was der Agent kann
 
-- Seiten öffnen, klicken, tippen, Dialoge wegklicken
+- Klicken, tippen, Dialoge wegklicken
 - Konsolen-Fehler lesen, Screenshots machen
-- Playwright-Code ausführen für längere Abläufe
+- Playwright-Code für längere Abläufe
 - Eure Tabs bleiben privat bis *Share with Agent*
 
 <p class="stand">VS Code 1.129.1</p>

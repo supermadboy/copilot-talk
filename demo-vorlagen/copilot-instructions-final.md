@@ -53,6 +53,11 @@ Woche zu sichtbar falschen Summen auf.
 **Formatierung passiert nur in `format.ts`**, nie inline im Rendering. Grund:
 sonst driften die Darstellungen zwischen Liste und Summenzeile auseinander.
 
+**Gemeinsam genutzte Typen liegen in `src/types.ts`**, nicht lokal im Modul.
+Grund: `Entry` und `WeekSummary` werden von mehreren Dateien importiert, und
+sobald Typen verstreut liegen, wandern Felder auseinander statt an einer Stelle
+gepflegt zu werden.
+
 **Neue Abhängigkeiten nur nach Rückfrage.** Das Projekt kommt absichtlich mit
 drei Dev-Dependencies aus.
 

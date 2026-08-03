@@ -1,3 +1,31 @@
+<!-- .slide: class="interaction" data-interaction="Teams-Reaktion" data-background-color="#1d523d" -->
+
+## 👍 Womit arbeitet ihr?
+
+Erst: wer **VS Code**
+
+Dann: wer **etwas anderes**
+
+<p>Reaktionsleiste — nicht in den Chat.</p>
+
+Note:
+Zeit: 0:01 — **zwanzig Sekunden, zwei Runden.**
+
+"Ganz kurz, damit ich weiß, mit wem ich es zu tun habe."
+
+1. "Daumen hoch, wer VS Code benutzt." → **laut auszählen**
+2. "Und jetzt Daumen hoch, wer mit was anderem arbeitet — IntelliJ, Rider, was
+   auch immer." → **laut auszählen**
+
+**Ergebnis merken, du brauchst es zweimal:**
+- gleich, um Block 2 flacher oder tiefer zu fahren
+- in Block 4, wo du darauf zurückkommst statt nochmal zu fragen
+
+Bewusst die leichte Frage zuerst — ein Daumen kostet nichts. Danach sitzt die
+Chat-Frage lockerer.
+
+---
+
 <!-- .slide: class="interaction" data-interaction="Jetzt in den Chat" data-background-color="#3d1d52" -->
 
 ## Was nervt euch an Copilot?
@@ -55,9 +83,9 @@ Details zum Ablauf: demo-ablauf.md, Demo 1.
 
 ## Warum das mehr ist als ein Trick
 
-- Der Weg *Fehler beschreiben → Modell rät* fällt weg
-- Funktioniert auch mit PDFs: Ticket, Mockup, Fehlerreport
-- Screenshot-Kontext direkt aus VS Code: ganzer Screen oder Ausschnitt
+- Kein Beschreiben mehr, kein Raten
+- Auch PDFs: Ticket, Mockup, Fehlerreport
+- Screenshot direkt aus VS Code
 
 Note:
 Optionale Vertiefung. Nur zeigen, wenn im Chat nachgefragt wird.
@@ -68,12 +96,10 @@ Optionale Vertiefung. Nur zeigen, wenn im Chat nachgefragt wird.
 
 <p class="kicker">Vier Blöcke</p>
 
-| | | |
-| --- | --- | --- |
-| **1** | Was gerade neu ist | 3 min |
-| **2** | Wie ich arbeite | 18 min |
-| **3** | Was ihr in euer Repo legt | 14 min |
-| **4** | Regeln bei uns, und eure Fragen | Rest |
+1. Was gerade neu ist
+2. **Wie ich arbeite**
+3. **Was ihr in euer Repo legt**
+4. Regeln bei uns, und eure Fragen
 
 Note:
 Zeit: 0:05 — maximal eine Minute. Orientierung, kein Inhalt.
