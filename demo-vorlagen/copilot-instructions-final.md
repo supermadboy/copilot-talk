@@ -1,14 +1,3 @@
-<!--
-  DEMO-REQUISITE für Demo 7 (`/init`).
-
-  Das ist die überarbeitete Fassung, die Markus im Split-View NEBEN das
-  Ergebnis von `/init` legt. Sie liegt bewusst NICHT in demo-repo/, damit
-  `/init` sie nicht sieht und daraus abschreibt.
-
-  Am Vortragstag: Inhalt kopieren, im Split-View neben der generierten
-  .github/copilot-instructions.md öffnen.
--->
-
 # Zeiterfassung
 
 Wochenweise Erfassung von Arbeitszeiten. Kleine Single-Page-App ohne Backend,
