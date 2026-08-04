@@ -2,9 +2,9 @@
 
 ## Was bei uns gilt
 
-- Platzhalter
-- Platzhalter
-- Platzhalter
+- preview Features sind disabled
+- Guthaben ist jederzeit auffüllbar
+- Opencode als neue Alternative
 
 Note:
 Zeit: 0:44 — drei Minuten.

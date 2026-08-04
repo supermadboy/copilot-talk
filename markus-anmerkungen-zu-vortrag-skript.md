@@ -31,3 +31,12 @@ Noch ein nices feature was ich zeigen will wie man einen erequest anschauen kann
 
 
 Damit bin ich jetzt fertig und alels ist erledigt oder?
+
+Folie habe ich selbst ausgefuellt bezueglich den Firmenregeln
+
+Formslink muss ich auhc onch hinzufügen, habe jetzt aber einen
+
+# Anmerkungen zum Vortrag
+
+- Die Erste Folie sollte die was nervt euch an copilot sein
+- Danach die Folie mit Womit arbeitet ihr. Das wuerde ich aber auch umformulieren: Welche IDE benutzt ihr? Antworten in Chat
