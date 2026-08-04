@@ -40,3 +40,4 @@ Formslink muss ich auhc onch hinzufügen, habe jetzt aber einen
 
 - Die Erste Folie sollte die was nervt euch an copilot sein
 - Danach die Folie mit Womit arbeitet ihr. Das wuerde ich aber auch umformulieren: Welche IDE benutzt ihr? Antworten in Chat
+- Entferne das mit dem anonym noch auf der letzten Seite und sag dass die Leute gerne das Forms noch ausfuellen und falls da noch etwas herauskommt dann werde ich es im chat noch schreiben und ansonstn einfahc in der naechsten session ainbindne.
