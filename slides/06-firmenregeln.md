@@ -9,18 +9,20 @@
 Note:
 Zeit: 0:44 — drei Minuten.
 
-**Diese Folie füllt Markus selbst.** Inhalte zu internen Regeln, Policies und
-Lizenzverträgen werden nicht generiert — hier steht nur, was tatsächlich gilt.
+**Inhalt steht von Markus** (05.08.2026). Nichts hier wird generiert oder
+ergänzt — es gilt nur, was tatsächlich gilt.
 
-Kandidaten, die aus dem Vortrag heraus naheliegen:
-- Nur Copilot ist freigegeben — was heißt das konkret für Modelle im Picker
-- Was darf in einen Prompt und was nicht
-- Wer erhöht das Credit-Budget, und wie fragt man das an
-- Sind Browser-Tools, MCP und Memory freigegeben oder per Policy gesperrt
-- Wer ist ansprechbar bei Problemen
+Zu den drei Punkten, je ein bis zwei Sätze:
+- **Preview-Features sind aus.** Sag dazu, was das für den Vortrag heißt: was
+  du gezeigt hast, ist keine Preview — außer du hast es an der Stelle
+  ausdrücklich gesagt
+- **Guthaben ist auffüllbar.** Nimmt der Credit-Angst die Schärfe: 30 $ sind
+  kein Deckel, an dem der Monat endet
+- **Opencode als neue Alternative.** Der Punkt gehört dir — nur das sagen, was
+  tatsächlich entschieden ist, keine Einschätzung dazu erfinden
 
-Wenn eine dieser Fragen unklar ist: lieber "weiß ich nicht, ich kläre das"
-sagen als raten. Das Publikum merkt den Unterschied.
+Wenn aus dem Publikum etwas kommt, das du nicht sicher weißt: "weiß ich nicht,
+ich kläre das" — und danach wirklich klären. Das Publikum merkt den Unterschied.
 
 ---
 

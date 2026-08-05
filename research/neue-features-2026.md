@@ -96,6 +96,31 @@ compatibility". Workspace- und User-Prompt-Files anzeigen, gezielt migrieren.
 - **GitHub-Enterprise-Authentifizierung** für Copilot (1.129)
 - **MCP OAuth**: vorregistrierte Client-ID mit Secret Storage
 
+## Chat Debug View — im Vortrag als Vertiefung
+
+Nachgeprüft am **05.08.2026** gegen die Primärquelle, weil Markus das live
+zeigen will.
+
+Quelle: <https://code.visualstudio.com/docs/copilot/chat/chat-debug-view>
+(*Debug chat interactions*)
+
+- **Name der Ansicht:** *Chat Debug view*. **Nicht** als Preview markiert
+- **Zwei Wege rein:**
+  - Überlaufmenü der Chat-Ansicht → *Show Chat Debug View*
+  - Command Palette → *Developer: Show Chat Debug View*
+- **Was drinsteht:** links die Requests der Sitzung, nach Agent gruppiert.
+  Beim Anklicken aufklappbare Abschnitte *System prompt*, *User prompt*,
+  *Context*, *Response*, *Tool responses*
+- **Für den Vortrag relevant** ist der Abschnitt *Context* — er belegt den
+  Kernsatz "was nicht im Kontext ist, existiert für das Modell nicht"
+
+**Nicht verwechseln** mit dem *Agent Debug Log panel*: eigene Ansicht, **in
+Preview**, braucht das Setting
+`github.copilot.chat.agentDebugLog.fileLogging.enabled`, öffnet über
+*Show Agent Debug Logs* bzw. *Developer: Open Agent Debug Logs*. Zeigt
+Zeitachse, Agent-Flowchart, Token-Statistik und Cache Explorer. Preview-Features
+sind in der Firma aus — also live nicht aufmachen.
+
 ## Was NICHT in den Vortrag gehört
 
 Firmenregel: nur GitHub Copilot. Diese Neuerungen fallen damit raus:

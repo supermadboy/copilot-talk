@@ -463,6 +463,22 @@ Rücksetzpunkt mit.
 
 ## Probelauf am 04.08.2026 — drei Sachen gezielt testen
 
+> ✅ **Erledigt am 04.08.2026. Alle drei bestanden, eine Anpassung nötig.**
+>
+> - **Test 1 · Plan per Folge-Prompt:** lief sauber, er hat nur den Plan
+>   geändert. Kein „implementiere noch nicht" nötig.
+> - **Test 2 · `/init`:** funktioniert **nicht** mit `/init` allein. Der
+>   funktionierende Prompt steht in `vortragstag.md`, 0:29 — er muss aufs
+>   `demo-repo` gezeigt bekommen und `copilot-instructions-final.md`
+>   ausdrücklich ignorieren.
+> - **Test 3 · Memory:** landet wie behauptet auf User-Ebene, Folie stimmt.
+> - Nebenbei: `chat.checkpoints.enabled` ist an und funktioniert, die
+>   Kostenanzeige ist gefunden, `#fetch` auf `code.visualstudio.com/updates`
+>   läuft.
+>
+> Der Rest dieses Abschnitts bleibt als Protokoll stehen — was geprüft wurde
+> und warum.
+
 Alle drei sind Stellen, an denen auf den Folien etwas behauptet wird, das noch
 nicht überprüft ist. Wenn eine davon nicht so funktioniert, muss die Folie
 geändert werden — nicht die Erzählung.

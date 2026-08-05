@@ -38,30 +38,10 @@ Am Ende kriegt ihr eine Checkliste, da steht alles drauf.
 Zwei Sachen vorweg: ich mache viel live, und wenn was schiefgeht, gehe ich
 einfach weiter. Und schreibt Fragen jederzeit in den Chat, ich sammle die ein.
 
-### 0:01 Wer arbeitet womit?
+### 0:00 Die Chat-Frage
 
-▸ Interaktionsfolie, Reaktionsleiste. **Zwanzig Sekunden, zwei Runden.**
-
-Ganz kurz, damit ich weiß, mit wem ich es zu tun habe. Daumen hoch, wer VS Code
-benutzt.
-
-▸ Auszählen, laut sagen.
-
-Und jetzt Daumen hoch, wer mit was anderem arbeitet — IntelliJ, Rider, was auch
-immer.
-
-▸ Auszählen, laut sagen.
-
-▸ **Das Ergebnis merken, du brauchst es zweimal:** einmal, um Teil 2 flacher
-oder tiefer zu fahren, und einmal in Teil 4, wo du darauf zurückkommst statt
-nochmal zu fragen.
-
-▸ Bewusst die leichte Frage zuerst — ein Daumen kostet nichts. Danach sitzt die
-Chat-Frage lockerer.
-
-### 0:01 Die Chat-Frage
-
-▸ Interaktionsfolie. **Hier passiert nichts von alleine.**
+▸ **Erste Folie des Vortrags.** Interaktionsfolie. **Hier passiert nichts von
+alleine.**
 
 Bevor ich anfange, brauche ich was von euch. Schreibt mir bitte eine Sache in
 den Chat, die euch an Copilot nervt. Eine reicht.
@@ -75,6 +55,24 @@ Gut, danke. Ich komme am Ende darauf zurück.
 
 ▸ Du siehst jetzt, ob das eher Einsteiger oder Vielnutzer sind. Teil 2
 entsprechend flacher oder tiefer fahren.
+
+### 0:02 Welche IDE benutzt ihr?
+
+▸ Interaktionsfolie, **auch über den Chat**. Zwanzig Sekunden, nicht mehr.
+
+Und gleich noch was hinterher, damit ich weiß, mit wem ich es zu tun habe:
+welche IDE benutzt ihr? Ein Wort reicht — VS Code, IntelliJ, Rider, was auch
+immer.
+
+▸ Grob auszählen, laut sagen.
+
+▸ Die Frage läuft parallel zur vorherigen, die Antworten kommen gemischt rein.
+Das ist in Ordnung — solange die Leute ohnehin tippen, kostet die zweite Frage
+fast nichts.
+
+▸ **Das Ergebnis merken, du brauchst es zweimal:** einmal, um Teil 2 flacher
+oder tiefer zu fahren, und einmal in Teil 4, wo du darauf zurückkommst statt
+nochmal zu fragen. Nennt niemand etwas anderes als VS Code, fällt Teil 4 weg.
 
 ### 0:03 Der Hook — Live-Demo 1
 
@@ -535,6 +533,35 @@ Und der häufigste Fehler in die andere Richtung: alles reinwerfen. Das große
 Kontextfenster vollzumachen kostet Geld und macht die Antwort schlechter, nicht
 besser.
 
+### 0:26 Nachsehen, was er wirklich bekommen hat
+
+▸ **Vertiefung, eigene Vertikale. 60 Sekunden, live.** Kennen auch Vielnutzer
+meistens nicht. Bei Zeitnot ersatzlos weglassen.
+
+Ich sage die ganze Zeit: was nicht im Kontext ist, existiert für das Modell
+nicht. Das könnt ihr euch auch ansehen.
+
+▸ Chat-Menü → *Show Chat Debug View*. Alternativ Command Palette →
+*Developer: Show Chat Debug View*.
+
+Links stehen alle Requests dieser Sitzung. Ich klick einen an —
+
+▸ Einen Request von vorhin anklicken, den Abschnitt **Context** aufklappen.
+
+— und hier steht drin, was tatsächlich mitgegangen ist. System Prompt, mein
+Prompt, der Kontext, die Tool-Antworten.
+
+Wenn ihr euch also mal fragt, warum er etwas nicht wusste: hier steht die
+Antwort. Meistens war es einfach nicht dabei.
+
+▸ Aufklappen, zeigen, zumachen. **Nicht ausbreiten** — der System Prompt ist
+lang, da verliert man sich.
+
+▸ **Nicht verwechseln** mit den *Agent Debug Logs*: andere Ansicht, Preview,
+eigenes Setting. Live nicht aufmachen.
+
+▸ Quelle: VS Code Docs, *Debug chat interactions*. Stand 05.08.2026.
+
 **Vier Sachen zum Prompt selbst**, die laut Doku am meisten bringen:
 
 1. **Konkret sein** — Sprache, Framework, Rahmenbedingungen nennen. Nicht
@@ -900,25 +927,21 @@ Danke fürs Zuhören.
 allgemein, dann das Danke — und *danach* die Feedback-Folie. Wer gehen will,
 ist beim Danke raus; wer bleibt, gibt dir brauchbares Feedback.
 
-▸ **Wichtig: Markus hält denselben Vortrag eine Woche später nochmal.**
-
 Eine Sache noch, bevor ihr geht.
 
-Ich hab euch gerade einen Link in den Chat gestellt. Der ist **anonym** und
-dauert zwei Minuten.
+Ich hab euch gerade einen Link in den Chat gestellt, das dauert zwei Minuten.
+Füllt das gerne noch aus.
 
-Warum ich das will, sage ich ehrlich: ich halte denselben Vortrag nächste Woche
-nochmal, und ich baue aus euren Antworten das Handout. Dann steht da drin, was
-ihr wirklich braucht, und nicht nur, was ich für wichtig halte.
+Wenn da was rauskommt, das eine Antwort braucht, schreibe ich es euch in den
+Chat. Und alles, was größer ist, baue ich in die nächste Session ein.
 
 Der Link bleibt offen — ihr könnt das auch heute Abend noch machen.
 
 ▸ **Link vorher vorbereiten und beim Anzeigen der Folie in den Chat posten.**
 Nicht erst suchen.
 
-▸ **Anonym ist der Punkt.** In einer internen Runde schreibt niemand
-"war zu oberflächlich" mit seinem Namen dran. Das ansagen, sonst nimmt es
-niemand als Einladung wahr.
+▸ **"Bleibt offen" laut sagen** — damit kriegst du auch die, die beim Danke
+schon raus sind.
 
 ▸ Die drei Fragen im Formular — konkret, nicht "gibt's Feedback":
 - Was war zu schnell?

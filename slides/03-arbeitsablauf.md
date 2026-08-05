@@ -476,6 +476,43 @@ der Rest ist Geschmackssache.
 Quelle: VS Code Docs, *Security* — Prompt Injection über Tool-Ausgaben.
 **Ein Satz. Kein Sicherheitsvortrag.**
 
+--
+
+## Nachsehen, was er wirklich bekommen hat
+
+- Chat-Menü → **Show Chat Debug View**
+- Links jeder Request, einzeln anklickbar
+- Drin: System Prompt, User Prompt, **Context**, Tool-Antworten
+
+<p class="stand">Stand: 05.08.2026, VS Code 1.129.1</p>
+
+Note:
+Vertiefung, Vertikale unter "Kontext gezielt geben". **60 Sekunden, live.**
+
+Das ist der Punkt, an dem "was nicht im Kontext ist, existiert für das Modell
+nicht" vom Merksatz zum Nachweis wird. **Kennen auch Vielnutzer meistens nicht.**
+
+Zwei Wege rein, beide funktionieren:
+- Überlaufmenü der Chat-Ansicht → *Show Chat Debug View*
+- Command Palette → *Developer: Show Chat Debug View*
+
+Ablauf: einen der Requests von vorhin anklicken, den Abschnitt **Context**
+aufklappen. Dann sieht man schwarz auf weiß, was von `#file` und `#codebase`
+tatsächlich mitgegangen ist — und wie viel Text der System Prompt schon vorher
+belegt.
+
+Kernsatz: "Wenn ihr euch mal fragt, warum er etwas nicht wusste — hier steht
+die Antwort. Meistens war es einfach nicht dabei."
+
+Nicht ausbreiten. Aufklappen, zeigen, zumachen. Der System Prompt ist lang, da
+verliert man sich sonst.
+
+**Verwechslungsgefahr:** es gibt daneben noch die *Agent Debug Logs* (Preview,
+eigenes Setting) mit Zeitachse und Token-Statistik. Nicht dasselbe, hier nicht
+aufmachen.
+
+Quelle: VS Code Docs, *Debug chat interactions*.
+
 ---
 
 ## Vier Sachen zum Prompt

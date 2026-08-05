@@ -65,6 +65,7 @@ Der Punkt, der remote am ehesten wehtut — du zeigst echte Arbeitsumgebungen.
 - [ ] Demo 5 — Memory-Files-Übersicht
 - [ ] Demo 6 — `#fetch`-Ergebnis
 - [ ] Demo 7 — `/init`-Ergebnis neben der überarbeiteten Fassung
+- [ ] Chat Debug View — ein Request mit aufgeklapptem `Context`
 
 ---
 
@@ -73,20 +74,19 @@ Der Punkt, der remote am ehesten wehtut — du zeigst echte Arbeitsumgebungen.
 Alles, was du tippst oder klickst, in Reihenfolge.
 **Fett** = du musst etwas tun, sonst passiert nichts.
 
-## 0:01 · Umfrage IDE
-
-> **Reaktionsleiste, zwei Runden, je auszählen:**
-> 1. "Daumen hoch, wer VS Code benutzt."
-> 2. "Und wer mit was anderem arbeitet."
->
-> **Ergebnis merken** — du brauchst es in Block 2 (Tiefe) und Block 4.
-> VS Code: ____   Andere: ____
-
-## 0:01 · Chat-Frage
+## 0:00 · Chat-Frage — was nervt euch?
 
 > **Warten. 45 bis 60 Sekunden. Wirklich schweigen.**
 > Die ersten zwei, drei Antworten laut vorlesen.
 > Antworten für Block 4 offen lassen.
+
+## 0:02 · Umfrage IDE — auch in den Chat
+
+> "Welche IDE benutzt ihr? Ein Wort reicht."
+> Läuft parallel zur Frage davor. **Grob auszählen.**
+>
+> **Ergebnis merken** — du brauchst es in Block 2 (Tiefe) und Block 4.
+> VS Code: ____   Andere: ____
 
 ## 0:03 · Demo 1 — Vision
 
@@ -190,6 +190,17 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 > Danach **ein Satz** zu Prompt Injection: was von einer fremden Seite
 > reinkommt, ist Text, den du nicht kontrollierst.
 
+## 0:26 · Chat Debug View (Vertikale, willst du zeigen)
+
+- Chat-Menü → **Show Chat Debug View**
+  (oder Palette → *Developer: Show Chat Debug View*)
+- Einen Request von vorhin anklicken → Abschnitt **Context** aufklappen
+
+> **60 Sekunden.** Aufklappen, zeigen, zumachen.
+> Satz dazu: "Wenn ihr euch fragt, warum er was nicht wusste — hier steht die
+> Antwort. Meistens war es einfach nicht dabei."
+> **Nicht** in die *Agent Debug Logs* abbiegen, das ist etwas anderes.
+
 ## 0:27 · Teams-Reaktion
 
 > **Explizit sagen:** "Daumen hoch, oben in der Reaktionsleiste — wer eine
@@ -198,8 +209,13 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 
 ## 0:29 · Demo 7 — `/init`
 
+**Genau so tippen — im Probelauf am 04.08. so gefunden.** `/init` allein reicht
+nicht: er muss aufs `demo-repo` gezeigt bekommen, und die fertige Vorlage muss
+er explizit ignorieren, sonst schreibt er sie ab:
+
 ```
-/init
+mach ein /init fuer das demo-repo
+Und lese NICHT copilot-instructions-final.md diese Datei ein
 ```
 
 1. Laufen lassen, erzeugte Datei aufmachen, kurz durchscrollen
@@ -237,10 +253,11 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 2. **Danke** — hier ist der Vortrag zu Ende, wer gehen will, geht
 3. **Was hat gefehlt?** — die Feedback-Folie kommt **hinter** dem Danke
 
-> **Formular-Link in den Chat.** "Anonym, zwei Minuten, bleibt offen — geht
-> auch heute Abend noch."
-> Begründung dazusagen: "Ich halte den Vortrag nächste Woche nochmal und baue
-> aus euren Antworten das Handout."
+> **Formular-Link in den Chat.** "Zwei Minuten, bleibt offen — geht auch heute
+> Abend noch."
+> Begründung dazusagen: "Wenn da was rauskommt, das eine Antwort braucht,
+> schreibe ich es euch in den Chat. Alles Größere baue ich in die nächste
+> Session ein."
 >
 > Nicht nach dem Danke abmoderieren und schließen — es kommt noch eine Folie.
 > **Chat-Antworten wegspeichern, bevor das Meeting zugeht.**
@@ -256,3 +273,33 @@ Was ist in dieser Version neu, in drei Stichpunkten?
 | Antwort dauert lang | Weiterreden, nicht schweigend warten |
 | Zeit wird knapp | Block 4, Prompt-Tipps, Credit-Hebel, Custom Agents streichen — **Demos bleiben** |
 | Du bist bei 30 min durch | Nach dem Schlusssatz aufhören, in die Fragen gehen |
+
+---
+
+# Teil C — Nachbereitung
+
+Direkt danach, solange das Meeting noch offen ist:
+
+- [ ] **Chat-Antworten wegspeichern**, bevor das Meeting zugeht — sonst sind
+      sie weg
+- [ ] **Aufnahme stoppen**, falls aufgezeichnet wurde
+
+Noch am selben Tag:
+
+- [ ] **Alle Links in den Chat posten** — gesammelt, auch die, die du während
+      des Vortrags schon einzeln geschickt hast:
+      - `code.visualstudio.com/docs/agents/best-practices`
+      - `code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet`
+      - `github.com/github/awesome-copilot`
+      - `code.visualstudio.com/updates`
+- [ ] **Feedback-Formular nochmal posten** — mit dem Satz, dass es offen bleibt.
+      Wer beim Danke schon raus war, hat den Link sonst nie gesehen
+- [ ] **Handout verteilen** (`handout.html`)
+- [ ] **Foliensatz als PDF in den SharePoint hochladen** und den Link in den
+      Chat. Dann kann sich jeder das selbst runterladen und weitergeben
+
+In den Tagen danach:
+
+- [ ] **Formular-Antworten durchgehen.** Was eine kurze Antwort braucht: in den
+      Chat. Was größer ist: in die nächste Session einbauen
+- [ ] Demo-Repo als ZIP exportieren, falls danach gefragt wurde

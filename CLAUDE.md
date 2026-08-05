@@ -19,12 +19,18 @@ Tool, das in der Firma erlaubt ist. Entwickelt wird unter WSL.
 
 Diese vier Punkte überschreiben im Zweifel jede andere Entscheidung.
 
-1. **Nur GitHub Copilot in VS Code.** Keine Inhalte zu Claude Code, Codex-CLI,
-   Cursor, BYOK-Modellen oder der Ollama-Extension – auch nicht als Vergleich.
-   **Auch Copilot CLI und Cloud-Agent nicht erwähnen** – beides ist in der Firma
-   nicht erlaubt. Das betrifft besonders die Skills-Argumentation: der Vorteil
-   von Skills ist hier **nicht** die Portabilität zu CLI und Cloud-Agent,
-   sondern die dreistufige Ladung (Tokenersparnis) und mitgelieferte Skripte.
+1. **Nur GitHub Copilot in VS Code.** Der Vortrag behandelt kein anderes Tool –
+   keine Inhalte zu Claude Code, Codex-CLI, Cursor, BYOK-Modellen oder der
+   Ollama-Extension, auch nicht als Vergleich. **Auch Copilot CLI und
+   Cloud-Agent nicht erwähnen** – beides ist in der Firma nicht erlaubt. Das
+   betrifft besonders die Skills-Argumentation: der Vorteil von Skills ist hier
+   **nicht** die Portabilität zu CLI und Cloud-Agent, sondern die dreistufige
+   Ladung (Tokenersparnis) und mitgelieferte Skripte.
+
+   **Kein Redeverbot für Randnotizen.** Gemeint ist: Markus hält keinen Vortrag
+   *über* andere Tools, er beschränkt sich auf VS Code. Ein Halbsatz zur
+   Herkunft eines fremden Repos (Hackathon, ECC) ist davon nicht betroffen und
+   bleibt drin. Entschieden am 05.08.2026.
 2. **Keine Firmen-Interna erfinden.** Alles zu internen Regeln, Policies,
    Lizenzverträgen oder konkreten Projekten kommt ausschließlich von Markus.
    Im Zweifel nachfragen statt plausibel klingende Beispiele generieren.
@@ -41,8 +47,12 @@ Diese vier Punkte überschreiben im Zweifel jede andere Entscheidung.
 - Speaker Notes: pro Folie **kumulative Uhrzeit** ("hier bist du bei 0:18"),
   nicht nur die Dauer des Abschnitts. Markus entscheidet live über die Länge und
   muss jederzeit sehen, wo er steht
-- **Kein PDF-Export.** Markus trägt aus dem laufenden `npm start` vor. Nichts
-  in `?print-pdf` investieren, keine Print-Styles pflegen
+- **Vortragen ohne PDF.** Markus trägt aus dem laufenden `npm start` vor. Für
+  den Vortrag selbst wird nichts in `?print-pdf` investiert.
+  **Ausnahme seit 05.08.2026:** *nach* dem Vortrag geht ein PDF in den
+  SharePoint. Dafür reicht, was reveal.js von Haus aus über `?print-pdf` kann —
+  einmal prüfen, was bricht, aber keine Print-Styles pflegen. Wenn es nicht
+  brauchbar aussieht, wird stattdessen `handout.html` verteilt
 
 ## Arbeitsweise: Skript zuerst
 
@@ -207,13 +217,16 @@ erklärt den Aufbau und den Refresh-Ablauf.
 1. ~~Grundgerüst + Ordnerstruktur~~ (steht)
 2. ~~Struktur/Folienaufteilung festlegen~~ (steht, siehe "Aufbau")
 3. ~~Recherche~~ (steht, siehe `research/`)
-4. **`vortrag-skript.md` mit Markus durchgehen, bis es sitzt** ← hier stehen wir
-5. Teil 5 (Firmenregeln) von Markus befüllen lassen
-6. Folien aus dem fertigen Skript ableiten
-7. Demo-Repo auf die im Skript festgelegte Aufgabe zuschneiden
-8. Demo einmal komplett durchspielen, Fallback-Screenshots erzeugen
+4. ~~`vortrag-skript.md` mit Markus durchgehen~~ (steht)
+5. ~~Teil 5 (Firmenregeln) von Markus befüllen lassen~~ (steht, 05.08.)
+6. ~~Folien aus dem fertigen Skript ableiten~~ (steht, 49 Folien)
+7. ~~Demo-Repo auf die im Skript festgelegte Aufgabe zuschneiden~~ (steht)
+8. **Demo einmal komplett mit Uhr durchspielen, Fallback-Screenshots
+   erzeugen** ← hier stehen wir
 9. Optionale Module, nur wenn Zeit bleibt
 10. Am Vortag: Refresh-Pass auf Aktualität (siehe oben)
+11. Nach dem Vortrag: Nachbereitung, siehe `vortragstag.md` Teil C
 
-Die Folien in `slides/` sind ein **Vorgriff** und werden aus dem Skript neu
-abgeleitet, sobald es steht. Nicht daran feilen, solange Schritt 4 läuft.
+Ab Schritt 8 ist **`todo.md` die führende Liste.** Das Skript ist durch; die
+Folien in `slides/` sind jetzt die gepflegte Fassung, nicht mehr ein Vorgriff.
+Inhaltliche Änderungen weiterhin erst im Skript, dann in den Folien.

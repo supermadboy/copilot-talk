@@ -1,31 +1,3 @@
-<!-- .slide: class="interaction" data-interaction="Teams-Reaktion" data-background-color="#1d523d" -->
-
-## 👍 Womit arbeitet ihr?
-
-Erst: wer **VS Code**
-
-Dann: wer **etwas anderes**
-
-<p>Reaktionsleiste — nicht in den Chat.</p>
-
-Note:
-Zeit: 0:01 — **zwanzig Sekunden, zwei Runden.**
-
-"Ganz kurz, damit ich weiß, mit wem ich es zu tun habe."
-
-1. "Daumen hoch, wer VS Code benutzt." → **laut auszählen**
-2. "Und jetzt Daumen hoch, wer mit was anderem arbeitet — IntelliJ, Rider, was
-   auch immer." → **laut auszählen**
-
-**Ergebnis merken, du brauchst es zweimal:**
-- gleich, um Block 2 flacher oder tiefer zu fahren
-- in Block 4, wo du darauf zurückkommst statt nochmal zu fragen
-
-Bewusst die leichte Frage zuerst — ein Daumen kostet nichts. Danach sitzt die
-Chat-Frage lockerer.
-
----
-
 <!-- .slide: class="interaction" data-interaction="Jetzt in den Chat" data-background-color="#3d1d52" -->
 
 ## Was nervt euch an Copilot?
@@ -33,7 +5,7 @@ Chat-Frage lockerer.
 Eine Sache in den Chat
 
 Note:
-Zeit: 0:01
+Zeit: 0:00 — **die erste Folie des Vortrags.**
 
 **Hier passiert nichts von alleine — du musst warten.**
 
@@ -45,6 +17,34 @@ Antworten offen lassen (zweiter Monitor), du brauchst sie in Teil 6.
 
 Nebeneffekt: du siehst sofort, ob das Publikum eher Einsteiger oder Vielnutzer
 sind, und kannst Teil 2 entsprechend flach oder tief fahren.
+
+Bewusst die schwerere Frage zuerst: solange die Leute noch tippen, kommt die
+IDE-Frage gleich hinterher und wird nebenbei mitbeantwortet.
+
+---
+
+<!-- .slide: class="interaction" data-interaction="Jetzt in den Chat" data-background-color="#3d1d52" -->
+
+## Welche IDE benutzt ihr?
+
+Auch in den Chat
+
+<p>VS Code · IntelliJ · Rider · etwas anderes</p>
+
+Note:
+Zeit: 0:02 — **zwanzig Sekunden, nicht mehr.**
+
+"Und gleich noch was hinterher, damit ich weiß, mit wem ich es zu tun habe:
+welche IDE benutzt ihr? Ein Wort reicht."
+
+Läuft parallel zur Frage davor — die Antworten kommen gemischt rein, das ist
+in Ordnung. **Laut auszählen**, grob reicht.
+
+**Ergebnis merken, du brauchst es zweimal:**
+- gleich, um Block 2 flacher oder tiefer zu fahren
+- in Block 4, wo du darauf zurückkommst statt nochmal zu fragen
+
+Wenn niemand etwas anderes als VS Code nennt: Block 4 fällt live weg.
 
 ---
 
