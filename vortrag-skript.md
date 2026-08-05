@@ -131,14 +131,21 @@ umschaltet. Kostet zehn Sekunden. Wenn du in Zeitnot bist, weglassen.
 Ganz kurz zur Einordnung, warum ich den Vortrag überhaupt halte und nicht
 einfach einen Link schicke.
 
-VS Code hat am achten Juli 1.128 released. Am fünfzehnten 1.129. Am
-siebzehnten nochmal einen Fix hinterher. Drei Releases in neun Tagen.
+VS Code hat am achten Juli 1.128 released. Am fünfzehnten 1.129, am siebzehnten
+nochmal einen Fix hinterher. Am zweiundzwanzigsten 1.130, am neunundzwanzigsten
+1.131. Fünf Releases in drei Wochen — und die unterste Zeile ist von letzter
+Woche.
 
 Ich sag das nicht, um mich abzusichern — sondern weil es ehrlich gesagt
 schwierig ist, da hinterherzukommen. Ich schau da auch nicht jede Woche rein.
 Deshalb: was ich euch zeige, ist der Stand von heute.
 
-▸ Wenn zwischen heute und dem Vortrag 1.130 erschienen ist: Zeile ergänzen.
+▸ **Refresh-Pass erledigt am 05.08.2026, dem Vortragstag selbst.** 1.131 ist
+aktuell, 1.132 war noch nicht draußen. Wenn jemand mit 1.132 kommt: "dann ist
+sie heute erschienen" — das stützt den Punkt eher, als dass es ihn kaputtmacht.
+
+▸ Zahlen gegen `code.visualstudio.com/updates` und
+`github.com/microsoft/vscode/releases`.
 
 ### 0:07 Drei Sachen, die was ändern
 

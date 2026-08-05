@@ -4,7 +4,7 @@
 
 ## Was gerade passiert
 
-<p class="big muted">Neun Tage. Drei Releases.</p>
+<p class="big muted">Drei Wochen. Fünf Releases.</p>
 
 Note:
 Zeit: 0:06 — Block 1 läuft bis 0:09.
@@ -24,6 +24,10 @@ nicht einfach einen Link schicke."
 | 1.128 | 08.07.2026 |
 | 1.129 | 15.07.2026 |
 | 1.129.1 | 17.07.2026 |
+| 1.130 | 22.07.2026 |
+| **1.131** | **29.07.2026** |
+
+<p class="stand">Stand: 05.08.2026</p>
 
 Note:
 Zeit: 0:06
@@ -36,8 +40,18 @@ Deshalb: was ich euch zeige, ist der Stand von heute."
 
 Locker bleiben. Kein Haftungsausschluss-Ton.
 
-**Refresh-Pass:** ist zwischen heute und dem Vortrag 1.130 erschienen? Dann
-Zeile ergänzen. Sonst kippt genau hier das Aktualitätsversprechen.
+Wenn du einen Aufhänger brauchst: **die letzte Zeile ist eine Woche alt.**
+"Und die unterste Zeile ist von letzter Woche" reicht völlig — das sitzt
+besser als jede Zahl.
+
+**Refresh-Pass ist erledigt — am Vortragstag selbst, 05.08.2026.** 1.131 ist
+die aktuelle Version, 1.132 war zu dem Zeitpunkt noch nicht draußen. Die
+Tabelle stimmt also.
+
+Falls doch jemand mit 1.132 kommt: ehrlich sagen "dann ist sie heute
+erschienen" — das macht den Punkt der Folie eher stärker als schwächer.
+
+Quelle: `code.visualstudio.com/updates` und `github.com/microsoft/vscode/releases`.
 
 ---
 
@@ -47,7 +61,7 @@ Zeile ergänzen. Sonst kippt genau hier das Aktualitätsversprechen.
 - **Browser-Tools** — er testet die Web-App selbst
 - **Parallele Chats** — Implementierung und Review getrennt
 
-<p class="stand">VS Code 1.129.1</p>
+<p class="stand">VS Code 1.131</p>
 
 Note:
 Zeit: 0:07
@@ -78,7 +92,7 @@ Abbinder: "So, das war der Neuigkeiten-Teil. Jetzt zum eigentlichen Thema."
 - Playwright-Code für längere Abläufe
 - Eure Tabs bleiben privat bis *Share with Agent*
 
-<p class="stand">VS Code 1.129.1</p>
+<p class="stand">VS Code 1.131</p>
 
 Note:
 Vertiefung. Nur bei Nachfrage.

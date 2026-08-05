@@ -54,7 +54,7 @@ Wenn niemand etwas anderes als VS Code nennt: Block 4 fällt live weg.
 
 <p class="big">Kaputtes UI reinziehen →<br />Copilot nennt Fehler und Datei</p>
 
-<p class="stand">VS Code 1.129.1</p>
+<p class="stand">VS Code 1.131</p>
 
 Note:
 Zeit: 0:03 — LIVE-DEMO 1, harte Grenze 90 Sekunden.

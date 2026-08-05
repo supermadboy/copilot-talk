@@ -77,7 +77,7 @@ Skills.** MCP nur, wenn ihr an externe Daten müsst. Custom Agents für Rollen.
 
 <p>Copilot liest das Repo und schreibt die Datei selbst.</p>
 
-<p class="stand">VS Code 1.129.1</p>
+<p class="stand">VS Code 1.131</p>
 
 Note:
 Zeit: 0:31 — DEMO 7, zwei Minuten. Nach `/plan` die wichtigste Demo.
@@ -374,7 +374,10 @@ rausgegeben."
 Nur über Blogs belegt, also "soweit ich weiß" sagen, nicht als Fakt verkaufen.
 Ein Satz, dann weiter. Siehe research/ecc-hackathon-repo.md.
 
-**Zahlen sind Stand 03.08.2026** — beim Refresh-Pass am Vortag neu ablesen.
+**Zahlen sind Stand 03.08.2026, also zwei Tage alt.** Wenn du das Repo ohnehin
+als Tab offen hast, lies sie kurz neu ab. Wenn nicht: **rund sagen** — "gut
+zweihunderttausend Sterne", "ein paar hundert Skills". Keine exakte Zahl
+nennen, die du heute nicht geprüft hast.
 
 Falls jemand fragt, warum 281 Skills kein Widerspruch zur "kurz halten"-Regel
 sind: Skills werden dreistufig geladen, Instructions nicht.

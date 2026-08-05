@@ -348,7 +348,7 @@ Folie — **hier nicht auflösen.**
 - **User** — wie *ihr* arbeitet, überall
 - Davon **200 Zeilen in jedem Chat**
 
-<p class="stand">VS Code 1.129.1</p>
+<p class="stand">VS Code 1.131</p>
 
 Note:
 Zeit: 0:19 — DEMO 5.
@@ -484,7 +484,7 @@ Quelle: VS Code Docs, *Security* — Prompt Injection über Tool-Ausgaben.
 - Links jeder Request, einzeln anklickbar
 - Drin: System Prompt, User Prompt, **Context**, Tool-Antworten
 
-<p class="stand">Stand: 05.08.2026, VS Code 1.129.1</p>
+<p class="stand">Stand: 05.08.2026, VS Code 1.131</p>
 
 Note:
 Vertiefung, Vertikale unter "Kontext gezielt geben". **60 Sekunden, live.**

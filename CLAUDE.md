@@ -5,7 +5,7 @@
 Interner Vortrag für Arbeitskollegen. GitHub Copilot ist das einzige KI-Coding-
 Tool, das in der Firma erlaubt ist. Entwickelt wird unter WSL.
 
-- **Vortragstag:** ca. 07.08.2026 (eine Woche nach Projektstart 31.07.2026)
+- **Vortragstag:** **05.08.2026** (Projektstart 31.07.2026)
 - **Format:** **remote** (Teams o.ä.) – kein Raum, keine Handzeichen
 - **Slot:** 60 min verfügbar, mindestens 30 werden gefüllt. Markus entscheidet
   **live**, wie weit er geht – der Aufbau muss das tragen
@@ -119,7 +119,8 @@ Vortragenden kommen muss. Alle drei müssen **remote** funktionieren:
 
 Markus' wichtigster inhaltlicher Anspruch: der Vortrag muss **am Vortragstag
 aktuell** sein. VS Code liefert derzeit im Wochenrhythmus (1.128 am 08.07.2026,
-1.129 am 15.07.2026, 1.129.1 am 17.07.2026).
+1.129 am 15.07.2026, 1.129.1 am 17.07.2026, 1.130 am 22.07.2026, 1.131 am
+29.07.2026 – abgeglichen am 05.08.2026).
 
 Daraus folgen harte Regeln:
 
@@ -127,7 +128,7 @@ Daraus folgen harte Regeln:
   "Stand: <Datum>, VS Code <Version>".
 - **Refresh-Pass am Vortag.** Release Notes und GitHub Changelog gegenchecken,
   Teil 1 nachziehen. Fester Arbeitsschritt, kein Optional.
-- **Auto-Update im Demo-Profil aus.** 1.130 kann vor dem Vortrag landen und die
+- **Auto-Update im Demo-Profil aus.** 1.132 kann vor dem Vortrag landen und die
   eingeübte Demo verändern.
 - **Nie aus dem Gedächtnis über Features schreiben.** Copilot-Features ändern
   sich schneller, als Modell-Wissen mithält. Vor UI-Beschreibungen, Settingnamen

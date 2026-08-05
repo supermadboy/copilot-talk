@@ -35,8 +35,8 @@ CLion, DataGrip gleichermaßen.
 ## Wo VS Code weiter vorne liegt
 
 - **Erstzugang.** Neue Features landen zuerst hier, und das im Wochenrhythmus
-  (1.128 → 1.129 → 1.129.1 innerhalb von neun Tagen). Das ist der eigentliche
-  Unterschied, nicht eine einzelne Funktion
+  (1.128 → 1.129 → 1.129.1 → 1.130 → 1.131 in drei Wochen, Stand 05.08.2026).
+  Das ist der eigentliche Unterschied, nicht eine einzelne Funktion
 - **Agents Window** mit parallelen Sessions, Multi-Chat und Session-Gruppierung
 - **Agentic Browser Tools** (GA)
 - **Next Edit Suggestions** – laut GitHub-Doku nur VS Code, Xcode und Eclipse

@@ -435,7 +435,7 @@ Rücksetzpunkt mit.
 
 **Setup**
 
-- [ ] Auto-Update im Demo-Profil aus — 1.130 darf nicht dazwischenkommen
+- [ ] Auto-Update im Demo-Profil aus — 1.132 darf nicht dazwischenkommen
 - [ ] Schriftgrößen in VS Code hochgedreht (Editor **und** Terminal **und** Chat)
 - [ ] Screensharing-Modus festgelegt: Fenster-Share von VS Code oder
       Desktop-Share mit Alt+Tab. **Nicht am Vortragstag entscheiden.**

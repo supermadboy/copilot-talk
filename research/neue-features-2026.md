@@ -1,6 +1,10 @@
 # Neue Features – Stand 31.07.2026
 
-Aktuelle VS-Code-Version bei Recherche: **1.129.1**
+Aktuelle VS-Code-Version bei Recherche: **1.129.1**.
+**Versionstabelle nachgezogen am 05.08.2026: aktuell ist 1.131.** Die
+Feature-Beschreibungen weiter unten stammen weiterhin vom 31.07. und sind
+gegen 1.129.1 geprüft – was in 1.130 und 1.131 dazukam, ist hier **nicht**
+eingearbeitet.
 
 ## Das Release-Tempo (Material für Teil 1)
 
@@ -9,6 +13,19 @@ Aktuelle VS-Code-Version bei Recherche: **1.129.1**
 | 1.128   | 08.07.2026 |
 | 1.129   | 15.07.2026 |
 | 1.129.1 | 17.07.2026 |
+| 1.130   | 22.07.2026 |
+| 1.131   | 29.07.2026 |
+
+Quellen: `code.visualstudio.com/updates`, `github.com/microsoft/vscode/releases`
+(abgeglichen 05.08.2026). Zwischen 1.129.1 und 1.131 gab es keine weiteren
+Patch-Releases.
+
+Stichworte aus den beiden neuen Releases, **nur als Hinweis, nicht geprüft**:
+1.130 bringt Agent Host in einem eigenen Prozess, kompaktere Diffs im
+Agents-Fenster und assistierte Tool-Freigaben; 1.131 bringt Sicht auf laufende
+Subagents, Diktat im Workbench und einen experimentellen Markdown-Editor fürs
+Agents-Fenster. Vieles davon fällt unter „gehört nicht in den Vortrag" (siehe
+unten) oder ist Preview – **vor jeder Folienaussage einzeln nachlesen.**
 
 Der Juni-Changelog von GitHub deckt 1.123–1.127 ab. Das ist das
 Aktualitätsargument des Vortrags – und der Grund, warum jede Folie mit
@@ -137,7 +154,10 @@ Firmenregel: nur GitHub Copilot. Diese Neuerungen fallen damit raus:
 
 ## Offene Punkte zum Nachprüfen
 
-- [ ] Ist 1.130 vor dem Vortrag erschienen? Wenn ja: Teil 1 nachziehen
+- [x] Ist 1.130 vor dem Vortrag erschienen? **Ja — 1.130 am 22.07., 1.131 am
+      29.07.** Teil 1 ist nachgezogen (05.08.)
+- [ ] Kommt 1.132 noch vor dem Vortrag? Rhythmus ist wöchentlich, 1.131 kam am
+      29.07. — am 05.08. war sie noch nicht da. Am Vortag nochmal prüfen
 - [ ] Läuft die Prompt-File-Migration in der installierten Version stabil genug
       für eine Live-Demo? Sonst nur auf der Folie zeigen
 - [ ] Sind Browser-Tools in der Firmenumgebung nutzbar (Proxy, Policies)?
