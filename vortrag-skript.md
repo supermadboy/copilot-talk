@@ -161,6 +161,18 @@ Und die erste Frage, die immer kommt: eure offenen Tabs sind privat. Der Agent
 kommt an eine Seite, die ihr selbst geöffnet habt, erst wenn ihr auf "Share
 with Agent" klickt.
 
+Bei uns ist das anscheinend erlaubt. Ich hab's aber selbst noch nicht
+ausprobiert, deswegen erzähl ich euch hier nur, was es kann — und nicht, wie
+es sich anfühlt.
+
+▸ **Diesen Satz wirklich sagen.** Es ist die einzige Stelle im Vortrag, an der
+du über etwas redest, das du nicht selbst benutzt. Wenn danach jemand fragt
+"und, taugt das?": dieselbe Antwort, nicht spekulieren. Wer es ausprobiert hat
+und im Chat was schreibt — aufgreifen und weitergeben.
+
+▸ **Nicht live vorführen.** Ungetestet plus remote plus ein Browser, der sich
+selbst bedient, ist die schlechteste Kombination im ganzen Vortrag.
+
 ▸ Quelle: VS Code Docs, *Build and test web apps with browser agent tools*
 
 **Parallele Chats.** Mehrere Unterhaltungen in einer Session — Implementierung

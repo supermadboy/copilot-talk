@@ -56,16 +56,18 @@ Der Punkt, der remote am ehesten wehtut — du zeigst echte Arbeitsumgebungen.
 - [ ] `npm run demo:test` läuft grün
 - [ ] Die App zeigt im roten Badge `Überstunden: -10h`
 
-## Fallback-Screenshots in `images/`
+## Fallback: alte Copilot-Sessions
 
-- [ ] Demo 1 — kaputte Ansicht + Antwort von Copilot
-- [ ] Demo 2 — Workspace mit mehreren Repos
-- [ ] Demo 3 — Kostenanzeige
-- [ ] Demo 4 — fertiger Plan
-- [ ] Demo 5 — Memory-Files-Übersicht
-- [ ] Demo 6 — `#fetch`-Ergebnis
-- [ ] Demo 7 — `/init`-Ergebnis neben der überarbeiteten Fassung
-- [ ] Chat Debug View — ein Request mit aufgeklapptem `Context`
+**Entschieden am 05.08.2026: keine Screenshots in `images/`.** Ersatz sind
+deine eigenen, älteren Copilot-Sessions, in denen das Gezeigte schon einmal
+funktioniert hat.
+
+- [ ] **Die Sessions vorher heraussuchen und offen haben.** Live danach zu
+      suchen dauert länger als der Fehlschlag selbst
+- [ ] Vor allem für **Demo 1 (Vision)** — die läuft nach 90 Sekunden, da hast
+      du noch keinen Puffer
+- [ ] **Vorher reinschauen, was in der Session sonst noch steht.** Es ist eine
+      echte Session aus deiner Arbeit, und sie geht auf den Share
 
 ---
 
@@ -268,7 +270,7 @@ Und lese NICHT copilot-instructions-final.md diese Datei ein
 
 | Situation | Reaktion |
 | --- | --- |
-| Demo hakt | Nicht reparieren. Fallback-Screenshot, weiter |
+| Demo hakt | Nicht reparieren. Alte Session zeigen, weiter |
 | Repo kaputt | `npm run demo:reset` |
 | Antwort dauert lang | Weiterreden, nicht schweigend warten |
 | Zeit wird knapp | Block 4, Prompt-Tipps, Credit-Hebel, Custom Agents streichen — **Demos bleiben** |
@@ -286,17 +288,64 @@ Direkt danach, solange das Meeting noch offen ist:
 
 Noch am selben Tag:
 
-- [ ] **Alle Links in den Chat posten** — gesammelt, auch die, die du während
-      des Vortrags schon einzeln geschickt hast:
-      - `code.visualstudio.com/docs/agents/best-practices`
-      - `code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet`
-      - `github.com/github/awesome-copilot`
-      - `code.visualstudio.com/updates`
+- [ ] **Alle Links in den Chat posten** — die vollständige Liste steht unten,
+      zum Kopieren
 - [ ] **Feedback-Formular nochmal posten** — mit dem Satz, dass es offen bleibt.
       Wer beim Danke schon raus war, hat den Link sonst nie gesehen
 - [ ] **Handout verteilen** (`handout.html`)
 - [ ] **Foliensatz als PDF in den SharePoint hochladen** und den Link in den
       Chat. Dann kann sich jeder das selbst runterladen und weitergeben
+
+### Die Linkliste zum Kopieren
+
+**Deins — musst du selbst eintragen:**
+
+- Feedback-Formular: `____________________`
+- Handout: `____________________`
+- Folien im SharePoint: `____________________`
+
+**Die vier von der Schluss-Folie** (die hast du schon live gepostet):
+
+- https://code.visualstudio.com/docs/agents/best-practices
+- https://code.visualstudio.com/docs/agents/reference/ai-features-cheat-sheet
+- https://github.com/github/awesome-copilot
+- https://code.visualstudio.com/updates ← der wichtigste
+
+**Was du live gezeigt hast, aber nirgends verlinkt war:**
+
+- https://github.com/affaan-m/ECC — das zweite Repo aus Demo 8
+- https://code.visualstudio.com/docs/copilot/chat/chat-debug-view — Chat Debug
+  View
+- https://github.com/microsoft/vscode/releases — die Versionstabelle aus Block 1
+
+**Die Quellen hinter den Folien** — nur posten, wenn jemand nachfragt, sonst
+erschlägt es:
+
+| Thema | Link |
+| --- | --- |
+| Custom Instructions (VS Code) | https://code.visualstudio.com/docs/agent-customization/custom-instructions |
+| Custom Instructions (GitHub) | https://docs.github.com/en/copilot/how-tos/configure-custom-instructions/add-repository-instructions |
+| Customization im Überblick | https://code.visualstudio.com/docs/agents/concepts/customization |
+| Agent Skills | https://code.visualstudio.com/docs/agent-customization/agent-skills |
+| Custom Agents | https://code.visualstudio.com/docs/agent-customization/custom-agents |
+| Planen mit Agents | https://code.visualstudio.com/docs/agents/planning |
+| `implementation-planner` | https://docs.github.com/en/copilot/tutorials/customization-library/custom-agents/implementation-planner |
+| Memory | https://code.visualstudio.com/docs/agents/memory |
+| Checkpoints | https://code.visualstudio.com/docs/chat/chat-checkpoints |
+| Kontext | https://code.visualstudio.com/docs/agents/concepts/context |
+| Credits sparen | https://code.visualstudio.com/docs/agents/guides/optimize-usage |
+| Modellwahl | https://docs.github.com/en/copilot/reference/ai-models/choosing-the-right-ai-model-for-your-task |
+| Prompt-Regeln | https://code.visualstudio.com/docs/copilot/chat/prompt-crafting |
+| Prompt Injection / Security | https://code.visualstudio.com/docs/agents/security |
+| Instructions-Blogpost von GitHub | https://github.blog/ai-and-ml/github-copilot/unlocking-the-full-power-of-copilot-code-review-master-your-instructions-files/ |
+| RigorBench (die +17 %) | https://arxiv.org/abs/2606.22678 |
+
+> ⚠️ **Zwei Lücken, falls genau danach gefragt wird:**
+> Für die **Browser-Tools-Doku** (*Build and test web apps with browser agent
+> tools*) ist in `research/` keine URL hinterlegt — die müsstest du kurz
+> suchen. Und die **arXiv-URL** ist aus der Nummer gebaut, die auf der Folie
+> steht; geprüft ist in `research/memory-und-plan-belege.md` nur die Nummer
+> selbst, nicht der Link.
 
 In den Tagen danach:
 

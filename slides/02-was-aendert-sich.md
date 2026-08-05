@@ -76,6 +76,17 @@ Die erste Frage, die immer kommt, gleich vorwegnehmen: **eure offenen Tabs
 sind privat.** Der Agent kommt an eine Seite, die ihr selbst geöffnet habt,
 erst wenn ihr auf *Share with Agent* klickt.
 
+**Ehrlichkeitssatz — genau so sagen, nicht ausschmücken:**
+
+> "Bei uns ist das anscheinend erlaubt. Ich hab's aber selbst noch nicht
+> ausprobiert, deswegen erzähl ich euch hier nur, was es kann — und nicht,
+> wie es sich anfühlt."
+
+Das ist die einzige Stelle im Vortrag, an der du über etwas redest, das du
+nicht selbst benutzt hast. Sag es, dann kann dich auch niemand darauf
+festnageln. Wenn danach jemand fragt "und, taugt das?" — dieselbe Antwort,
+nicht anfangen zu spekulieren.
+
 Quelle: VS Code Docs, *Build and test web apps with browser agent tools*
 
 Parallele Chats: mehrere Unterhaltungen in einer Session — Implementierung im
@@ -100,5 +111,12 @@ Vertiefung. Nur bei Nachfrage.
 Setting: `workbench.browser.enableChatTools`, dazu Browser-Tools im
 Tools-Picker aktivieren.
 
-Admins können Browser-Tools per Policy abschalten oder auf Domains beschränken
-— **vor dem Vortrag prüfen, ob es bei uns überhaupt an ist.**
+Admins können Browser-Tools per Policy abschalten oder auf Domains beschränken.
+**Bei uns anscheinend erlaubt (Stand 05.08.2026), von dir aber nicht selbst
+getestet** — also weiterhin nur beschreiben, nicht empfehlen.
+
+Wenn jemand es ausprobiert hat und im Chat etwas dazu schreibt: aufgreifen und
+weitergeben. Das ist mehr wert als deine Vermutung.
+
+**Diese Folie nicht live vorführen.** Ungetestet plus remote plus Browser, der
+sich selbst bedient — das ist die schlechteste Kombination im ganzen Vortrag.

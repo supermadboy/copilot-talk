@@ -160,5 +160,7 @@ Firmenregel: nur GitHub Copilot. Diese Neuerungen fallen damit raus:
       29.07. — am 05.08. war sie noch nicht da. Am Vortag nochmal prüfen
 - [ ] Läuft die Prompt-File-Migration in der installierten Version stabil genug
       für eine Live-Demo? Sonst nur auf der Folie zeigen
-- [ ] Sind Browser-Tools in der Firmenumgebung nutzbar (Proxy, Policies)?
-      Markus fragen, nicht raten
+- [x] Sind Browser-Tools in der Firmenumgebung nutzbar (Proxy, Policies)?
+      **Laut Markus anscheinend erlaubt (05.08.2026), von ihm aber selbst noch
+      nicht getestet.** Auf der Folie deshalb nur beschreiben, nicht empfehlen
+      und nicht live vorführen

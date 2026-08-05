@@ -73,9 +73,12 @@ rät' fällt weg."
 
 Ich beschreibe den Fehler nicht. Ich ziehe ein Bild rein.
 
-**Fallback:** images/hook-vision.png zeigen und erzählen. Nicht reparieren
-wollen, wenn es hakt — abbrechen und weiter. Der Punkt ist die Idee, nicht
-der Beweis.
+**Fallback:** eine deiner **alten Copilot-Sessions** aufmachen, in der Vision
+schon funktioniert hat, und die Antwort daraus zeigen. (Es liegt bewusst kein
+Screenshot in `images/` — das ist der abgesprochene Ersatz.)
+
+Nicht reparieren wollen, wenn es hakt — abbrechen und weiter. Der Punkt ist die
+Idee, nicht der Beweis.
 
 Details zum Ablauf: demo-ablauf.md, Demo 1.
 
